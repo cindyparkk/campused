@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import CreateListing from '../comps/CreateListing';
 import CircleButton from '../comps/CircleButton';
+import Footer from '../comps/Footer';
 
 
 export default {
@@ -10,3 +11,4 @@ export default {
 
 export const CreateAListing = () => <CreateListing />;
 export const IconButton = () => <CircleButton />;
+export const CampusedFooter = () => <Footer />;
