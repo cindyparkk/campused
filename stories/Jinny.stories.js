@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Divider from '../comps/Divider';
+import Item from '../comps/Item';
 
 
 
@@ -11,3 +12,4 @@ export default {
 };
 
 export const Hr_Divider= () => <Divider />;
+export const ItemList = () => <Item />;
