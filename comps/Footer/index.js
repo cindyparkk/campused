@@ -13,10 +13,10 @@ const Main = styled.div`
 `;
 
 const Container = styled.div`
-background-color: #1F5A98;
-width: 100%;
-height: 100%;
-display: flex;
+    background-color: #1F5A98;
+    width: 100%;
+    height: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
