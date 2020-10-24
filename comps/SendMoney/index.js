@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-
+import user from '../../public/user.png';
 
 const Container = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -84,7 +84,7 @@ return <Container>
 
 SendMoney.defaultProps = {
   
-    user:"./user.png",
+    user:user,
     text1:"Default Name",
     price:"Default"
 
