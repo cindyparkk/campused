@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 
 
+
 const Main = styled.div`
     display: flex;
     justify-content: center;
@@ -28,7 +29,7 @@ const Container = styled.div`
 
 const Text = styled.div`
     margin-left: 30px;
-    line-height: 0.6;
+    line-height: 0.3;
 `;
 
 const Title = styled.h2`
@@ -50,6 +51,7 @@ const ImageContainer = styled.div`
 const Description = styled.p`
 font-family: 'Assistant', sans-serif;
 font-weight: 300;
+line-height: 1;
 `;
 
 const Price = styled.h2`
