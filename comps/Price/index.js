@@ -34,7 +34,7 @@ margin-top:15px;
        text-align:start;
 
     //    align-self:  start;
-    
+
     }
 `;
 
@@ -55,7 +55,7 @@ const Price =({text1,text2}) => {
 
 Price.defaultProps = {
   
-    text1:"Price",
+    text1:"Default",
     text2:""
 
 }
