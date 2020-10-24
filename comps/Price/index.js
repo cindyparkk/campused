@@ -7,15 +7,15 @@ font-family: 'Assistant', sans-serif;
 `;
 
 const Title = styled.h4`
-font-size:28px;
+
 margin:0;
 
 `;
 
-const Input = styled.h5` 
+const Input = styled.p` 
 
 width:147px;
-height:60px;
+height:67px;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 17px;
 border:solid 1px #000000;
@@ -27,10 +27,14 @@ margin-top:15px;
 
 
     span {
-        
-        font-size: 24px;
-       color: #999999;
-       padding : 18px;
+
+        position:absolute;
+         color: #999999;
+       padding : 22px;
+       text-align:start;
+
+    //    align-self:  start;
+    
     }
 `;
 
