@@ -9,6 +9,7 @@ font-family: 'Assistant', sans-serif;
 const Title = styled.h4`
 
 margin:0;
+font-family: 'Assistant', sans-serif;
 
 `;
 
