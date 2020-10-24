@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-var image = require('../../public/userpost.png');
+
 
 
 const Main = styled.div`
