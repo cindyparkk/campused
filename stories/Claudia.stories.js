@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import CreateListing from '../comps/CreateListing';
 import CircleButton from '../comps/CircleButton';
 import Footer from '../comps/Footer';

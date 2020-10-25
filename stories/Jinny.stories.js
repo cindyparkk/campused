@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Divider from '../comps/Divider';
 import Item from '../comps/Item';
 import Price from '../comps/Price';

@@ -11,6 +11,9 @@ const Contain = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     display: inline-flex;
+    // display: ${props=>props.expanded ? "inline-flex" : "hidden"};
+    // opacity: ${props=>props.expanded ? 1 : 0};
+    // height: ${props=>props.expanded ? "auto" : "0px"};
 `
 const Content = styled.div`
     display: inline-flex;
@@ -23,6 +26,7 @@ const Content = styled.div`
     div {
         cursor: pointer;
         padding: 30px 30px;
+        // padding: ${props=>props.expanded ? "30px 30px" : "0px"};
         &:hover {
             background-color: #FE9A4C;
             color: #FFF;
@@ -36,18 +40,27 @@ const Content = styled.div`
     }
 `
 
-const ExpandedMenu = () => {
-    return <Contain>
+const ExpandedMenu = ({expand, onMenuSelect}) => {
+    const [expanded, setExpanded] = useState(false);
+
+    useEffect(()=>{
+        setExpanded(expand)
+    }, [expand])
+
+    return <Contain expanded={expanded}>
         <Content>
-            <div>Mark as Sold</div>
-            <div>Edit</div>
-            <div>Delete</div>
+            <div onClick={()=>{
+            onMenuSelect("marksold");}}>Mark as Sold</div>
+            <div onClick={()=>{
+            onMenuSelect("edit");}}>Edit</div>
+            <div onClick={()=>{
+            onMenuSelect("delete");}}>Delete</div>
         </Content>
     </Contain>
 }
 
 ExpandedMenu.defaultProps = {
-
+    expand: false
 }
 
 export default ExpandedMenu;
