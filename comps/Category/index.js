@@ -52,7 +52,7 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     width:100%;
     padding:10px;
-
+    height: 100%;
 
 
     display:${props=>props.expanded ? "inline-flex" : "hidden"};
@@ -64,13 +64,16 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     flex-direction: column;
 
     div{
-       
-        paddig:${props=>props.expanded ? "10px" : "0px"};
-        margin:${props=>props.expanded ? "10px" : "0px"};
-        cursor:pointer;
-       
         &:hover{
             background-color:#FE9A4C;
+        }
+        
+        padding:10px;
+        margin:10px;
+        // margin:${props=>props.expanded ? "10px" : "0px"};
+        cursor:pointer;
+       
+       
     
     }
  
@@ -100,6 +103,7 @@ const Category =({expand,onCategorySelect})=> {
         </DropDownMenu>
 
         <Expand expanded={expanded}>
+
             <div onClick={()=> {
                 onCategorySelect("bed");
             }}>
