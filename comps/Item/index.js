@@ -14,19 +14,29 @@ const Container = styled.div`
 
 `;
 const Image_Box = styled.div`
-    backgound-size:cover;
-    border: 2px solid #9A9A9A;
-border-radius: 16px;
+
+  
+        width:185px;
+        height:205px;
+        margin-bottom:15px;
+        padding:0;
+        
+        background-position: center;
+        background-size: cover;
+        box-sizing: border-box;
 `;
 
 const Item_Image = styled.img`
 
-
-
-// width:100%;
-// height:100%;
-
-
+         background-size: cover;
+         
+        border: 2px solid #9A9A9A;
+        border-radius: 16px;
+        width:183px;
+        height:205px; 
+      
+        margin:0;
+    
 
 
 `;
