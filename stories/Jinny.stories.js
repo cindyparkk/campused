@@ -5,6 +5,7 @@ import Price from '../comps/Price';
 import UploadImage from '../comps/UploadImage';
 import SendMoney from '../comps/SendMoney';
 import Category from '../comps/Category';
+import SmallCategory from '../comps/SmallCategory';
 
 
 
@@ -24,3 +25,4 @@ export const PriceInput = () => <Price />;
 export const Upload = () => <UploadImage />;
 export const Send = () => <SendMoney />;
 export const BigCategory = () => <Category />;
+export const Small_Category = () => <SmallCategory />;
