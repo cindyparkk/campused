@@ -40,7 +40,7 @@ const DropDownBox = styled.div`
     img {
     
         margin: 0px 10px;
-        width:25px;
+        width:11px;
         heigh:auto;
 }
 `;
