@@ -14,19 +14,24 @@ const Container = styled.div`
 
 `;
 
+const Image_Box = styled.div`
+    max-width: 185px;
+    max-height: 205px;
+`;
+
 
 const Item_Image = styled.img`
         
-width:185px;
-height:205px;
+width: 100%;
+height: 100%;
 margin-bottom:15px;
 
 border: 2px solid #9A9A9A;
 border-radius: 16px;
 
-box-sizing: border-box;
-background-size: cover;
-background-position: center;
+// box-sizing: border-box;
+// background-size: cover;
+// background-position: center;
         
         object-fit:cover;
         margin:0;
@@ -39,7 +44,7 @@ background-position: center;
 const Item_Title = styled.h5`
     font-family: 'Montserrat', sans-serif;
     color:#18191F;
-    margin:2px 0px;
+    margin:10px 5px 0px 0px;
 
 `;
 
@@ -54,9 +59,9 @@ const Item_Price = styled.h6`
 const Item = ({text1,text2}) => {
 
     return <Container>
-
+        <Image_Box>
         <Item_Image src={photo}/>
-
+        </Image_Box>   
       
 
          <Item_Title>
