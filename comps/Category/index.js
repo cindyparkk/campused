@@ -26,7 +26,7 @@ const DropDownBox = styled.div`
     img {
     
         margin: 0px 10px;
-        width:25px;
+        width:14px;
         heigh:auto;
 }
 `;
