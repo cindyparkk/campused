@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
+var arrow = require('../../public/arrowdown.png');
 
 
 const Container = styled.div`
@@ -91,7 +92,15 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
 `;
 
+const Arrow = styled.img`
+    width: 100%;
+    height: 100%;
+`;
 
+const ArrowDiv = styled.div`
+    max-width: 200px;
+    height: auto;
+`;
 
 
 
@@ -111,7 +120,12 @@ return <div>
     }}>
         <DropDownBox>
         <div>Select a Category</div>
-        <div><img src="./arrowndown.png"/ ></div>
+
+        <ArrowDiv>
+            <Arrow src={arrow} />
+        </ArrowDiv>
+
+
         </DropDownBox>
     </DropDownMenu>
 
