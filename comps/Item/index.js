@@ -13,29 +13,24 @@ const Container = styled.div`
     
 
 `;
-const Image_Box = styled.div`
 
-  
-        width:185px;
-        height:205px;
-        margin-bottom:15px;
-        padding:0;
-        
-        background-position: center;
-        background-size: cover;
-        box-sizing: border-box;
-`;
 
 const Item_Image = styled.img`
+        
+width:185px;
+height:205px;
+margin-bottom:15px;
 
-         background-size: cover;
-         
-        border: 2px solid #9A9A9A;
-        border-radius: 16px;
-        width:183px;
-        height:205px; 
-      
+border: 2px solid #9A9A9A;
+border-radius: 16px;
+
+box-sizing: border-box;
+background-size: cover;
+background-position: center;
+        
+        object-fit:cover;
         margin:0;
+        padding:0;
     
 
 
@@ -59,9 +54,9 @@ const Item_Price = styled.h6`
 const Item = ({text1,text2}) => {
 
     return <Container>
-        <Image_Box>
+
         <Item_Image src={photo}/>
-        </Image_Box>
+
       
 
          <Item_Title>
