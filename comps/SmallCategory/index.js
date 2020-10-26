@@ -37,12 +37,7 @@ const DropDownBox = styled.div`
     font-weight:200;
     color:#999999;
     
-    img {
     
-        margin: 0px 10px;
-        width:11px;
-        heigh:auto;
-}
 `;
 
 
@@ -66,7 +61,7 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-size:${props=>props.expanded ? "24px" : "0px"};
     opacity:${props=>props.expanded ? 1 : 0};
 
-    transition:opacity 0.5s;
+    transition:opacity 0.3s;
     flex-direction: column;
 
     div{
@@ -98,8 +93,10 @@ const Arrow = styled.img`
 `;
 
 const ArrowDiv = styled.div`
-    max-width: 200px;
+    mid-width: 10px;
     height: auto;
+    padding-left:15px;
+
 `;
 
 
