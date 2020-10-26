@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 
 
-
+var photo = require('../../public/photo.png');
 
 const Container = styled.div`
 
@@ -10,17 +10,34 @@ const Container = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
+    
 
+`;
+const Image_Box = styled.div`
+
+  
+        width:185px;
+        height:205px;
+        margin-bottom:15px;
+        padding:0;
+        
+        background-position: center;
+        background-size: cover;
+        box-sizing: border-box;
 `;
 
 const Item_Image = styled.img`
 
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 16px;
-    width: 185px;
-    height: 205px;
-    margin:15px 0px;
-    border: 2px solid #9A9A9A;
+         background-size: cover;
+         
+        border: 2px solid #9A9A9A;
+        border-radius: 16px;
+        width:183px;
+        height:205px; 
+      
+        margin:0;
+    
+
 
 `;
 
@@ -39,11 +56,14 @@ const Item_Price = styled.h6`
 
 
 
-const Item = ({src, text1,text2}) => {
+const Item = ({text1,text2}) => {
 
     return <Container>
-         <Item_Image src={src}/>
-       
+        <Image_Box>
+        <Item_Image src={photo}/>
+        </Image_Box>
+      
+
          <Item_Title>
              {text1}
          </Item_Title>
@@ -56,7 +76,7 @@ const Item = ({src, text1,text2}) => {
 }
 
 Item.defaultProps = {
-    src:"/photo.png",
+   
     text1:"UBC Dorm Room 12",
     text2:"$100"
 
