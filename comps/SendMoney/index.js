@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import user from '../../public/user.png';
+var user = require('../../public/user.png');
 
 const Container = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -9,10 +9,12 @@ const Container = styled.div`
     font-family: 'Montserrat', sans-serif;
     font-weight:bold;
     width: 511px;
-    height: 370px;
+    height: auto;
     background-color: #F3F3F3;
     border:solid 1px #000000;   
     padding:20px;
+
+
 `;
 
 const User = styled.div`
@@ -20,15 +22,25 @@ const User = styled.div`
 display:flex;
 flex-direction:row;
 
+    
 `;
 
 const User_Image = styled.div`
-width:78px;
-height:78px;
-margin:50px;
+ min-width:78px;
+ mid-height:78px;
+ padding:20px;
+
+
+`;
+
+const User_Image_Circle = styled.img`
+
 `;
 
 const User_Name = styled.div`
+
+margin-top:20px;
+margin-left:10px;
 
 `;
 const User_Profile = styled.p`
@@ -37,13 +49,16 @@ color:#8296FF;
 font-size:14px;
 font-weight:300;
 font-family: 'Roboto', sans-serif;
-margin:0
+
+margin-top:5px;
+margin-left:10px;
+
 
 `;
 
 const Total = styled.div`
     
-    margin-top:20px;
+    margin-bottom:10px;
     display:flex;
     flex-direction:row;
     justify-content: space-between;
@@ -55,13 +70,16 @@ const Price = styled.div`
 
 
 
-const SendMoney =({user,text1,price})=> {
+const SendMoney =({text1,price})=> {
 
 return <Container>
 
 <p>To:</p>
 <User>
-    <User_Image src={user}></User_Image>
+    <User_Image>
+        <User_Image_Circle src={user}/>
+     </User_Image>
+
     <div>
     <User_Name>{text1}</User_Name>
     <User_Profile>View Profile</User_Profile>
@@ -84,7 +102,7 @@ return <Container>
 
 SendMoney.defaultProps = {
   
-    user:user,
+    
     text1:"Default Name",
     price:"Default"
 

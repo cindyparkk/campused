@@ -13,7 +13,7 @@ const Container = styled.div`
 
 `;
 
-const Item_Image = styled.div`
+const Item_Image = styled.img`
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 16px;
@@ -42,8 +42,8 @@ const Item_Price = styled.h6`
 const Item = ({src, text1,text2}) => {
 
     return <Container>
-         <Item_Image src={src}>
-         </Item_Image>
+         <Item_Image src={src}/>
+       
          <Item_Title>
              {text1}
          </Item_Title>

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 
-
+var arrow = require('../../public/arrowdown.png');
 
 
 const Container = styled.div`
@@ -25,20 +25,41 @@ const DropDownBox = styled.div`
     
     img {
     
-        margin: 0px 10px;
-        width:14px;
-        heigh:auto;
+        mid-width: 10px;
+        height: auto;
+        padding-left:15px;
 }
 `;
 
 const DropDownMenu = styled.div`
 
 display:inline-flex;
+
+justify-content:space-between;
+
 border: 2px solid #000000;
 border-radius: 16px;
 padding:5px 10px;
 
 `;
+
+
+
+const ArrowDiv = styled.div`
+    mid-width: 10px;
+    height: auto;
+    padding-left:170px;
+    padding-top:5px;
+    
+    
+`;
+
+const Arrow = styled.img`
+    width: 100%;
+    height: 100%;
+   
+`;
+
 
 
 const Expand = styled.div`
@@ -61,7 +82,7 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-size:${props=>props.expanded ? "24px" : "0px"};
     opacity:${props=>props.expanded ? 1 : 0};
 
-    transition:opacity 0.5s;
+    transition:opacity 0.3s;
     flex-direction: column;
 
     div{
@@ -107,7 +128,11 @@ const Category =({expand,onCategorySelect})=> {
         }}>
             <DropDownBox>
             <div>Choose a Category</div>
-            <div><img src="./arrowndown.png"/ ></div>
+
+            <ArrowDiv>
+            <Arrow src={arrow} />
+          </ArrowDiv>
+
             </DropDownBox>
         </DropDownMenu>
 
