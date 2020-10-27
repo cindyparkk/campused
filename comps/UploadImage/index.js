@@ -6,7 +6,7 @@ var camera = require('../../public/camera.png');
 const Container = styled.div`
     display: flex;
     width: 100%;
-    font-family: 'Assistant', sans-serif;
+
     flex-direction:column;
 
 `;
