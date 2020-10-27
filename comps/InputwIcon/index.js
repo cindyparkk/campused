@@ -19,6 +19,10 @@ const Input = styled.input`
     box-sizing: border-box;
     border-radius: 10px;
     padding-left: 40px;
+
+    font-family: "Assistant", sans-serif;
+    font-weight: 300;
+    font-size: 18px;
 `
 
 const InputwIcon = ({icon, placeholder}) => {

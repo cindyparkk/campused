@@ -24,9 +24,15 @@ const Top = styled.div`
 `
 
 const Title = styled.h1`
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 35px;
 `
 
-const Subtitle = styled.h2`
+const Subtitle = styled.h3`
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
 `
 const Box = styled.div`
     display: inline-flex;
@@ -34,6 +40,12 @@ const Box = styled.div`
     width: 100%;
     justify-content: space-between;
     margin-bottom: 25px;
+
+    & > * {
+        font-family: "Assistant", sans-serif;
+        font-weight: 300;
+        font-size: 18px;
+    }
 `
 
 const Checkbox = styled.input`

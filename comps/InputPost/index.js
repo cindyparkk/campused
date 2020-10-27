@@ -8,7 +8,11 @@ const Contain = styled.div`
     flex-direction: column;
 `
 
-const Title = styled.h3`
+const Title = styled.h6`
+    font-family: "Assistant", sans-serif;
+    font-weight: 300;
+    font-size: 28px;
+    margin-bottom: 20px;
 `
 
 const Input = styled.input`
@@ -19,6 +23,10 @@ const Input = styled.input`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 17px;
     padding-left: 20px;
+
+    font-family: "Assistant", sans-serif;
+    font-weight: 300;
+    font-size: 18px;
 `
 
 const InputPost = ({title, placeholder}) => {

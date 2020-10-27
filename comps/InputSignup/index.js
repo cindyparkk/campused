@@ -8,8 +8,12 @@ const Contain = styled.div`
     flex-direction: column;
 `
 
-const Title = styled.h2`
+const Title = styled.h6`
     margin-bottom: 15px;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 20px; 
 `
 
 const Input = styled.input`
@@ -19,6 +23,10 @@ const Input = styled.input`
     box-sizing: border-box;
     border-radius: 10px;
     padding-left: 15px;
+
+    font-family: "Assistant", sans-serif;
+    font-weight: 300;
+    font-size: 18px;
 `
 
 const InputSignup = ({title, placeholder}) => {
