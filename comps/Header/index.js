@@ -9,7 +9,7 @@ import profileicon from '../../public/profileicon.jpg';
 
 const Main = styled.div`
     background-color: white;
-    border: 1px solid black;
+    // border: 1px solid black;
     width: 100%;
     margin: 0;
 `;
@@ -37,14 +37,14 @@ const Center = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
-    border: 1px solid black;
+    // border: 1px solid black;
 `;
 
 const MenuCont = styled.div`
     max-width: 31px;
     max-height: 31px;
     margin-left: 12px;
-    border: 1px solid black;
+    // border: 1px solid black;
 `;
 
 const Icon = styled.img`
@@ -55,7 +55,7 @@ const Icon = styled.img`
 
 const SearchContainer = styled.div`
     width: 60px;
-    border: 1px solid black;
+    // border: 1px solid black;
     cursor: pointer;
 `;
 
@@ -63,7 +63,7 @@ const Searchmain = styled.div`
     height: auto;
     display: flex;
     margin-right: 10px;
-    border: 1px solid black;
+    // border: 1px solid black;
 `;
 
 const ProfileIconCont = styled.div`
@@ -72,7 +72,7 @@ const ProfileIconCont = styled.div`
     display: flex;
     margin-right: 10px;
     margin-left: 20px;
-    border: 1px solid black;
+    // border: 1px solid black;
 `;
 
 const Profile = styled.img`
@@ -86,7 +86,7 @@ const FlexEnd = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    border: 1px solid black;
+    // border: 1px solid black;
     margin-right: 12px;
     padding-left: 20px;
 `;

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 
 import searchicon from '../../public/search.svg';
+import CircleButton from '../../comps/CircleButton';
 
 const Main = styled.div`
 width: 100%;
@@ -57,10 +58,25 @@ const IconContainer = styled.div`
 const SearchContainer = styled.div`
     display: flex;
     width: 100%;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     position:relative;
 `;
+
+const Arrow = styled.div`
+transform: scaleX(-1);
+width: 50px;
+display: flex;
+justify-content: flex-start;
+`;
+
+const SearchMain = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+`;
+
 
 const Search = () =>{
     return <Main>
@@ -68,14 +84,20 @@ const Search = () =>{
     <Container>
         <SearchContainer>
 
+        <Arrow>
+            <CircleButton />
+        </Arrow>
+
+    <SearchMain>
         <SearchBar placeholder='Search...'></SearchBar>
 
-        <IconContainer>
-            <Icon src={searchicon} />
-        </IconContainer>
+            <IconContainer>
+                <Icon src={searchicon} />
+            </IconContainer>
+
+    </SearchMain>
 
         </SearchContainer>
-        
 
         </Container>
    
