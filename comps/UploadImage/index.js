@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import camera from '../../public/camera.png';
+var camera = require('../../public/camera.png');
 
 const Container = styled.div`
     display: flex;
     width: 100%;
-    font-family: 'Assistant', sans-serif;
+
     flex-direction:column;
 
 `;
@@ -27,17 +27,26 @@ const Upload = styled.div`
     flex-direction:column;
     justify-content: center;
     align-items: center;
-    margin-top:15px;
-    opacity:0.6;
     
+        p{
+            opacity:0.7;
+        }
+
 `;
 
-const Icon = styled.div`
-    width: 25%;
+const Camera = styled.div`
+    width:100%;
+    height:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+const Icon = styled.img`
+  
     display: inline-block;
     background-size: cover;
     background-position: center;
-    padding: 20px;
     cursor: pointer;
 
 `;
@@ -47,7 +56,10 @@ const UploadImage =({text1}) => {
     return <Container>
         <Title>{text1}</Title>
         <Upload>
-           <Icon src={camera}></Icon> 
+            <Camera>
+            <Icon src={camera}/>
+            </Camera>
+         
            <p>Upload Photo(s)</p>
         </Upload>
     </Container>
