@@ -17,6 +17,11 @@ const ButtonBox = styled.div`
     box-shadow: 0px 4px 0px #18191F;
     border-radius: 10px;
     cursor: pointer;
+    padding: 0 15px;
+
+    font-family:  "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 17px; 
 `
 
 const Button = ({color, text}) => {
@@ -27,7 +32,7 @@ const Button = ({color, text}) => {
 
 Button.defaultProps = {
     color: null,
-    text: "Buy Now"
+    text: "Contact Seller"
 }
 
 export default Button;

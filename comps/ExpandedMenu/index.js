@@ -26,6 +26,11 @@ const Content = styled.div`
     div {
         cursor: pointer;
         padding: 30px 30px;
+
+        font-family: "Assistant", sans-serif;
+        font-weight: 300;
+        font-size: 24px;
+
         // padding: ${props=>props.expanded ? "30px 30px" : "0px"};
         &:hover {
             background-color: #FE9A4C;

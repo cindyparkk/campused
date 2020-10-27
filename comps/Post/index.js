@@ -23,8 +23,10 @@ const Content = styled.div`
     margin: 25px;
 `
 
-const Title = styled.div`
-
+const Title = styled.h3`
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 24px;
 `
 
 const Div = styled.div`
