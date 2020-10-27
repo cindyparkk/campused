@@ -12,7 +12,7 @@ font-weight:bold;
 font-size:24px;
 display:inline-flex;
 flex-direction:column;
-font-family: 'Montserrat', sans-serif;
+
 
 `;
 

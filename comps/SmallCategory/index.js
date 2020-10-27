@@ -10,9 +10,9 @@ min-width: 252px;
 
 display:inline-flex;
 flex-direction:column;
-font-family: 'Assistant', sans-serif;
+
 padding:0px;
-font-size:24px;
+
 
 `;
 
@@ -33,7 +33,7 @@ const DropDownBox = styled.div`
     // width:100%;
     padding:10px;
     display:flex;
-    font-size:20px;
+
     font-weight:200;
     color:#999999;
     
@@ -95,7 +95,7 @@ const Arrow = styled.img`
 const ArrowDiv = styled.div`
     mid-width: 10px;
     height: auto;
-    padding-left:15px;
+    padding-left:55px;
 
 `;
 
