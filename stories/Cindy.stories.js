@@ -6,6 +6,7 @@ import InputSignup from '../comps/InputSignup';
 import InputwIcon from '../comps/InputwIcon';
 import InputPost from '../comps/InputPost';
 import ExpandedMenu from '../comps/ExpandedMenu';
+import Menu from '../comps/Menu';
 
 export default {
     title: 'Cindy Components',
@@ -19,3 +20,4 @@ export const InputForSignup = () => <InputSignup />;
 export const InputwithIcon = () => <InputwIcon />;
 export const InputForPosts = () => <InputPost />;
 export const MenuExpanded = () => <ExpandedMenu />;
+export const MainMenu = () => <Menu />;
