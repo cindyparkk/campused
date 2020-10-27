@@ -9,8 +9,7 @@ import HeaderMenu from '../comps/HeaderMenu';
 
 
 export default {
-    title: 'Components/Claudia Components',
-    component: HeaderMenu
+    title: 'Components/Claudia Components'
 };
 
 export const CreateAListing = () => <CreateListing />;

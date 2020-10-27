@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 var icon = require('../../public/arrowright.svg');
@@ -17,6 +17,7 @@ const Container = styled.div`
     box-sizing: border-box;
     box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.65);
     cursor: pointer;
+    background-color: white;
 `;
 
 const IconContainer = styled.div`
