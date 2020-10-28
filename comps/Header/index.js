@@ -112,7 +112,7 @@ const Header = () =>{
 
    
         <SearchContainer>
-            <CircleButton icon={search} />
+            <CircleButton icon={search} width="28px" height="28px"/>
         </SearchContainer>
    
 
