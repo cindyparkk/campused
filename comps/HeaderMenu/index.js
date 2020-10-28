@@ -13,7 +13,7 @@ const Container = styled.div`
     justify-content: space-around;
 `;
 
-const LeaveIn = styled.h2`
+const LeaveIn = styled.h3`
     font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     transition: 0.25s;
@@ -23,7 +23,7 @@ const LeaveIn = styled.h2`
     color: ${props=>props.selected ? '#EA7317' : 'black'};
 `;
 
-const Furniture = styled.h2`
+const Furniture = styled.h3`
     font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     transition: 0.25s;
@@ -33,7 +33,7 @@ const Furniture = styled.h2`
     color: ${props=>props.selected2 ? '#EA7317' : 'black'};
 `;
 
-const Wishlist = styled.h2`
+const Wishlist = styled.h3`
     font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     transition: 0.25s;

@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 
 
-var image = require('../../public/userpost.png');
-
 const Main = styled.div`
     display: flex;
     justify-content: center;
@@ -32,7 +30,7 @@ const Text = styled.div`
     line-height: 0.3;
 `;
 
-const Title = styled.h2`
+const Title = styled.h4`
     font-family: 'Assistant', sans-serif;
     font-weight: 300;
 `;
@@ -54,8 +52,7 @@ font-weight: 300;
 line-height: 1;
 `;
 
-const Price = styled.h2`
-font-family: 'Montserrat', sans-serif;
+const Price = styled.h3`
 `;
 
 const ProfilePost = ({title, description, price, image}) =>{
@@ -82,7 +79,7 @@ const ProfilePost = ({title, description, price, image}) =>{
        title: 'Default Title',
        description: 'Description goes here...',
        price: '00',
-       image: image
+       image: '/userpost.png'
    }
    
    

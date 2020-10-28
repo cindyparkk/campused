@@ -1,11 +1,8 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import logo from '../../public/logotext.png';
-import hamburgermenu from '../../public/menu.png';
 import CircleButton from '../../comps/CircleButton';
-import search from '../../public/search.svg';
-import profileicon from '../../public/profileicon.jpg';
+
 
 const Main = styled.div`
     background-color: white;
@@ -91,18 +88,18 @@ const FlexEnd = styled.div`
     padding-left: 20px;
 `;
 
-const Header = () =>{
+const Header = ({profileicon}) =>{
     return <Main>
     
         <Container>
 
             <MenuCont>
-                 <Icon src={hamburgermenu} />
+                 <Icon src="/menu.png" />
             </MenuCont>
             
             <Center>
         <Logo>
-            <Campused src={logo}/>
+            <Campused src="/logotext.png"/>
         </Logo>
     </Center>
         
@@ -112,7 +109,7 @@ const Header = () =>{
 
    
         <SearchContainer>
-            <CircleButton icon={search} width="28px" height="28px"/>
+            <CircleButton icon="/search.svg" width="28px" height="28px"/>
         </SearchContainer>
    
 
@@ -129,5 +126,9 @@ const Header = () =>{
    }
 
    
+   Header.defaultProps = {
+       profileicon: "/profileicon.jpg"
+   }
+
    
    export default Header;

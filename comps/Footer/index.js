@@ -1,10 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import logo from '../../public/logo.png';
-import insta from '../../public/instagram.png';
-import facebook from '../../public/facebook.svg';
-import twitter from '../../public/twitter.png';
 
 const Main = styled.div`
     display: flex;
@@ -41,19 +37,16 @@ const TextContainer = styled.div`
 `;
 
 const Furniture = styled.p`
-    font-family: 'Assistant', sans-serif;
     color: white;
     cursor: pointer;
 `;
 
 const About = styled.p`
-    font-family: 'Assistant', sans-serif;
     color: white;
     cursor: pointer;
 `;
 
 const LeaveIn = styled.p`
-    font-family: 'Assistant', sans-serif;
     color: white;
     cursor: pointer;
 `;
@@ -66,13 +59,11 @@ const TextContainer2 = styled.div`
 `;
 
 const FAQ = styled.p`
-    font-family: 'Assistant', sans-serif;
     color: white;
     cursor: pointer;
 `;
 
 const Profile = styled.p`
-    font-family: 'Assistant', sans-serif;
     color: white;
     cursor: pointer;
 `;
@@ -134,7 +125,6 @@ const Circle = styled.div`
 `;
 
 const Copyright = styled.p`
-    font-family: 'Assistant', sans-serif;
     color: white;
     margin: 50px 0px 10px 0px;
 `;
@@ -146,7 +136,7 @@ const Footer = () =>{
  <Container>
 
     <ImageContainer>
-        <Campused src={logo} />
+        <Campused src='/logo.png' />
     </ImageContainer>
     
 
@@ -164,15 +154,15 @@ const Footer = () =>{
     <Socials>
        
             <Circle>
-                <Instagram src={insta}></Instagram>
+                <Instagram src='/instagram.png'></Instagram>
             </Circle>
 
             <Circle>
-                <Facebook src={facebook}></Facebook>
+                <Facebook src='/facebook.svg'></Facebook>
             </Circle>
         
             <Circle>
-                <Twitter src={twitter}></Twitter>
+                <Twitter src='/twitter.png'></Twitter>
             </Circle>
         
     </Socials>

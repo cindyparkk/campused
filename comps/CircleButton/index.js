@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-var icon = require('../../public/arrowright.svg');
+// var icon = require('../../public/arrowright.svg');
 
 const Main = styled.div`
     width: 100%;
@@ -43,7 +43,7 @@ const CircleButton = ({icon, width, height}) =>{
 }
 
 CircleButton.defaultProps = {
-    icon: icon,
+    icon: "/arrowright.svg",
     width: "50px",
     height: "50px"
 }
