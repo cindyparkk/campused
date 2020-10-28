@@ -2,10 +2,10 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 const Contain = styled.div`
-
+    margin: 0;
 `
 
-const ButtonBox = styled.div`
+const ButtonBox = styled.h6`
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -19,20 +19,19 @@ const ButtonBox = styled.div`
     cursor: pointer;
     padding: 0 30px;
 
-    font-family:  "Montserrat", sans-serif;
-    font-weight: 600;
-    font-size: 17px; 
+    font-size: ${props=>props.fsize ? props.fsize : "17px"};
 `
 
-const Button = ({bgcolor, text}) => {
+const Button = ({bgcolor, text, fsize}) => {
     return <Contain>
-        <ButtonBox bgcolor={bgcolor}>{text}</ButtonBox>
+        <ButtonBox bgcolor={bgcolor} fsize={fsize}>{text}</ButtonBox>
     </Contain>
 }
 
 Button.defaultProps = {
     bgcolor: "#FEC601",
-    text: "Contact Seller"
+    text: "Contact Seller",
+    fsize: "17px"
 }
 
 export default Button;
