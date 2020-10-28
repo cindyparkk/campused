@@ -20,7 +20,6 @@ const Text = styled.h1`
     color: black;
     margin-left: 45px;
     margin-top: 35px;
-    font-family: 'Montserrat', sans-serif;
 `;
 
 

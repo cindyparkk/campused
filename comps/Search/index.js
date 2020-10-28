@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import searchicon from '../../public/search.svg';
 import CircleButton from '../../comps/CircleButton';
 
 const Main = styled.div`
@@ -78,7 +77,7 @@ const SearchMain = styled.div`
 `;
 
 
-const Search = () =>{
+const Search = ({}) =>{
     return <Main>
 
     <Container>
@@ -92,7 +91,7 @@ const Search = () =>{
         <SearchBar placeholder='Search...'></SearchBar>
 
             <IconContainer>
-                <Icon src={searchicon} />
+                <Icon src="/search.svg" />
             </IconContainer>
 
     </SearchMain>
@@ -104,6 +103,9 @@ const Search = () =>{
    </Main>
    }
 
+   Search.defaultProps = {
+
+   }
    
    
    export default Search;
