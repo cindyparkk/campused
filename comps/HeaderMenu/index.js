@@ -14,7 +14,6 @@ const Container = styled.div`
 `;
 
 const LeaveIn = styled.h3`
-    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     transition: 0.25s;
     :hover{
@@ -24,7 +23,6 @@ const LeaveIn = styled.h3`
 `;
 
 const Furniture = styled.h3`
-    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     transition: 0.25s;
     :hover{
@@ -34,7 +32,6 @@ const Furniture = styled.h3`
 `;
 
 const Wishlist = styled.h3`
-    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     transition: 0.25s;
     :hover{
