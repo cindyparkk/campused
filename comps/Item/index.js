@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 
 
-var photo = require('../../public/photo.png');
+// var photo = require('../../public/photo.png');
 
 const Container = styled.div`
 
@@ -56,11 +56,11 @@ const Item_Price = styled.h6`
 
 
 
-const Item = ({text1,text2}) => {
+const Item = ({text1,text2,imgurl}) => {
 
     return <Container>
         <Image_Box>
-        <Item_Image src={photo}/>
+        <Item_Image src={imgurl}/>
         </Image_Box>   
       
 
@@ -78,7 +78,8 @@ const Item = ({text1,text2}) => {
 Item.defaultProps = {
    
     text1:"UBC Dorm Room 12",
-    text2:"$100"
+    text2:"$100",
+    imgurl:"/user_icon.png"
 
 }
 
