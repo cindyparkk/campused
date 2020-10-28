@@ -29,22 +29,18 @@ const Input = styled.input`
     box-sizing: border-box;
     border-radius: 10px;
     padding-left: 40px;
-
-    font-family: "Assistant", sans-serif;
-    font-weight: 300;
-    font-size: 18px;
 `
 
-const InputwIcon = ({ placeholder, imgurl}) => {
+const InputwIcon = ({ placeholder, icon}) => {
     return <Contain>
-        <Icon src={imgurl}></Icon>
+        <Icon src={icon}></Icon>
         <Input type="text" placeholder={placeholder}></Input>
     </Contain>
 }
 
 InputwIcon.defaultProps = {
     placeholder:"Placeholder",
-    imgurl:"/user_icon.png"
+    icon:"/user_icon.png"
 }
 
 export default InputwIcon;

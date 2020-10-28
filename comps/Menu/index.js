@@ -7,11 +7,10 @@ const Contain = styled.div`
     align-items: center;
     justify-content: center;
 `
-const Item = styled.h1`
-    font-family: "Montserrat", sans-serif;
-    font-weight: 800;
+const Item = styled.h2`
     font-size: 60px;
     cursor: pointer;
+    margin-bottom: 20px;
 
     &:hover {
         color: #EA7317;
@@ -20,16 +19,19 @@ const Item = styled.h1`
 `
 
 const Menu = ({}) => {
-    const [selected, setSelected] = useState(false);
+    const [selected, setSelected] = useState(1);
 
     return <Contain>
-        <Item selected={selected} onClick={()=>{
-            setSelected(!selected);}}>Home</Item>
-        <Item selected={selected} onClick={()=>{
-            setSelected(!selected);}}>Profile</Item>
-        <Item>Wishlist</Item>
-        <Item>Messages</Item>
-        <Item>About</Item>
+        <Item selected={selected === 1} onClick={()=>{
+            setSelected(1);}}>Home</Item>
+        <Item selected={selected === 2} onClick={()=>{
+            setSelected(2);}}>Profile</Item>
+        <Item selected={selected === 3} onClick={()=>{
+            setSelected(3);}}>Wishlist</Item>
+        <Item selected={selected === 4} onClick={()=>{
+            setSelected(4);}}>Messages</Item>
+        <Item selected={selected === 5} onClick={()=>{
+            setSelected(5);}}>About</Item>
     </Contain>
 }
 
