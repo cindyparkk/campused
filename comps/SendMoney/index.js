@@ -6,8 +6,8 @@ var user = require('../../public/user.png');
 const Container = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 17px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight:bold;
+    // font-family: 'Montserrat', sans-serif;
+    // font-weight:bold;
     width: 511px;
     height: auto;
     background-color: #F3F3F3;
