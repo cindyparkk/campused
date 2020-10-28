@@ -5,6 +5,8 @@ import styled from 'styled-components';
 
 const Contain = styled.div`
     display: inline-flex;
+    align-items: center;
+
 `
 // const Icon = styled.div`
 //     position: absolute;
@@ -16,7 +18,6 @@ const Contain = styled.div`
 
 const Icon = styled.img`
     position: absolute;
-    top: 20px;
     padding: 15px;
     width: 16px;
 `

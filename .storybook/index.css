@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400&display=swap');
+
+
+h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+}
+
+h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+}
+
+h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+h4 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 25px;
+}
+
+h5 {
+    font-family: "Assistant", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+h6 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 17px; 
+}
+ 
+p {
+    font-family: "Assistant", sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+input {
+    font-family: "Assistant", sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+}
