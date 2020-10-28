@@ -11,8 +11,8 @@ const Main = styled.div`
 const Container = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 50%;
-    max-width: 100px;
-    max-height: 100px;
+    width: ${props=>props.width ? props.width : "50px"};
+    height: ${props=>props.height ? props.height : "50px"};
     border: 2px solid black;
     box-sizing: border-box;
     box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.65);
@@ -30,8 +30,8 @@ const Icon = styled.img`
 `;
 
 
-const CircleButton = ({icon}) =>{
- return <Container>
+const CircleButton = ({icon, width, height}) =>{
+ return <Container width={width} height={height}>
     
             <IconContainer>
                 <Icon src={icon} />
@@ -43,7 +43,9 @@ const CircleButton = ({icon}) =>{
 }
 
 CircleButton.defaultProps = {
-    icon: icon
+    icon: icon,
+    width: "50px",
+    height: "50px"
 }
 
 
