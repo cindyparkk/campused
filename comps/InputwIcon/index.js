@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
-var icon = require('../../public/user_icon.png')
+//var icon = require('/user_icon.png')
 
 const Contain = styled.div`
     display: inline-flex;
@@ -35,15 +35,16 @@ const Input = styled.input`
     font-size: 18px;
 `
 
-const InputwIcon = ({ placeholder}) => {
+const InputwIcon = ({ placeholder, imgurl}) => {
     return <Contain>
-        <Icon src={icon}></Icon>
+        <Icon src={imgurl}></Icon>
         <Input type="text" placeholder={placeholder}></Input>
     </Contain>
 }
 
 InputwIcon.defaultProps = {
-    placeholder:"Placeholder"
+    placeholder:"Placeholder",
+    imgurl:"/user_icon.png"
 }
 
 export default InputwIcon;

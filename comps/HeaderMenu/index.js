@@ -45,28 +45,20 @@ const Wishlist = styled.h2`
 
 
 const HeaderMenu = ({}) =>{
-    const [selected, setSelected] = useState(false);
-    const [selected2, setSelected2] = useState(false);
-    const [selected3, setSelected3] = useState(false);
+    const [selected, setSelected] = useState(1);
 
     return <Main>
     
         <Container>
 
-            <LeaveIn selected={selected} onClick={()=>{
-            setSelected(!selected);
-            setSelected2(false);
-            setSelected3(false);
+            <LeaveIn selected={selected === 1} onClick={()=>{
+            setSelected(1);
         }}>Leave-in's</LeaveIn>
-            <Furniture selected2={selected2} onClick={()=>{
-            setSelected2(!selected2);
-            setSelected(false);
-            setSelected3(false);
+            <Furniture selected2={selected === 2} onClick={()=>{
+            setSelected(2);
         }}>Furniture</Furniture>
-            <Wishlist selected3={selected3} onClick={()=>{
-            setSelected3(!selected3);
-            setSelected(false);
-            setSelected2(false);
+            <Wishlist selected3={selected === 3} onClick={()=>{
+            setSelected(3);
         }}>Wishlist</Wishlist>
 
     </Container>
