@@ -6,6 +6,7 @@ import ProfilePost from '../comps/ProfilePost';
 import Search from '../comps/Search';
 import Header from '../comps/Header';
 import HeaderMenu from '../comps/HeaderMenu';
+import ProfileSlider from '../comps/ProfileSlider';
 
 
 export default {
@@ -19,3 +20,4 @@ export const AProfilePost = () => <ProfilePost />;
 export const SearchBar = () => <Search />;
 export const HeaderBar = () => <Header />;
 export const HeaderMenuBar = () => <HeaderMenu />;
+export const ProfileListingsAndWishlist = () => <ProfileSlider />

@@ -5,6 +5,7 @@ import Header from '../../comps/Header';
 import HeaderMenu from '../../comps/HeaderMenu';
 import CreateListing from '../../comps/CreateListing';
 import Footer from '../../comps/Footer';
+import ProfileSlider from '../../comps/ProfileSlider';
 
 export default function Home() {
   
@@ -15,6 +16,7 @@ export default function Home() {
       <HeaderMenu />
       <CreateListing />
       <Footer />
+      <ProfileSlider />
     </div>
   
 }
