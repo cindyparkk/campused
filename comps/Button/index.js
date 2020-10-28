@@ -17,7 +17,7 @@ const ButtonBox = styled.div`
     box-shadow: 0px 4px 0px #18191F;
     border-radius: 10px;
     cursor: pointer;
-    padding: 0 15px;
+    padding: 0 30px;
 
     font-family:  "Montserrat", sans-serif;
     font-weight: 600;
