@@ -11,7 +11,7 @@ const ButtonBox = styled.div`
     justify-content: center;
     min-width: 126px;
     min-height: 46px;
-    background: ${props=>props.color ? props.color : "#FEC601"};
+    background: ${props=>props.bgcolor ? props.bgcolor : "#FEC601"};
     border: 2px solid #000000;
     box-sizing: border-box;
     box-shadow: 0px 4px 0px #18191F;
@@ -24,14 +24,14 @@ const ButtonBox = styled.div`
     font-size: 17px; 
 `
 
-const Button = ({color, text}) => {
+const Button = ({bgcolor, text}) => {
     return <Contain>
-        <ButtonBox bgcolor={color}>{text}</ButtonBox>
+        <ButtonBox bgcolor={bgcolor}>{text}</ButtonBox>
     </Contain>
 }
 
 Button.defaultProps = {
-    color: null,
+    bgcolor: "#FEC601",
     text: "Contact Seller"
 }
 
