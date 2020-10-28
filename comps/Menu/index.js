@@ -16,20 +16,25 @@ const Item = styled.h1`
     &:hover {
         color: #EA7317;
     }
-
-    &:active {
-        color: #EA7317;
-    }
+    color: ${props=>props.selected ? '#EA7317' : 'black'};
 `
 
-const Menu = ({text}) => {
+const Menu = ({}) => {
+    const [selected, setSelected] = useState(false);
+
     return <Contain>
-        <Item>{text}</Item>
+        <Item selected={selected} onClick={()=>{
+            setSelected(!selected);}}>Home</Item>
+        <Item selected={selected} onClick={()=>{
+            setSelected(!selected);}}>Profile</Item>
+        <Item>Wishlist</Item>
+        <Item>Messages</Item>
+        <Item>About</Item>
     </Contain>
 }
 
 Menu.defaultProps = {
-    text:"Home"
+
 }
 
 export default Menu;
