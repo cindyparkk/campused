@@ -6,6 +6,7 @@ import HeaderMenu from '../../comps/HeaderMenu';
 import CreateListing from '../../comps/CreateListing';
 import Footer from '../../comps/Footer';
 import ProfileSlider from '../../comps/ProfileSlider';
+import Saved from '../../comps/Saved';
 
 export default function Home() {
   
@@ -17,6 +18,7 @@ export default function Home() {
       <CreateListing />
       <Footer />
       <ProfileSlider />
+      <Saved />
     </div>
   
 }

@@ -6,6 +6,7 @@ import styled from 'styled-components';
 const Main = styled.div`
     width: 100%;
     height: 100%;
+    
 `;
 
 const Container = styled.div`
@@ -18,34 +19,43 @@ const Container = styled.div`
     box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.65);
     cursor: pointer;
     background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;
 
 const IconContainer = styled.div`
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
 
 const Icon = styled.img`
-    height: 100%;
-    width: 100%;
+    height: ${props=>props.iconwidth ? props.iconwidth : "100%"};
+    width: ${props=>props.iconwidth ? props.iconwidth : "100%"};
+    color: red;
 `;
 
 
-const CircleButton = ({icon, width, height}) =>{
+
+
+const CircleButton = ({icon, width, height, iconwidth, iconheight}) =>{
  return <Container width={width} height={height}>
     
             <IconContainer>
-                <Icon src={icon} />
+                <Icon src={icon} iconwidth={iconwidth} iconheight={iconheight} />
             </IconContainer>
 
     </Container>
-
-    
 }
 
 CircleButton.defaultProps = {
     icon: "/arrowright.svg",
     width: "50px",
-    height: "50px"
+    height: "50px",
+    iconwidth: '100%',
+    iconheight: '100%'
 }
 
 

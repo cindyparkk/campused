@@ -7,6 +7,7 @@ import Search from '../comps/Search';
 import Header from '../comps/Header';
 import HeaderMenu from '../comps/HeaderMenu';
 import ProfileSlider from '../comps/ProfileSlider';
+import Saved from '../comps/Saved';
 
 
 export default {
@@ -21,3 +22,4 @@ export const SearchBar = () => <Search />;
 export const HeaderBar = () => <Header />;
 export const HeaderMenuBar = () => <HeaderMenu />;
 export const ProfileListingsAndWishlist = () => <ProfileSlider />
+export const SavedButton = () => <Saved />
