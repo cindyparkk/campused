@@ -84,7 +84,7 @@ const Search = ({}) =>{
         <SearchContainer>
 
         <Arrow>
-            <CircleButton />
+            <CircleButton iconwidth='40px' />
         </Arrow>
 
     <SearchMain>
