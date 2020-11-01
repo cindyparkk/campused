@@ -25,7 +25,7 @@ const Container = styled.div`
 `;
 
 const SearchBar = styled.input`
-    padding: 20px 0px 20px 0px;
+    padding: 20px 0px 20px 20px;
     border: 2px solid black;
     border-radius: 16px;
     width: 70%;
@@ -33,13 +33,8 @@ const SearchBar = styled.input`
     outline: none;
     ::placeholder {
         font-family: 'Assistant', sans-serif;
-        text-indent: 20px;
     }
     font-family: 'Assistant', sans-serif;
-    ::-webkit-input-placeholder {text-indent:20px!important;}
-    :-moz-placeholder { text-indent:20px!important;}
-    ::-moz-placeholder {text-indent:20px!important;}
-    :-ms-input-placeholder {text-indent:20px!important;}
 `;
 
 const Icon = styled.img`

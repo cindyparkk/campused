@@ -43,7 +43,7 @@ const Text = styled.div`
 const BorderContainer = styled.div`
     width: 100%;
     display: flex;
-    transition: 0.5s;
+    transition: transform 0.5s;
     justify-content: ${props=>props.slider ? 'flex-end' : 'flex-start'};
 `;
 
@@ -67,7 +67,10 @@ const ProfileSlider = () =>{
         }}>Saved</Wishlist>
     </Text>
 
-<BorderContainer>
+<BorderContainer selected={selected === 1} slider={slider === true} onClick={()=>{
+            setSelected(1);
+            setSlider(true);
+        }}>
     <Container>
 
     </Container>

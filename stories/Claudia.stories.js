@@ -8,6 +8,7 @@ import Header from '../comps/Header';
 import HeaderMenu from '../comps/HeaderMenu';
 import ProfileSlider from '../comps/ProfileSlider';
 import Saved from '../comps/Saved';
+import ProductDescription from '../comps/ProductDescription';
 
 
 export default {
@@ -23,3 +24,4 @@ export const HeaderBar = () => <Header />;
 export const HeaderMenuBar = () => <HeaderMenu />;
 export const ProfileListingsAndWishlist = () => <ProfileSlider />
 export const SavedButton = () => <Saved />
+export const ProductPageDescription = () => <ProductDescription />

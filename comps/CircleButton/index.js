@@ -32,9 +32,8 @@ const IconContainer = styled.div`
 `;
 
 const Icon = styled.img`
-    height: ${props=>props.iconwidth ? props.iconwidth : "100%"};
+    height: ${props=>props.iconheight ? props.iconheight : "100%"};
     width: ${props=>props.iconwidth ? props.iconwidth : "100%"};
-    color: red;
 `;
 
 
