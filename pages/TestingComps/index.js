@@ -7,6 +7,7 @@ import CreateListing from '../../comps/CreateListing';
 import Footer from '../../comps/Footer';
 import ProfileSlider from '../../comps/ProfileSlider';
 import Saved from '../../comps/Saved';
+import ProductDescription from '../../comps/ProductDescription';
 
 export default function Home() {
   
@@ -19,6 +20,7 @@ export default function Home() {
       <Footer />
       <ProfileSlider />
       <Saved />
+      <ProductDescription />
     </div>
   
 }

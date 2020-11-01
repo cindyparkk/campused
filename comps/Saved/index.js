@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 import CircleButton from '../CircleButton';
@@ -8,7 +8,12 @@ const Main = styled.div`
 `;
 
 const Icon = styled.img`
-    color: red;
+    width: 33px;
+    height: 33px;
+    position: absolute;
+    top: 19%;
+    left: 19%;
+    display: ${props=>props.savedselected ? "flex" : "none"};
 `;
 
 const IconContainer = styled.div`
@@ -35,19 +40,52 @@ const Text = styled.p`
 const AddedContainer = styled.div`
     max-width: 200px;
     position: relative;
+    transition: opacity 3s;
+    display: ${props=>props.message ? "flex" : "none"};
+    opacity: ${props=>props.fade ? "0" : "1"};
+`;
+
+const Icons = styled.div`
+    position: relative;
+`;
+
+const CircleButtonCont = styled.div`
+    display: inline-flex;
 `;
 
 const Saved = () =>{
-    
+    const [savedselected, clickSaved] = useState(false);
+    const [message, addedMessage] = useState(false);
+    // const [fade, fadeOut] = useState(false);
+
+    // useEffect(() => {
+    //     const fade = setTimeout(() => {
+    //        alert('hey');
+    //      }, 3000);
+    //    },[]);
 
  return <Main>
 
 
     <IconContainer>
-        <CircleButton icon='/saved.svg' iconwidth='32px'/>
+        <Icons>
+            <CircleButtonCont message={message} savedselected={savedselected} onClick={()=>{
+            clickSaved(!savedselected);
+            addedMessage(!message);
+            // setTimeout();
+        }}>
+        <CircleButton icon='/saved.svg' iconwidth='32px' iconheight='32px'
+        />
+        </CircleButtonCont>
+        <Icon savedselected={savedselected} onClick={()=>{
+            clickSaved(!savedselected);
+        }} src='/savedselected.png' />
+        </Icons>
      </IconContainer>
 
-    <AddedContainer>
+    <AddedContainer message={message} onClick={()=>{
+            addedMessage(!message);
+        }}>
      <Added src='/addedtosaved.png' />
      <Text>Added to Saved Listings</Text>
      </AddedContainer>
@@ -57,8 +95,12 @@ const Saved = () =>{
     
 }
 
+
+
 Saved.defaultProps = {
-   
+    savedselected: 'none',
+    message: 'none',
+    fade: '1'
 }
 
 
