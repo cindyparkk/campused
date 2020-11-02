@@ -7,6 +7,7 @@ const Main = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin: 20px 0;
 `;
 
 const Container = styled.div`

@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import InputPost from '../InputPost';
 import SmallCategory from '../SmallCategory';
-import UploadImage from '../UploadImage';
+// import UploadImage from '../UploadImage';
+import Button from '../Button';
 
 const Main = styled.div`
     display: inline-flex;
@@ -87,6 +88,7 @@ const CreateListing = () =>{
             <p>Description</p>
             <textarea placeholder="Write a description..."></textarea>
         </Box>
+        <Button text="Post" fsize="26px"/>
     </Content>
 </Container>
 

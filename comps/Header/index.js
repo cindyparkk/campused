@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import CircleButton from '../../comps/CircleButton';
+import CircleButton from '../CircleButton';
+import Menu from '../Menu';
 
 
 const Main = styled.div`
@@ -25,7 +26,7 @@ const Campused = styled.img`
 `;
 
 const Logo = styled.div`
-    max-width: 150px;
+    max-width: 180px;
     height: auto;
     display: flex;
 `;
@@ -91,33 +92,27 @@ const FlexEnd = styled.div`
 const Header = ({profileicon}) =>{
     return <Main>
     
-        <Container>
+    <Container>
 
             <MenuCont>
                  <Icon src="/menu.png" />
             </MenuCont>
             
-            <Center>
-        <Logo>
-            <Campused src="/logotext.png"/>
-        </Logo>
-    </Center>
+        <Center>
+            <Logo>
+                <Campused src="/logotext.png"/>
+            </Logo>
+        </Center>
         
 
-<FlexEnd>
-
-
-   
-        <SearchContainer>
-            <CircleButton icon="/search.svg" width="28px" height="28px"/>
-        </SearchContainer>
-   
-
-        <ProfileIconCont>
-            <Profile src={profileicon} />
-        </ProfileIconCont>
-
-</FlexEnd>
+        <FlexEnd>
+            <SearchContainer>
+                <CircleButton icon="/search.svg" width="28px" height="28px"/>
+            </SearchContainer>
+            <ProfileIconCont>
+                <Profile src={profileicon} />
+            </ProfileIconCont>
+        </FlexEnd>
 
     </Container>
 

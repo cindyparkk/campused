@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 
 const Main = styled.div`
-    display: flex;
+    display: inline-flex;
+    width: 100%;
 `;
 
 const SubCont = styled.div`
