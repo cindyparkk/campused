@@ -1,9 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
-var arrow = require('../../public/arrowdown.png');
-
-
 const Container = styled.div`
 min-width: 252px;
 
@@ -24,7 +21,6 @@ border-radius: 12px;
 padding:5px 10px;
 
 `;
-
 
 
 const DropDownBox = styled.div`
@@ -119,7 +115,7 @@ return <div>
         <div>Select a Category</div>
 
         <ArrowDiv>
-            <Arrow src={arrow} />
+            <Arrow src="/arrowdown.png" />
         </ArrowDiv>
 
 
