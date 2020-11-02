@@ -54,8 +54,32 @@ p {
     font-size: 18px;
 }
 
+a {
+    color: #3DA5D9;
+}
+
 input {
     font-family: "Assistant", sans-serif;
     font-weight: 300;
     font-size: 18px;
+}
+
+// ------------------------------
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+.page {
+    @include flexIt();
+    flex-direction: column;
+}
+
+.home_logo {
+    width: 250px;
+    margin-bottom: 30px;
+}
+
+.about_contents {
+    background-color: #F89C55;
 }

@@ -10,10 +10,6 @@ const Contain = styled.div`
 
 const Title = styled.h6`
     margin-bottom: 15px;
-
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
-    font-size: 20px; 
 `
 
 const Input = styled.input`
@@ -23,22 +19,21 @@ const Input = styled.input`
     box-sizing: border-box;
     border-radius: 10px;
     padding-left: 15px;
-
-    font-family: "Assistant", sans-serif;
-    font-weight: 300;
-    font-size: 18px;
+    margin-top: ${props=>props.margin ? props.margin : 0};
 `
 
-const InputSignup = ({title, placeholder}) => {
+const InputSignup = ({title, placeholder, type, margin}) => {
     return <Contain>
         <Title>{title}</Title>
-        <Input type="text" placeholder={placeholder}></Input>
+        <Input type={type} placeholder={placeholder} margin={margin}></Input>
     </Contain>
 }
 
 InputSignup.defaultProps = {
     title:"Title",
-    placeholder:"ex: John"
+    placeholder:"ex: John",
+    type: "text",
+    margin: null
 }
 
 export default InputSignup;
