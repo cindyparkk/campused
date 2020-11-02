@@ -5,8 +5,15 @@ import styled from 'styled-components';
 
 const Contain = styled.div`
     display: inline-flex;
-    align-items: center;
+    flex-direction: column;
+`
+const Title = styled.h3`
+    margin: 20px 0;
+`
 
+const Box = styled.div`
+    display: inline-flex;
+    align-items: center;
 `
 // const Icon = styled.div`
 //     position: absolute;
@@ -32,14 +39,18 @@ const Input = styled.input`
     padding-left: 40px;
 `
 
-const InputwIcon = ({ placeholder, icon}) => {
+const InputwIcon = ({ title, placeholder, icon}) => {
     return <Contain>
-        <Icon src={icon}></Icon>
-        <Input type="text" placeholder={placeholder}></Input>
+        <Title>{title}</Title>
+        <Box>
+            <Icon src={icon}></Icon>
+            <Input type="text" placeholder={placeholder}></Input>
+        </Box>
     </Contain>
 }
 
 InputwIcon.defaultProps = {
+    title: "Title",
     placeholder:"Placeholder",
     icon:"/user_icon.png"
 }
