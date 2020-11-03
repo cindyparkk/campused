@@ -8,14 +8,14 @@ const Container = styled.div`
 
 display:flex;
 justify-content:center;
-
+margin-bottom: -25px;
 
 `;
 
 
 const Line = styled.div`
 
-        width: 503px;
+        width: 90%;
         height: 0px;
         padding: 0px;
         border: 1px solid #C6C6C6;

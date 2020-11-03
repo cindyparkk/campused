@@ -7,7 +7,7 @@ import InputwIcon from '../comps/InputwIcon';
 
 export default function Start() {
   return  <div className="page">
-    <div className="page_home">
+    <div className="page_start">
       <img className="home_logo"src="/logo_colour.png"/>
       <InputwIcon placeholder="Email address" title="Log in"/>
       <InputwIcon icon="/lock.png" placeholder="Password" title=""/>

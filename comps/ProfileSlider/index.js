@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
+import ProfilePost from '../ProfilePost';
 
 
 const Main = styled.div`
     display: inline-flex;
+    flex-direction: column;
     width: 100%;
 `;
 
@@ -48,27 +50,43 @@ const BorderContainer = styled.div`
     justify-content: ${props=>props.slider ? 'flex-end' : 'flex-start'};
 `;
 
+const Box = styled.div`
+    background-color: #FEC601;
+    width: 95%;
+    border: 2px solid black;
+    margin: 20px;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    display: inline-flex;
+    flex-direction: column;
+`
 
 
 const ProfileSlider = () =>{
     const [selected, setSelected] = useState(1);
     const [slider, setSlider] = useState(false);
 
+    function changeBG(){
+        if (selected === 1){
+            // change the background color of Box
+        }
+    }
  return <Main>
      <SubCont>
 
-<Text>
- <Listings selected={selected === 1} slider={slider === false} onClick={()=>{
+    <Text>
+        <Listings selected={selected === 1} slider={slider === false} onClick={()=>{
             setSelected(1);
             setSlider(false);
         }}>My Listings</Listings>
-    <Wishlist selected={selected === 2} slider={slider === true} onClick={()=>{
+         <Wishlist selected={selected === 2} slider={slider === true} onClick={()=>{
             setSelected(2);
             setSlider(true);
         }}>Saved</Wishlist>
     </Text>
 
-<BorderContainer selected={selected === 1} slider={slider === true} onClick={()=>{
+    <BorderContainer selected={selected === 1} slider={slider === true} onClick={()=>{
             setSelected(1);
             setSlider(true);
         }}>
@@ -78,6 +96,11 @@ const ProfileSlider = () =>{
     </BorderContainer>
 
     </SubCont>
+    <Box>
+        <div>
+            <ProfilePost />
+        </div>
+    </Box>
     </Main> 
     
 }

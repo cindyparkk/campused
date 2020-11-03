@@ -79,7 +79,7 @@ body, html {
     overflow-x: hidden;
 }
 
-.page_home {
+.page_start {
     @include flexIt();
     flex-direction: column;
     margin: 70px 0;
@@ -173,4 +173,9 @@ textarea {
 
 .page_right {
     width: 70%;
+}
+
+// product page
+.product_description {
+    width: 100%;
 }
