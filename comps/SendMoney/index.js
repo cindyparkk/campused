@@ -1,19 +1,23 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-var user = require('../../public/user.png');
+// var user = require('../../public/user.png');
 
 const Container = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 17px;
-    // font-family: 'Montserrat', sans-serif;
-    // font-weight:bold;
+                font-family: 'Montserrat', sans-serif;
+                font-weight:bold;
     width: 511px;
     height: auto;
     background-color: #F3F3F3;
     border:solid 1px #000000;   
     padding:20px;
+  
 
+     h4{
+         margin-top:10px;
+     }
 
 `;
 
@@ -21,7 +25,7 @@ const User = styled.div`
 
 display:flex;
 flex-direction:row;
-
+margin-top:-10px;
     
 `;
 
@@ -70,11 +74,10 @@ const Price = styled.div`
 
 
 
-const SendMoney =({text1,price})=> {
+const SendMoney =({text1,price,user})=> {
 
 return <Container>
-
-<p>To:</p>
+<h4>To:</h4>
 <User>
     <User_Image>
         <User_Image_Circle src={user}/>
@@ -104,7 +107,8 @@ SendMoney.defaultProps = {
   
     
     text1:"Default Name",
-    price:"Default"
+    price:"Default",
+    user:'/user.png'
 
 }
 

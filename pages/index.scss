@@ -147,6 +147,16 @@ textarea {
     padding-top: 20px;
 }
 
+
+
+.proceed {
+    padding-top:10%;
+    padding-bottom:5%;
+    display: flex;
+    position: relative;
+    margin-right:-50%;
+}
+
 // profile page
 .profile_contents {
     background-color: #FEC601;
@@ -173,9 +183,9 @@ textarea {
 
 .page_right {
     width: 70%;
-}
-
+  
 // product page
 .product_description {
     width: 100%;
+
 }
