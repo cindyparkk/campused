@@ -79,7 +79,7 @@ Item.defaultProps = {
    
     text1:"UBC Dorm Room 12",
     text2:"$100",
-    imgurl:"/user_icon.png"
+    imgurl:"/userpost.png"
 
 }
 

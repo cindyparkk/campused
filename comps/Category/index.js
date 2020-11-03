@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 
-var arrow = require('../../public/arrowdown.png');
+// var arrow = require('../../public/arrowdown.png');
 
 
 const Container = styled.div`
@@ -112,7 +112,7 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 
-const Category =({expand,onCategorySelect})=> {
+const Category =({expand,onCategorySelect,arrow})=> {
 
 
         const [expanded, setExpanded] = useState(false);
@@ -159,7 +159,8 @@ const Category =({expand,onCategorySelect})=> {
 
 Category.defaultProps = {
 
-expand:false
+expand:false,
+arrow:"/arrowdown.png"
 
 }
 
