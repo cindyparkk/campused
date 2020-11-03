@@ -42,14 +42,14 @@ border-radius: 16px;
 `;
 
 const Item_Title = styled.h5`
-    font-family: 'Montserrat', sans-serif;
+    // font-family: 'Montserrat', sans-serif;
     color:#18191F;
     margin:10px 5px 0px 0px;
 
 `;
 
 const Item_Price = styled.h6`
-    font-family: 'Montserrat', sans-serif;
+    // font-family: 'Montserrat', sans-serif;
     margin:5px 0px;
     color:#474A57;
 `;

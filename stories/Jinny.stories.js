@@ -6,6 +6,14 @@ import UploadImage from '../comps/UploadImage';
 import SendMoney from '../comps/SendMoney';
 import Category from '../comps/Category';
 import SmallCategory from '../comps/SmallCategory';
+import Proceed from '../comps/Proceed';
+import Paypal from '../comps/Paypal';
+import Paypal_Button from '../comps/Paypal_Button';
+import InputPaypal from '../comps/InputPaypal';
+import Payment from '../comps/Payment';
+import Browse_Button from '../comps/Browse_Button';
+
+
 
 
 
@@ -26,3 +34,10 @@ export const Upload = () => <UploadImage />;
 export const Send = () => <SendMoney />;
 export const BigCategory = () => <Category />;
 export const Small_Category = () => <SmallCategory />;
+export const Proceed_Payment = () => <Proceed />;
+export const Paypal_Payment = () => <Paypal />;
+export const LoginPaypalButton = () => <Paypal_Button />;
+export const Paypal_Input = () => <InputPaypal />;
+export const Paypal_Input2 = () => <InputPaypal placeholder="password"/>;
+export const LastPayment = () => <Payment />;
+export const BrowseButton = () => <Browse_Button />;
