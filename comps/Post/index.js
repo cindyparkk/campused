@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import Item from '../Item';
 
 const Contain = styled.div`
-    min-width: 511px;
-    min-height: 1190px;
+    width: 100%;
     display: inline-flex;
     flex-direction: column;
     background-color: #FFF7D9;
@@ -12,19 +11,22 @@ const Contain = styled.div`
     border-radius: 12px;
     box-sizing: border-box;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 30px;
 `
 
 const Content = styled.div`
+    min-width: 511px;
+    min-height: 1190px;
     flex: 3;    
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;     
-    margin: 25px;
+    // margin: 25px;
 `
 
 const Title = styled.h4`
-
+    margin-top: -10px;
 `
 
 const Div = styled.div`

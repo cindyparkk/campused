@@ -67,7 +67,7 @@ input, textarea {
 // ------------------------------
 body, html {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     font-family: "Assistant", sans-serif;
     font-weight: 300;
 }
@@ -76,6 +76,13 @@ body, html {
     @include flexIt();
     flex-direction: column;
     margin-left: -10px;
+    overflow-x: hidden;
+}
+
+.page_home {
+    @include flexIt();
+    flex-direction: column;
+    margin: 70px 0;
 }
 
 .page_contents {
@@ -88,15 +95,11 @@ body, html {
 }
 
 // about page
-.page_about {
-    display: flex;
-    flex-direction: column;
-    margin-left: -10px;
-}
 
 .about_contents {
     background-color: #F89C55;
     width: 100%;
+    z-index: -2;
 }
 
 .textbox {
@@ -144,7 +147,7 @@ textarea {
     padding-top: 20px;
 }
 
-//payment page 
+
 
 .proceed {
     padding-top:10%;
@@ -152,5 +155,33 @@ textarea {
     display: flex;
     position: relative;
     margin-right:-50%;
+}
+
+// profile page
+.profile_contents {
+    background-color: #FEC601;
+    width: 95%;
+    border: 2px solid black;
+    margin: 20px;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+// home page
+.page_home {
+    width:100%;
+    display: inline-flex;
+    flex-direction: row;
+
+    div {
+        margin: 10px;
+    }
+}
+
+.page_right {
+    width: 70%;
 
 }
