@@ -1,16 +1,34 @@
 import React, {useState} from 'react';
-import Item from '../../comps/Item';
+
 import Header from '../../comps/Header';
 import HeaderMenu from '../../comps/HeaderMenu';
+import SendMoney from '../../comps/SendMoney';
+import Footer from '../../comps/Footer';
+import Proceed from '../../comps/Proceed';
+
 
 
 
 export default function Payment() {
   
-  return  <div>
+  return   <div className="page">
    <Header />
    <HeaderMenu/>
-   <Item />
-    </div>
+   <div className="payment_contents">
+     <h2>Payment Details</h2>
+     <SendMoney />
+     </div>   
+     <div className="proceed">
+       <Proceed />
+     </div>
+   
+
+
+    <div className="footer">
+        <Footer />
+        </div>
+
+  </div>
+ 
   
 }
