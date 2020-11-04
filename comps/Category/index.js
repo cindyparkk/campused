@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 
-var arrow = require('../../public/arrowdown.png');
+// var arrow = require('../../public/arrowdown.png');
 
 
 const Container = styled.div`
@@ -112,7 +112,7 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 
-const Category =({expand,onCategorySelect})=> {
+const Category =({expand,onCategorySelect,arrow,name1,name2,name3,name4})=> {
 
 
         const [expanded, setExpanded] = useState(false);
@@ -140,17 +140,17 @@ const Category =({expand,onCategorySelect})=> {
 
             <div onClick={()=> {
                 onCategorySelect("bed");}}>
-                Bedroom</div>
+                {name1}</div>
 
              <div onClick={()=> {
                 onCategorySelect("kit");}}>
-                Kitchen</div>
+                {name2}</div>
              <div onClick={()=> {
                 onCategorySelect("bath");}}>
-                Bathroom</div>
+                {name3}</div>
             <div onClick={()=> {
                 onCategorySelect("liv");}}>
-                Living room & General Furniture</div>
+                {name4}</div>
         </Expand>
     </Container>
     </div>
@@ -159,7 +159,12 @@ const Category =({expand,onCategorySelect})=> {
 
 Category.defaultProps = {
 
-expand:false
+expand:false,
+arrow:"/arrowdown.png",
+name1:"Bedroom",
+name2:"Kitchen",
+name3:"Bathroom",
+name4:"Living room & General Furniture"
 
 }
 

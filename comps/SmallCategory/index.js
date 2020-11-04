@@ -97,7 +97,7 @@ const ArrowDiv = styled.div`
 
 
 
-const SmallCategory =({expand,onCategorySelect})=> {
+const SmallCategory =({expand,onCategorySelect,name1,name2,name3,name4})=> {
 
 
     const [expanded, setExpanded] = useState(false);
@@ -126,21 +126,16 @@ return <div>
 
         <div onClick={()=> {
             onCategorySelect("bed");}}>
-            Bedroom</div>
-  
-      
-
+           {name1}</div>
          <div onClick={()=> {
             onCategorySelect("kit");}}>
-            Kitchen</div>
+            {name2}</div>
          <div onClick={()=> {
             onCategorySelect("bath");}}>
-            Bathroom</div>
+            {name3}</div>
         <div onClick={()=> {
             onCategorySelect("liv");}}>
-            Living room & 
-            <br>
-            </br>General Furniture</div>
+           {name4}</div>
     </Expand>
     </Container>
     </div>
@@ -149,7 +144,11 @@ return <div>
     
 SmallCategory.defaultProps = {
 
-expand:false
+expand:false,
+name1:"Bedroom",
+name2:"Kitchen",
+name3:"Bathroom",
+name4:"Living room & \n General Furniture"
 
 }
 
