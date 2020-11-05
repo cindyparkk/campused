@@ -10,6 +10,7 @@ const Main = styled.div`
     // border: 1px solid black;
     width: 100%;
     margin: 0;
+    position: relative;
 `;
 
 const Container = styled.div`
@@ -29,6 +30,7 @@ const Logo = styled.div`
     max-width: 180px;
     height: auto;
     display: flex;
+    margin: 0px 110px 0px 110px;
 `;
 
 const Center = styled.div`
@@ -36,6 +38,11 @@ const Center = styled.div`
     display: flex;
     justify-content: center;
     // border: 1px solid black;
+    position: absolute;
+    top: 16px;
+    @media (max-width: 500px){
+        top: 12px;
+    }
 `;
 
 const MenuCont = styled.div`
@@ -55,6 +62,7 @@ const SearchContainer = styled.div`
     width: 60px;
     // border: 1px solid black;
     cursor: pointer;
+    margin-left: 12px;
 `;
 
 const Searchmain = styled.div`
@@ -66,10 +74,13 @@ const Searchmain = styled.div`
 
 const ProfileIconCont = styled.div`
     max-width: 50px;
+    @media (max-width: 500px){
+        max-width: 40px;
+    }
     height: auto;
     display: flex;
     margin-right: 10px;
-    margin-left: 20px;
+    margin-left: 10px;
     // border: 1px solid black;
 `;
 
@@ -84,30 +95,34 @@ const FlexEnd = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    // border: 1px solid black;
     margin-right: 12px;
     padding-left: 20px;
+    // margin-left: 250px;
+    max-width: 200px;
+    @media (max-width: 500px) {
+        max-width: 100px;
+      }
 `;
 
 const Header = ({profileicon}) =>{
     return <Main>
-    
+    <Center>
+            <Logo>
+                <Campused src="/logotext.png"/>
+            </Logo>
+        </Center>
     <Container>
 
             <MenuCont>
                  <Icon src="/menu.png" />
             </MenuCont>
             
-        <Center>
-            <Logo>
-                <Campused src="/logotext.png"/>
-            </Logo>
-        </Center>
+        
         
 
         <FlexEnd>
             <SearchContainer>
-                <CircleButton icon="/search.svg" width="28px" height="28px"/>
+                <CircleButton icon="/search.svg" width="32px" height="32px"/>
             </SearchContainer>
             <ProfileIconCont>
                 <Profile src={profileicon} />
