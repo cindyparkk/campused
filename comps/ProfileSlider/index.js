@@ -51,7 +51,7 @@ const BorderContainer = styled.div`
 `;
 
 const Box = styled.div`
-    background-color: #FEC601;
+    background-color: ${props=>props.bgcolor ? '#F89C55' : "#FEC601"};
     width: 95%;
     border: 2px solid black;
     margin: 20px;
@@ -66,29 +66,29 @@ const Box = styled.div`
 const ProfileSlider = () =>{
     const [selected, setSelected] = useState(1);
     const [slider, setSlider] = useState(false);
+    const [bgcolor, setBgColor] = useState(false);
 
-    function changeBG(){
-        if (selected === 1){
-            // change the background color of Box
-        }
-    }
+
  return <Main>
      <SubCont>
 
     <Text>
-        <Listings selected={selected === 1} slider={slider === false} onClick={()=>{
+        <Listings selected={selected === 1} slider={slider === false} bgcolor={bgcolor === false} onClick={()=>{
             setSelected(1);
             setSlider(false);
+            setBgColor(false);
         }}>My Listings</Listings>
-         <Wishlist selected={selected === 2} slider={slider === true} onClick={()=>{
+         <Wishlist selected={selected === 2} slider={slider === true} bgcolor={bgcolor === true} onClick={()=>{
             setSelected(2);
             setSlider(true);
+            setBgColor(true);
         }}>Saved</Wishlist>
     </Text>
 
-    <BorderContainer selected={selected === 1} slider={slider === true} onClick={()=>{
+    <BorderContainer selected={selected === 1} slider={slider === true} bgcolor={bgcolor === true} onClick={()=>{
             setSelected(1);
             setSlider(true);
+            setBgColor(true);
         }}>
     <Container>
 
@@ -96,7 +96,7 @@ const ProfileSlider = () =>{
     </BorderContainer>
 
     </SubCont>
-    <Box>
+    <Box selected={selected === 1} slider={slider === true} bgcolor={bgcolor === true}>
         <div>
             <ProfilePost />
         </div>
@@ -107,7 +107,8 @@ const ProfileSlider = () =>{
 
 ProfileSlider.defaultProps = {
    slider: 'flex-start',
-   selected: '#EA7317'
+   selected: '#EA7317',
+   bgcolor: '#FEC601'
 }
 
 
