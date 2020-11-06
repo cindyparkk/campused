@@ -39,17 +39,17 @@ const Center = styled.div`
     justify-content: center;
     // border: 1px solid black;
     position: absolute;
-    top: 16px;
+    top: 22px;
     @media (max-width: 500px){
-        top: 12px;
+        top: 20px;
+    }
+    @media (max-width: 370px){
+        top: 25px;
     }
 `;
 
 const MenuCont = styled.div`
-    max-width: 31px;
-    max-height: 31px;
-    margin-left: 12px;
-    // border: 1px solid black;
+    z-index: 2;
 `;
 
 const Icon = styled.img`
@@ -113,9 +113,9 @@ const Header = ({profileicon}) =>{
         </Center>
     <Container>
 
-            <MenuCont>
-                 <Icon src="/menu.png" />
-            </MenuCont>
+           <MenuCont> <Menu /> </MenuCont>
+   
+            
             
         
         

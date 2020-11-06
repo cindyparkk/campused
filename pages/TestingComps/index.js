@@ -12,13 +12,13 @@ import Profile from '../../comps/Profile';
 
 export default function Home() {
   
-  return  <div>
-      <ProfilePost />
-      <Search />
+  return  <div className='page'>
+      {/* <ProfilePost />
+      <Search /> */}
       <Header />
       <HeaderMenu />
       <CreateListing />
-      {/* <Footer /> */}
+      <Footer />
       <ProfileSlider />
       <Saved />
       <ProductDescription />
