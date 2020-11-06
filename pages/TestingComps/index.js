@@ -12,7 +12,7 @@ import Profile from '../../comps/Profile';
 
 export default function Home() {
   
-  return  <div className='page'>
+  return  <div>
       {/* <ProfilePost />
       <Search /> */}
       <Header />
