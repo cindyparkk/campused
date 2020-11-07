@@ -9,6 +9,7 @@ import ProfileSlider from '../../comps/ProfileSlider';
 import Saved from '../../comps/Saved';
 import ProductDescription from '../../comps/ProductDescription';
 import Profile from '../../comps/Profile';
+import FilterOpen from '../../comps/FilterOpen';
 
 export default function Home() {
   
@@ -17,12 +18,13 @@ export default function Home() {
       <Search /> */}
       <Header />
       <HeaderMenu />
-      <CreateListing />
+      {/* <CreateListing />
       <Footer />
       <ProfileSlider />
       <Saved />
       <ProductDescription />
-      <Profile />
+      <Profile /> */}
+      <FilterOpen />
     </div>
   
 }

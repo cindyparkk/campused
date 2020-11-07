@@ -69,7 +69,6 @@ const Searchmain = styled.div`
     height: auto;
     display: flex;
     margin-right: 10px;
-    // border: 1px solid black;
 `;
 
 const ProfileIconCont = styled.div`
@@ -81,7 +80,6 @@ const ProfileIconCont = styled.div`
     display: flex;
     margin-right: 10px;
     margin-left: 10px;
-    // border: 1px solid black;
 `;
 
 const Profile = styled.img`
@@ -115,11 +113,6 @@ const Header = ({profileicon}) =>{
 
            <MenuCont> <Menu /> </MenuCont>
    
-            
-            
-        
-        
-
         <FlexEnd>
             <SearchContainer>
                 <CircleButton icon="/search.svg" width="32px" height="32px"/>
