@@ -5,6 +5,7 @@ import styled from 'styled-components';
 // var photo = require('../../public/photo.png');
 
 const Container = styled.div`
+    width:80%;
 
     display: flex;
     justify-content: flex-start;
@@ -15,8 +16,9 @@ const Container = styled.div`
 `;
 
 const Image_Box = styled.div`
-    max-width: 185px;
-    max-height: 205px;
+    min-width: 185px;
+    min-height: 205px;
+    margin-bottom:5px;
 `;
 
 
@@ -24,7 +26,7 @@ const Item_Image = styled.img`
         
 width: 100%;
 height: 100%;
-margin-bottom:15px;
+
 
 border: 2px solid #9A9A9A;
 border-radius: 16px;
@@ -41,10 +43,13 @@ border-radius: 16px;
 
 `;
 
-const Item_Title = styled.h5`
-    // font-family: 'Montserrat', sans-serif;
+const Item_Title = styled.h4`
+
     color:#18191F;
-    margin:10px 5px 0px 0px;
+ 
+    
+    margin:5px 5px 0px 0px;
+    word-wrap: break-word;
 
 `;
 

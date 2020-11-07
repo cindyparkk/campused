@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 
 const Container = styled.div`
-min-width: 511px;
+width: 100%;
 
 font-weight:bold;
 font-size:24px;
@@ -48,7 +48,7 @@ padding:5px 10px;
 const ArrowDiv = styled.div`
     mid-width: 10px;
     height: auto;
-    padding-left:170px;
+    padding-left:280px;
     padding-top:5px;
     
     
@@ -63,12 +63,20 @@ const Arrow = styled.img`
 
 
 const Expand = styled.div`
-min-width: 511px;
+
+min-width: 570px;
+
+
 margin-top:5px;
 background: #FFFFFF;
 border: 2px solid #000000;
 box-sizing: border-box;
 border-radius: 16px;
+
+
+margin-bottom:15px;
+
+
 
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 

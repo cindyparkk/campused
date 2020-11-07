@@ -19,8 +19,15 @@ export default function Furniture() {
      <Header />
      <HeaderMenu/>
     <br></br>
+    <div className="category">
     <BigCategory />
+    </div>
+ 
+    <div className="itempost">
     <Post />
+
+    </div>
+ 
       <div className="footer">
           <Footer />
           </div>
