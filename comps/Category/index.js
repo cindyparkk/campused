@@ -14,6 +14,11 @@ display:inline-flex;
 flex-direction:column;
 
 
+font-family: "Montserrat", sans-serif;
+font-weight: 700;
+font-size: 24px;
+
+
 `;
 
 const DropDownBox = styled.div`
@@ -48,7 +53,8 @@ padding:5px 10px;
 const ArrowDiv = styled.div`
     mid-width: 10px;
     height: auto;
-    padding-left:280px;
+    padding-left:250px;
+    padding-right:10px;
     padding-top:5px;
     
     
@@ -120,7 +126,7 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 
-const Category =({expand,onCategorySelect,arrow,name1,name2,name3,name4})=> {
+const Category =({expand,onCategorySelect,arrow,name1,name2,name3,name4,title})=> {
 
 
         const [expanded, setExpanded] = useState(false);
@@ -135,7 +141,7 @@ const Category =({expand,onCategorySelect,arrow,name1,name2,name3,name4})=> {
             setExpanded(!expanded);
         }}>
             <DropDownBox>
-            <div>Choose a Category</div>
+            <div>{title}</div>
 
             <ArrowDiv>
             <Arrow src={arrow} />
@@ -172,7 +178,8 @@ arrow:"/arrowdown.png",
 name1:"Bedroom",
 name2:"Kitchen",
 name3:"Bathroom",
-name4:"Living room & General Furniture"
+name4:"Living room & General Furniture",
+title:"Choose a Category"
 
 }
 

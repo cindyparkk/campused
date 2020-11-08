@@ -21,7 +21,7 @@ export default function Furniture() {
      <HeaderMenu/>
     <br></br>
     <div className="category">
-    <BigCategory />
+    <BigCategory title="Choose a Building" name1="Brock Hall" name2="Walter Gage " name1="Ponderosa" name1="Thunderbird" />
     </div>
  
     <div className="itempost">
