@@ -28,8 +28,10 @@ export default function Furniture() {
     <Post />
     </div>
     
+    <div className="icons">
     <FilterOpen />
-    
+    </div>
+
      <div className="footer">
           <Footer />
           </div>
