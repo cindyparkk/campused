@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
+import Router from 'next/router';
 
 import CircleButton from '../CircleButton';
 import Menu from '../Menu';
@@ -102,6 +104,12 @@ const FlexEnd = styled.div`
       }
 `;
 
+function clickSearch(){
+    if (true){
+        Router.push("/search");
+    }
+}
+
 const Header = ({profileicon}) =>{
     return <Main>
     <Center>
@@ -114,7 +122,7 @@ const Header = ({profileicon}) =>{
            <MenuCont> <Menu /> </MenuCont>
    
         <FlexEnd>
-            <SearchContainer>
+            <SearchContainer onClick={clickSearch}>
                 <CircleButton icon="/search.svg" width="32px" height="32px"/>
             </SearchContainer>
             <ProfileIconCont>

@@ -28,9 +28,9 @@ const Text = styled.p`
 
 
 
-const ProductDescription = ({description}) =>{
+const ProductDescription = ({title, description}) =>{
     return <Main>
-<Title>Description</Title>
+<Title>{title}</Title>
     <Container>
 <Text>{description}</Text>
 
@@ -40,7 +40,8 @@ const ProductDescription = ({description}) =>{
    }
 
    ProductDescription.defaultProps = {
-        description: "Place the product description here..."
+    title: "Description",    
+    description: "Place the product description here..."
    }
    
    

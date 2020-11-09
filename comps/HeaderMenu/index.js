@@ -5,13 +5,14 @@ const Main = styled.div`
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     width: 100%;
-    z-index: 10;
+    z-index: 0;
 `;
 
 const Container = styled.div`
     display: flex;
     width: 100%;
     justify-content: space-around;
+
 `;
 
 const LeaveIn = styled.h3`
