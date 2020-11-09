@@ -29,9 +29,10 @@ const ButtonBox = styled.h6`
 //     margin-right: 5px;
 // `
 
-const Button = ({bgcolor, text, fsize, color}) => {
+const Button = ({bgcolor, text, fsize, color, onClick}) => {
     return <Contain>
-        <ButtonBox bgcolor={bgcolor} fsize={fsize} color={color}>
+        <ButtonBox bgcolor={bgcolor} fsize={fsize} color={color}
+        onClick={onClick}>
             {/* <Icon src={icon}></Icon> */}
             {text}
         </ButtonBox>
@@ -42,7 +43,8 @@ Button.defaultProps = {
     bgcolor: "#FEC601",
     text: "Contact Seller",
     fsize: "17px",
-    color: null
+    color: null,
+    onClick:()=>{}
 }
 
 export default Button;

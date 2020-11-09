@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
+import Router from 'next/router';
 
 import CircleButton from '../../comps/CircleButton';
 
@@ -62,6 +64,7 @@ transform: scaleX(-1);
 width: 50px;
 display: flex;
 justify-content: flex-start;
+margin-left: 20px;
 `;
 
 const SearchMain = styled.div`
@@ -71,6 +74,11 @@ const SearchMain = styled.div`
     align-items: center;
 `;
 
+function clickBack() {
+    if (true) {
+        Router.push("/");
+    }
+}
 
 const Search = ({}) =>{
     return <Main>
@@ -78,9 +86,9 @@ const Search = ({}) =>{
     <Container>
         <SearchContainer>
 
-        <Arrow>
+        <Link href="/"><Arrow onClick={clickBack}>
             <CircleButton iconwidth='40px' />
-        </Arrow>
+        </Arrow></Link>
 
     <SearchMain>
         <SearchBar placeholder='Search...'></SearchBar>

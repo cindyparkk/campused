@@ -83,7 +83,12 @@ body, html {
 .page_start {
     @include flexIt();
     flex-direction: column;
-    margin: 70px 0;
+    margin: 70px 10px;
+
+    p {
+        min-width: 343px;
+        text-align: center;
+    }
 }
 
 .page_contents {
@@ -191,19 +196,14 @@ textarea {
 
 }
 
-
-
 //furniture_maret_app page 
-
 .itempost {
-
     margin:0% 15% 15% 15%;
     z-index: -1;
 }
 
 
 .category {
-
     z-index: 1;
 }
 
@@ -213,4 +213,10 @@ textarea {
     z-index: 1;
     margin-left:-10%;
     top:20%;
+}
+
+// search bar
+.search_results {
+    width: 100%;
+    margin-top: -100px;
 }
