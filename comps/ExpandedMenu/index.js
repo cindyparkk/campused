@@ -59,7 +59,7 @@ const ExpandedMenu = ({expand, onMenuSelect}) => {
     const [expanded, setExpanded] = useState(false);
 
     useEffect(()=>{
-        setExpanded(expand)
+        setExpanded(expand);
     }, [expand])
 
     return <Contain>
@@ -67,6 +67,7 @@ const ExpandedMenu = ({expand, onMenuSelect}) => {
             setExpanded(!expanded);
             }}>
             <CircleButton icon='/dropdown.png' iconwidth="5px" iconheight="21px" expanded={expanded}/>
+            
         </InitialButton>
         <Main expanded={expanded}>
             <Content>
