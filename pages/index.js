@@ -4,8 +4,16 @@ import InputwIcon from '../comps/InputwIcon';
 // import Starry from 'starry-rating';
 import axios from 'axios';
 import {config} from './auth.js';
+import Link from 'next/link';
+import Router from 'next/router';
 
 // const starryRating = Starry.stars(3);
+
+function clickSignup(){
+  if(true){
+    Router.push("/signup");
+  }
+}
 
 export default function Start() {
 
@@ -24,7 +32,7 @@ export default function Start() {
       <img className="home_logo"src="/logo_colour.png"/>
       <InputwIcon placeholder="Email address" title="Log in"/>
       <InputwIcon icon="/lock.png" placeholder="Password" title=""/>
-      <p>Don't have an account? Click here to <a href="">create an account.</a></p>
+      <p>Don't have an account? Click here to <Link href=""><a href="/signup" onClick={clickSignup}>create an account.</a></Link></p>
       <Button text="Log In" bgcolor="#73BFB8" onClick={HandleLogin} action={config}/>
     </div>
     {/* <head>

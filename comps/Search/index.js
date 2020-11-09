@@ -87,7 +87,7 @@ const Search = ({}) =>{
         <SearchContainer>
 
         <Link href="/"><Arrow onClick={clickBack}>
-            <CircleButton iconwidth='40px' />
+            <CircleButton iconwidth='40px' iconheight="25px"/>
         </Arrow></Link>
 
     <SearchMain>

@@ -110,6 +110,12 @@ function clickSearch(){
     }
 }
 
+function clickProfile(){
+    if (true){
+        Router.push("/profile");
+    }
+}
+
 const Header = ({profileicon}) =>{
     return <Main>
     <Center>

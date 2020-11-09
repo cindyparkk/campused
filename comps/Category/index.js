@@ -7,71 +7,39 @@ import styled from 'styled-components';
 
 const Container = styled.div`
 width: 100%;
-
 font-weight:bold;
 font-size:24px;
 display:inline-flex;
 flex-direction:column;
-
-
-font-family: "Montserrat", sans-serif;
-font-weight: 700;
-font-size: 24px;
-
-
-`;
-
-const DropDownBox = styled.div`
-
-
-    // width:100%;
-    padding:10px;
-    display:flex;
-    
-    img {
-    
-        mid-width: 10px;
-        height: auto;
-        padding-left:15px;
-}
 `;
 
 const DropDownMenu = styled.div`
-
-display:inline-flex;
-
-justify-content:space-between;
-
-border: 2px solid #000000;
-border-radius: 16px;
-padding:5px 10px;
-
+    display:inline-flex;
+    justify-content:space-between;
+    border: 2px solid #000000;
+    border-radius: 16px;
+    padding:5px 10px;
+    max-height: 71px;
+    min-width: 321px;
 `;
 
-
-
-const ArrowDiv = styled.div`
-    mid-width: 10px;
-    height: auto;
-    padding-left:250px;
-    padding-right:10px;
-    padding-top:5px;
-    
-    
+const DropDownBox = styled.div`
+    padding:10px;
+    display:inline-flex;
+    align-items: center;
+    justify-content:space-between;
+    width: 100%;
 `;
 
 const Arrow = styled.img`
-    width: 100%;
-    height: 100%;
-   
+    max-width: 29px;
+    height: auto;
+    transform: ${props=>props.expanded ? "rotate(180deg)" : "none"};
 `;
-
-
 
 const Expand = styled.div`
 
 min-width: 570px;
-
 
 margin-top:5px;
 background: #FFFFFF;
@@ -79,17 +47,12 @@ border: 2px solid #000000;
 box-sizing: border-box;
 border-radius: 16px;
 
-
 margin-bottom:15px;
 
-
-
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
     // width:100%;
     // padding:10px;
     height: 100%;
-
 
     display:${props=>props.expanded ? "inline-flex" : "hidden"};
     max-height:${props=>props.expanded ? "auto" : "0px"};
@@ -116,20 +79,15 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     
         // margin:${props=>props.expanded ? "10px" : "0px"};
         cursor:pointer;
-       
-       
-    
     }
- 
- 
-
 `;
-
+const Title = styled.h4`
+    white-space: nowrap;
+`
 
 const Category =({expand,onCategorySelect,arrow,name1,name2,name3,name4,title})=> {
-
-
         const [expanded, setExpanded] = useState(false);
+
 
         useEffect(() => {
             setExpanded(expand);
@@ -141,15 +99,10 @@ const Category =({expand,onCategorySelect,arrow,name1,name2,name3,name4,title})=
             setExpanded(!expanded);
         }}>
             <DropDownBox>
-            <div>{title}</div>
-
-            <ArrowDiv>
-            <Arrow src={arrow} />
-          </ArrowDiv>
-
+                <Title>{title}</Title>
+                    <Arrow src={arrow} expanded={expanded}/>
             </DropDownBox>
         </DropDownMenu>
-
         <Expand expanded={expanded}>
 
             <div onClick={()=> {
