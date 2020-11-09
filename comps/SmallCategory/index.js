@@ -14,26 +14,25 @@ padding:0px;
 `;
 
 const DropDownMenu = styled.div`
-
-display:inline-flex;
-border: 1px solid #000000;
-border-radius: 12px;
-padding:5px 10px;
-
+    display:inline-flex;
+    min-height: 67px;
+    border: 1px solid #000000;
+    border-radius: 17px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-left: 20px;
+    background-color: #FFF;
+    width: 100%;
 `;
 
 
 const DropDownBox = styled.div`
-
-
-    // width:100%;
+    width:100%;
     padding:10px;
-    display:flex;
-
+    display:inline-flex;
     font-weight:200;
     color:#999999;
-    
-    
+    justify-content: space-between;
 `;
 
 
@@ -84,16 +83,17 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 const Arrow = styled.img`
-    width: 100%;
-    height: 100%;
-`;
-
-const ArrowDiv = styled.div`
-    mid-width: 10px;
+    max-width: 22px;
     height: auto;
-    padding-left:55px;
-
+    padding-right: 10px;
 `;
+
+// const ArrowDiv = styled.div`
+//     mid-width: 10px;
+//     height: auto;
+//     padding-left:55px;
+
+// `;
 
 
 
@@ -112,12 +112,8 @@ return <div>
         setExpanded(!expanded);
     }}>
         <DropDownBox>
-        <div>Select a Category</div>
-
-        <ArrowDiv>
+            <div>Select a Category</div>
             <Arrow src="/arrowdown.png" />
-        </ArrowDiv>
-
 
         </DropDownBox>
     </DropDownMenu>

@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
+import Router from 'next/router';
 
 const Main = styled.div`
     background: #FFFFFF;
@@ -42,6 +44,19 @@ const Wishlist = styled.h3`
     color: ${props=>props.selected3 ? '#EA7317' : 'black'};
 `;
 
+function clickLeavein(){
+    if(true){
+        setTimeout(function (){
+            Router.push("/leave-in");
+        }, 600)
+    }
+}
+
+function clickFurniture(){
+    if(true){
+        Router.push("/furniture-market");
+    }
+}
 
 const HeaderMenu = ({}) =>{
     const [selected, setSelected] = useState(1);
@@ -50,13 +65,13 @@ const HeaderMenu = ({}) =>{
     
         <Container>
 
-            <LeaveIn selected={selected === 1} onClick={()=>{
+        <Link href="/leave-in"><LeaveIn selected={selected === 1} onClick={()=>{
             setSelected(1);
-        }}>Leave-in's</LeaveIn>
-            <Furniture selected2={selected === 2} onClick={()=>{
+        }}>Leave-in's</LeaveIn></Link>
+        <Link href="/furniture-market"><Furniture selected2={selected === 2} onClick={()=>{
             setSelected(2);
-        }}>Furniture</Furniture>
-            <Wishlist selected3={selected === 3} onClick={()=>{
+        }}>Furniture</Furniture></Link>
+        <Wishlist selected3={selected === 3} onClick={()=>{
             setSelected(3);
         }}>Wishlist</Wishlist>
 
