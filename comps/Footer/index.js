@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-
+import Link from 'next/link';
+import Router from 'next/router';
 
 const Main = styled.div`
     display: flex;
@@ -133,6 +134,12 @@ const Copyright = styled.p`
     margin: 50px 0px 10px 0px;
 `;
 
+function clickAbout(){
+    if(true){
+        Router.push("/about");
+    }
+}
+
 
 const Footer = () =>{
  return <Main>
@@ -146,13 +153,13 @@ const Footer = () =>{
 
     <TextContainer>
         <Furniture>Furniture Market</Furniture>
-        <About>About Us</About>
+        <Link href="/about"><About onClick={clickAbout}>About Us</About></Link>
         <LeaveIn>Leave-in's Market</LeaveIn>
     </TextContainer>
 
     <TextContainer2>
-        <FAQ>FAQ Page</FAQ>
-        <Profile>My Profile</Profile>
+        <Link href="/faq"><FAQ>FAQ Page</FAQ></Link>
+        <Link href="/profile"><Profile>My Profile</Profile></Link>
     </TextContainer2>
 
     <Socials>
