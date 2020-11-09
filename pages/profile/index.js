@@ -6,6 +6,8 @@ import Button from '../../comps/Button';
 import ProfileSlider from '../../comps/ProfileSlider';
 import Profile from '../../comps/Profile';
 import ExpandedMenu from '../../comps/ExpandedMenu';
+import Link from 'next/link';
+import Router from 'next/router';
 
 export default function ProfilePage() {
   return  <div className="page">
@@ -14,7 +16,7 @@ export default function ProfilePage() {
       <div className="profile">
         <Profile />
       </div>
-      <Button bgcolor="#3DA5D9" color="#FFF" text="Make a listing"/>
+      <Link href="/create-a-listing"><Button bgcolor="#3DA5D9" color="#FFF" text="Make a listing" fsize="24px"/></Link>
       <ProfileSlider />
       <div className="footer">
         <Footer />

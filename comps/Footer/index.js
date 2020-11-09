@@ -33,6 +33,7 @@ const ImageContainer = styled.div`
     max-width: 15%;
     margin-top: 20px;
     margin-bottom: 5%;
+    cursor: pointer;
 `;
 
 const TextContainer = styled.div`
@@ -146,15 +147,15 @@ const Footer = () =>{
  
  <Container>
 
-    <ImageContainer>
+    <Link href="/home"><ImageContainer>
         <Campused src='/logo.png' />
-    </ImageContainer>
+    </ImageContainer></Link>
     
 
     <TextContainer>
-        <Furniture>Furniture Market</Furniture>
+        <Link href="/furniture-market"><Furniture>Furniture Market</Furniture></Link>
         <Link href="/about"><About onClick={clickAbout}>About Us</About></Link>
-        <LeaveIn>Leave-in's Market</LeaveIn>
+       <Link href="/leave-in"><LeaveIn>Leave-in's Market</LeaveIn></Link>
     </TextContainer>
 
     <TextContainer2>
