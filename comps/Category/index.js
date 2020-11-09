@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-
+import Link from 'next/link';
+import Router from 'next/router';
 
 // var arrow = require('../../public/arrowdown.png');
 
@@ -88,6 +89,11 @@ const Title = styled.h4`
 const Category =({expand,onCategorySelect,arrow,name1,name2,name3,name4,title})=> {
         const [expanded, setExpanded] = useState(false);
 
+        function onCategorySelect(str){
+            if (str==="bed"){
+                Router.push("/");
+            }
+        }
 
         useEffect(() => {
             setExpanded(expand);
