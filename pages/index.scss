@@ -71,12 +71,14 @@ body, html {
     height: 100%;
     font-family: "Assistant", sans-serif;
     font-weight: 300;
+    overflow-x: hidden;
+    margin: 0; 
 }
 
 .page {
     @include flexIt();
     flex-direction: column;
-    margin-left: -10px;
+    // margin-left: -10px;
     overflow-x: hidden;
 }
 
@@ -210,7 +212,6 @@ textarea {
     z-index: -1;
 }
 
-
 .category {
     z-index: 1;
 }
@@ -226,4 +227,11 @@ textarea {
 // search bar
 .search_results {
     width: 100%;
+}
+
+//success page
+.success {
+    width: 100%;
+    margin: 50px;
+    @include flexIt();
 }

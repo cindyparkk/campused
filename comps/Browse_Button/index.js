@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const Contain = styled.div`
     margin: 0;
+    width: 100%:
 `
 
 const ButtonBox = styled.h6`
