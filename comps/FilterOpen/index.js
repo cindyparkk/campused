@@ -1,17 +1,30 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
+import CircleButton from '../../comps/CircleButton';
 
-import close from '../../public/close.png';
+// import close from '../../public/close2.png';
+// import filter from '../../public/filter.png';
 
 const Contain = styled.div`
-    min-width: 367px;
-    min-height: 617px;
-    display: inline-flex;
+    max-width: 367px;
+    // min-height: 617px;
     border-radius: 17px;
     background: #FFFFFF;
     box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 17px;
+    transform-origin: bottom;
+    overflow: hidden;
+    max-height: ${props=>props.showfilters ? "617px" : "0px"};
+    transition: 0.5s ease-in-out;
+    z-index: 4;
 `
+const Main = styled.div`
+    height: 700px;
+    display: inline-flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    position: relative;
+`;
 
 const Content = styled.div`
     margin: 25px;
@@ -99,12 +112,100 @@ const Icon = styled.img`
 //     }
 // `
 
+const FilterContainer = styled.div`
+    transition: 0.3s;
+    opacity: ${props=>props.filterbutton ? "0" : "1"};
+    width: 50px;
+`;
+
+const GrayBackground = styled.div`
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(100, 100, 100, 0.4);
+    z-index: 1;
+    visibility: ${props=>props.hide ? "visible" : "hidden"};
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    opacity: ${props=>props.gray ? "1" : "0"};
+`;
+
 const FilterOpen = () => {
-    return <Contain>
+    const [showfilters, setFilter] = useState(false);
+    const [gray, showGray] = useState(false);
+    const [filterbutton, setButton] = useState(false);
+    const [hide, setHide] = useState(false);
+
+
+
+    return <Main>
+    
+        <FilterContainer showfilters={showfilters} hide={hide} gray={gray} filterbutton={filterbutton} onClick={()=>{
+                setFilter(!showfilters);
+                showGray(!gray);
+                setButton(true);
+                setHide(true);
+                if(showfilters === true){
+                    setTimeout(function(){
+        
+                            setButton(false);
+                
+                    }, 600);
+                }
+                
+            }}>
+                <CircleButton icon='/filter.png' iconwidth='32px' iconheight='32px' gray={gray} hide={hide} filterbutton={filterbutton} showfilters={showfilters} onClick={()=>{
+                    setFilter(!showfilters);
+                    showGray(!gray);
+                    setButton(true);
+                    setHide(true);
+                    if(showfilters === true){
+                        setTimeout(function(){
+            
+                                setButton(false);
+                    
+                        }, 600);
+                    }
+                    
+                }}/>
+        
+        </FilterContainer>
+
+        <GrayBackground gray={gray} hide={hide} onClick={()=>{
+                setFilter(!showfilters);
+                showGray(!gray);
+                setButton(true);
+                setHide(false);
+                if(showfilters === true){
+                    setTimeout(function(){
+        
+                            setButton(false);
+                
+                    }, 600);
+            }
+            
+        }}></GrayBackground>
+
+
+            <Contain showfilters={showfilters}>
         <Content>
             <Top>
                 <Title>Filters</Title>
-                <Icon src={close}></Icon>
+                <Icon src='/close2.png' showfilters={showfilters} filterbutton={filterbutton} gray={gray} onClick={()=>{
+                setFilter(!showfilters);
+                showGray(!gray);
+                setButton(true);
+                setHide(false);
+                if(showfilters === true){
+                    setTimeout(function(){
+        
+                            setButton(false);
+                    }, 600);
+                }
+                
+                
+            }}></Icon>
             </Top>
             <div>
                 <Subtitle>Price</Subtitle>
@@ -143,7 +244,10 @@ const FilterOpen = () => {
                 </Box>
             </div>
         </Content>
+        
     </Contain>
+    
+    </Main>
 }
 
 export default FilterOpen;

@@ -20,17 +20,18 @@ h2 {
 }
 
 h3 {
-    // i.e. header menus, choose a category
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    font-size: 24px;
-}
-
-h4 {
-    // price
+    // i.e. header menus
     font-family: "Montserrat", sans-serif;
     font-weight: 800;
     font-size: 25px;
+}
+
+h4 {
+    // price, choose a category
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
 }
 
 h5 {
@@ -188,4 +189,28 @@ textarea {
 .product_description {
     width: 100%;
 
+}
+
+
+
+//furniture_maret_app page 
+
+.itempost {
+
+    margin:0% 15% 15% 15%;
+    z-index: -1;
+}
+
+
+.category {
+
+    z-index: 1;
+}
+
+.icons {
+    display: inline;
+    position: absolute;
+    z-index: 1;
+    margin-left:-10%;
+    top:20%;
 }

@@ -5,9 +5,7 @@ import HeaderMenu from '../../comps/HeaderMenu';
 import Footer from '../../comps/Footer';
 import BigCategory from '../../comps/Category';
 import Post from '../../comps/Post';
-
 import FilterOpen from '../../comps/FilterOpen';
-
 
 
 
@@ -23,11 +21,11 @@ export default function Furniture() {
      <HeaderMenu/>
     <br></br>
     <div className="category">
-    <BigCategory />
+    <BigCategory title="Choose a Building" name1="Brock Hall" name2="Walter Gage " name1="Ponderosa" name1="Thunderbird" />
     </div>
  
     <div className="itempost">
-    <Post />
+    <Post title="All Leave-in Furniture"/>
     </div>
     
     <div className="icons">
@@ -36,7 +34,7 @@ export default function Furniture() {
 
      <div className="footer">
           <Footer />
-      </div>
+          </div>
   
     </div>
    
