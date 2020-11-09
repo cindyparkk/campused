@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import Item from '../Item';
+import CircleButton from '../CircleButton';
 
 const Contain = styled.div`
     width: 100%;
@@ -37,15 +38,17 @@ const Title = styled.h3`
 const Div = styled.div`
     display: inline-flex;
     justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
 `
 
 const PageNum = styled.p`
     // position: absolute;
     // bottom: 40px;
+    margin: 0 40px;
 `
 
 const Item_list = styled.div`
-
     display:grid;
     grid-template-columns: repeat(2, 1fr);
     grid-row-gap: 4%;
@@ -67,7 +70,9 @@ const Post = ({title, n, x}) => {
            
         </Content>
         <Div>
+            <CircleButton icon="/arrowleft.svg"/>
             <PageNum>Page {n} of {x}</PageNum>
+            <CircleButton />
         </Div>
     </Contain>
 }
