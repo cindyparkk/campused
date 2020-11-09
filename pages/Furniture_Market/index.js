@@ -5,7 +5,9 @@ import HeaderMenu from '../../comps/HeaderMenu';
 import Footer from '../../comps/Footer';
 import BigCategory from '../../comps/Category';
 import Post from '../../comps/Post';
+
 import FilterOpen from '../../comps/FilterOpen';
+
 
 
 
@@ -34,7 +36,7 @@ export default function Furniture() {
 
      <div className="footer">
           <Footer />
-          </div>
+      </div>
   
     </div>
    
