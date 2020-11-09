@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-var camera = require('../../public/camera.png');
+// var camera = require('../../public/camera.png');
 
 const Container = styled.div`
     display: flex;
@@ -51,7 +51,7 @@ const Icon = styled.img`
 
 `;
 
-const UploadImage =({text1}) => {
+const UploadImage =({text1,camera}) => {
 
     return <Container>
         <Title>{text1}</Title>
@@ -68,7 +68,8 @@ const UploadImage =({text1}) => {
 
 UploadImage.defaultProps = {
   
-    text1:"Default"
+    text1:"Default",
+    camera:"/camera.png"
    
 }
 
