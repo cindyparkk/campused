@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import ProfilePost from '../ProfilePost';
-
+import ExpandedMenu from '../ExpandedMenu';
 
 const Main = styled.div`
     display: inline-flex;
@@ -61,7 +61,10 @@ const Box = styled.div`
     display: inline-flex;
     flex-direction: column;
 `
-
+const BoxContent = styled.div`
+    display: inline-flex;
+    align-items: center;
+`
 
 const ProfileSlider = () =>{
     const [selected, setSelected] = useState(1);
@@ -97,9 +100,10 @@ const ProfileSlider = () =>{
 
     </SubCont>
     <Box selected={selected === 1} slider={slider === true} bgcolor={bgcolor === true}>
-        <div>
+        <BoxContent>
             <ProfilePost />
-        </div>
+            <ExpandedMenu />
+        </BoxContent>
     </Box>
     </Main> 
     

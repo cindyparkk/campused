@@ -162,9 +162,7 @@ const FilterOpen = () => {
                     setHide(true);
                     if(showfilters === true){
                         setTimeout(function(){
-            
                                 setButton(false);
-                    
                         }, 600);
                     }
                     

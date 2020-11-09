@@ -85,7 +85,7 @@ const Menu = ({}) => {
             <Link href="/home"><Item selected={selected === 1} onClick={()=>{
                 setSelected(1);
                 clickNavHome;}}>Home</Item></Link>
-            <Link href="/about"><Item selected={selected === 2} onClick={()=>{
+            <Link href="/profile"><Item selected={selected === 2} onClick={()=>{
                 setSelected(2);}}>Profile</Item></Link>
             <Link href="/about"><Item selected={selected === 3} onClick={()=>{
                 setSelected(3);}}>Messages</Item></Link>
