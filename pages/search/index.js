@@ -6,7 +6,7 @@ export default function SearchPage() {
   return  <div className="page">
       <Search />
       <div className="search_results">
-        <ProductDescription title=""/>
+        <ProductDescription title="Recent Searches" />
       </div>
     </div>
 }

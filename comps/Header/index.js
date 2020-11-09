@@ -73,21 +73,16 @@ const Searchmain = styled.div`
     margin-right: 10px;
 `;
 
-const ProfileIconCont = styled.div`
+const Profile = styled.img`
+    border-radius: 50%;
+
     max-width: 50px;
     @media (max-width: 500px){
         max-width: 40px;
     }
     height: auto;
-    display: flex;
     margin-right: 10px;
     margin-left: 10px;
-`;
-
-const Profile = styled.img`
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
     cursor: pointer;
 `;
 
@@ -116,10 +111,16 @@ function clickProfile(){
     }
 }
 
+function clickHome(){
+    if (true){
+        Router.push("/home");
+    }
+}
+
 const Header = ({profileicon}) =>{
     return <Main>
     <Center>
-            <Logo>
+            <Logo onClick={clickHome}>
                 <Campused src="/logotext.png"/>
             </Logo>
         </Center>
@@ -131,9 +132,7 @@ const Header = ({profileicon}) =>{
             <SearchContainer onClick={clickSearch}>
                 <CircleButton icon="/search.svg" width="32px" height="32px"/>
             </SearchContainer>
-            <ProfileIconCont>
-                <Profile src={profileicon} />
-            </ProfileIconCont>
+            <Link href="/profile"><Profile src={profileicon} onClick={clickProfile}/></Link>
         </FlexEnd>
 
     </Container>
