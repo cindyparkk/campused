@@ -11,13 +11,13 @@ const Main = styled.div`
 `;
 
 const Container = styled.div`
-    max-width: 200px;
+    max-width: 150px;
     max-height: auto;
     margin: 0px 130px 0px 130px;
 `;
 
 const Name = styled.h1`
-    
+    margin: 10px 0;
 `;
 
 const PFP = styled.img`

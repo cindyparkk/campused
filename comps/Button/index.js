@@ -20,9 +20,14 @@ const ButtonBox = styled.h6`
     border-radius: 10px;
     cursor: pointer;
     padding: 10px 50px;
+    white-space: nowrap;
 
     font-size: ${props=>props.fsize ? props.fsize : "17px"};
     color: ${props=>props.color ? props.color : "#000"};
+
+    @media (max-width: 500px){
+        font-size: 
+    }
 `
 // const Icon = styled.img`
 //     width: ${props=>props.icon ? "" : "48px"};
