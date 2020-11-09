@@ -185,14 +185,18 @@ textarea {
     width:100%;
     display: inline-flex;
     flex-direction: row;
-
-    div {
-        margin: 10px;
-    }
 }
-
+.page_left {
+    @include flexIt();
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 20px 10px;
+}
 .page_right {
-    width: 70%;
+    flex-grow: 3;
+    margin: 20px 10px;
+
 } 
 // product page
 .product_description {

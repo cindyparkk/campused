@@ -37,8 +37,6 @@ const Icon = styled.img`
 `;
 
 
-
-
 const CircleButton = ({icon, width, height, iconwidth, iconheight}) =>{
  return <Container width={width} height={height}>
     

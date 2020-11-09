@@ -1,3 +1,4 @@
+import { Router } from 'next/router';
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import CircleButton from '../../comps/CircleButton';
@@ -57,6 +58,12 @@ const Main = styled.div`
 
 const ExpandedMenu = ({expand, onMenuSelect}) => {
     const [expanded, setExpanded] = useState(false);
+    
+    function onMenuSelect(str){
+        if (str==="marksold"){
+            Router.push("/");
+        }
+    }
 
     useEffect(()=>{
         setExpanded(expand);
