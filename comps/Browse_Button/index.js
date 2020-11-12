@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
+import Router from 'next/router';
+
 
 const Contain = styled.div`
     margin: 0;
@@ -21,10 +23,16 @@ const ButtonBox = styled.h6`
     padding: 0 30px;
 
     font-size: ${props=>props.fsize ? props.fsize : "17px"};
+
 `
+function clickFurniture() {
+    if (true) {
+        Router.push("/furniture-market");
+    }
+}
 
 const Browse_Button = ({bgcolor, text, fsize}) => {
-    return <Contain>
+    return <Contain onClick={clickFurniture}>
         <ButtonBox bgcolor={bgcolor} fsize={fsize}>{text}</ButtonBox>
     </Contain>
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Router from 'next/router';
 
 
 const Contain = styled.div`
@@ -19,12 +19,17 @@ const Arrow = styled.img`
 
 `;
 
+function clicktoPayment() {
+    if (true) {
+        Router.push("/Paypal");
+    }
+}
 
 const Proceed = ({imgurl}) => {
 
     return <Contain>
         <h5>Proceed to Payment</h5>
-        <Arrow src={imgurl} />
+        <Arrow src={imgurl} onClick={clicktoPayment}/>
     </Contain>
 }
 
