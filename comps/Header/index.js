@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import Link from 'next/link';
 import Router from 'next/router';
 
 import CircleButton from '../CircleButton';
@@ -48,6 +47,7 @@ const Center = styled.div`
     @media (max-width: 370px){
         top: 25px;
     }
+    z-index: 1;
 `;
 
 const MenuCont = styled.div`
@@ -84,6 +84,7 @@ const Profile = styled.img`
     margin-right: 10px;
     margin-left: 10px;
     cursor: pointer;
+    z-index: 10;
 `;
 
 const FlexEnd = styled.div`
@@ -107,6 +108,7 @@ function clickSearch(){
 
 function clickProfile(){
     if (true){
+        console.log("clicked");
         Router.push("/profile");
     }
 }
@@ -132,7 +134,7 @@ const Header = ({profileicon}) =>{
             <SearchContainer onClick={clickSearch}>
                 <CircleButton icon="/search.svg" width="32px" height="32px"/>
             </SearchContainer>
-            <Link href="/profile"><Profile src={profileicon} onClick={clickProfile}/></Link>
+            <Profile src={profileicon} onClick={clickProfile}/>
         </FlexEnd>
 
     </Container>

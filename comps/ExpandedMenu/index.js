@@ -1,7 +1,7 @@
-import { Router } from 'next/router';
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import CircleButton from '../../comps/CircleButton';
+import Router from 'next/router';
 
 const Contain = styled.div`
     position: relative;

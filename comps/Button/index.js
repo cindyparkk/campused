@@ -26,7 +26,8 @@ const ButtonBox = styled.h6`
     color: ${props=>props.color ? props.color : "#000"};
 
     @media (max-width: 500px){
-        font-size: 
+        width: 80%;
+        font-size: 90%;
     }
 `
 // const Icon = styled.img`
