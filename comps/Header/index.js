@@ -65,6 +65,7 @@ const SearchContainer = styled.div`
     // border: 1px solid black;
     cursor: pointer;
     margin-left: 12px;
+    z-index: 10;
 `;
 
 const Searchmain = styled.div`
