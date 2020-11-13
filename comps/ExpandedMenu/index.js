@@ -1,7 +1,7 @@
-import { Router } from 'next/router';
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import CircleButton from '../../comps/CircleButton';
+import Router from 'next/router';
 
 const Contain = styled.div`
 
@@ -51,7 +51,7 @@ const Main = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     // display: inline-flex;
-    display: ${props=>props.expanded ? "inline-flex" : "hidden"};
+    display: ${props=>props.expanded ? "inline-flex" : "none"};
     opacity: ${props=>props.expanded ? 1 : 0};
     height: ${props=>props.expanded ? "auto" : "0px"};
 `
