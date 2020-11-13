@@ -38,7 +38,7 @@ export default function Start() {
       <InputwIcon placeholder="Email address" title="Log in"/>
       <InputwIcon icon="/lock.png" placeholder="Password" title=""/>
       <p>Don't have an account? Click here to <a href="/signup" onClick={clickSignup}>create an account.</a></p>
-      <Button text="Log In" bgcolor="#73BFB8" onClick={HandleLogin, clickLogin} />
+      <Button text="Log In" bgcolor="#73BFB8" onClick={HandleLogin} />
     </div>
     </div>
 }
