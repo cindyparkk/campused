@@ -74,11 +74,12 @@ const SearchMain = styled.div`
     align-items: center;
 `;
 
-function clickBack() {
-    if (true) {
-        Router.push("/");
-    }
+function clickPrev(){
+  if(true){
+    Router.back();
+  }
 }
+
 
 const Search = ({}) =>{
     return <Main>
@@ -86,7 +87,7 @@ const Search = ({}) =>{
     <Container>
         <SearchContainer>
 
-        <Link href="/"><Arrow onClick={clickBack}>
+        <Link href="/"><Arrow onClick={clickPrev}>
             <CircleButton iconwidth='40px' iconheight="25px"/>
         </Arrow></Link>
 
