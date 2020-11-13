@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Link from 'next/link';
-import Router from 'next/router';
+
 
 const Cont = styled.div`
   display:flex;
   img {
-    width:50px;
-    height:50px;
+    width:40px;
+    height:40px;
+    margin-right: 5px;
+    cursor: pointer;
   }
 `;
 
-const outlined = "https://image.flaticon.com/icons/png/512/130/130188.png";
-const filled = "https://icons-for-free.com/iconfiles/png/512/linecolor+version+svg+stars-1319964495853900697.png";
+
+
+const empty = '/starempty.png';
+const filled = "/star.png";
+
+
+
 const Rating = ({numstars, onClick}) => {
 
   const [stars, setStars] = useState(0);
@@ -23,22 +29,34 @@ const Rating = ({numstars, onClick}) => {
 
   return <Cont>
     <div onClick={()=>{
-      setStars(1)
-      onClick(1)
+      setStars(1);
+      onClick(1);
     }}>
-      <img src={stars !== 0 ? filled : outlined} />
+      <img src={stars !== 0 ? filled : empty} />
     </div>
-    <div>
-      <img src={stars > 1 ? filled : outlined} />
+    <div onClick={()=>{
+      setStars(2);
+      onClick(2);
+    }}>
+      <img src={stars > 1 ? filled : empty} />
     </div>
-    <div>
-      <img src={outlined} />
+    <div onClick={()=>{
+      setStars(3);
+      onClick(3);
+    }}>
+      <img src={stars > 2 ? filled : empty} />
     </div>
-    <div>
-      <img src={outlined} />
+    <div onClick={()=>{
+      setStars(4);
+      onClick(4);
+    }}>
+      <img src={stars > 3 ? filled : empty} />
     </div>
-    <div>
-      <img src={outlined} />
+    <div onClick={()=>{
+      setStars(5);
+      onClick(5);
+    }}>
+      <img src={stars > 4 ? filled : empty} />
     </div>
   </Cont>
 }

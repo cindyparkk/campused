@@ -11,6 +11,11 @@ import ProductDescription from '../../comps/ProductDescription';
 import Profile from '../../comps/Profile';
 import FilterOpen from '../../comps/FilterOpen';
 
+import Item from '../../comps/Item';
+import Post from '../../comps/Post';
+
+import Rating from '../../comps/Rating';
+
 export default function Home() {
   
   return  <div>
@@ -24,7 +29,13 @@ export default function Home() {
       <Saved />
       <ProductDescription />
       <Profile /> */}
-      <FilterOpen />
+      {/* <FilterOpen /> */}
+
+      <div>
+        <Item />
+        <Post />
+      </div>
+      <Rating></Rating>
     </div>
   
 }
