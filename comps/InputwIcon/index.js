@@ -24,9 +24,12 @@ const Box = styled.div`
 // `
 
 const Icon = styled.img`
-    position: absolute;
-    padding: 15px;
+    // position: fixed;
+    // padding: 15px;
     width: 16px;
+    overflow:hidden;
+    position: relative;
+    left: -91%;
 `
 
 const Input = styled.input`
@@ -43,8 +46,8 @@ const InputwIcon = ({ title, placeholder, icon}) => {
     return <Contain>
         <Title>{title}</Title>
         <Box>
-            <Icon src={icon}></Icon>
             <Input type="text" placeholder={placeholder}></Input>
+            <Icon src={icon}></Icon>
         </Box>
     </Contain>
 }
