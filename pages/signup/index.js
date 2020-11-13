@@ -2,9 +2,16 @@ import React, {useState} from 'react';
 import Button from '../../comps/Button';
 import InputSignup from '../../comps/InputSignup';
 import Rating from '../../comps/Rating';
-import Router from 'next/router'
+import CircleButton from '../../comps/CircleButton';
 
+import Router from 'next/router';
 import axios from 'axios';
+
+function clickBack(){
+  if(true){
+    Router.push("/");
+  }
+}
 
 export default function Signup() {
 
@@ -39,6 +46,10 @@ export default function Signup() {
       {process.browser && window.innerWidth < 500 ? <Rating numstars={2} onClick={(num)=>{
         console.log(num);
       }}/> : null}
+      <div className="home_back" onClick={clickBack}>
+        <CircleButton icon="/arrowleft.svg" width="35px" height="35px" iconwidth="80%"/>
+        <h6>Back to Log in</h6>
+      </div>
       <InputSignup title="First Name"/>
       <InputSignup title="Last Name" placeholder="ex: Doe"/>
       <InputSignup title="Email Address" placeholder="ex: johndoe@gmail.com" onChange={(e)=>{

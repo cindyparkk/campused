@@ -7,15 +7,18 @@ import BigCategory from '../../comps/Category';
 import Post from '../../comps/Post';
 import FilterOpen from '../../comps/FilterOpen';
 
-
-
-
-
-
-
+import axios from 'axios';
 
 export default function Furniture() {
   
+  const HandleFilter = async ()=>{
+
+    console.log("clicked");
+
+    var resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api");
+
+    console.log(resp.data);
+  }
     return   <div className="page">
      <Header />
      <HeaderMenu/>

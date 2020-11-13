@@ -87,9 +87,9 @@ const Search = ({}) =>{
     <Container>
         <SearchContainer>
 
-        <Link href="/"><Arrow onClick={clickPrev}>
+        <Arrow onClick={clickPrev}>
             <CircleButton iconwidth='40px' iconheight="25px"/>
-        </Arrow></Link>
+        </Arrow>
 
     <SearchMain>
         <SearchBar placeholder='Search...'></SearchBar>
