@@ -50,6 +50,7 @@ export default function Signup() {
         <CircleButton icon="/arrowleft.svg" width="35px" height="35px" iconwidth="80%"/>
         <h6>Back to Log in</h6>
       </div>
+      <h3 className="home_title">Sign up</h3>
       <InputSignup title="First Name"/>
       <InputSignup title="Last Name" placeholder="ex: Doe"/>
       <InputSignup title="Email Address" placeholder="ex: johndoe@gmail.com" onChange={(e)=>{
