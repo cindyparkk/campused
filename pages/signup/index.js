@@ -13,9 +13,10 @@ export default function Signup() {
   const [password, setPassword] = useState("");
   const HandleSignup = async (e)=>{
     // Router.back();
-    Router.push("/home")
+
+    // Router.push("/home")
     console.log("clicked", e, password, email);
-    return false;
+    // return false;
     /*
       if confirm !== pass 
         setError("password sucks")
