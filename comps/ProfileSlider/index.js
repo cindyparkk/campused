@@ -2,11 +2,29 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import ProfilePost from '../ProfilePost';
 import ExpandedMenu from '../ExpandedMenu';
+import Divider from '../Divider';
 
 const Main = styled.div`
-    display: inline-flex;
-    flex-direction: column;
+    display: flex;
     width: 100%;
+    justify-content: center;
+    flex-direction: column;
+`;
+
+const Header = styled.h2`
+    
+`;
+
+const HeaderContainer = styled.div`
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+`;
+
+const DividerCont = styled.div`
+    margin-top: 20px;
+    margin-bottom: 20px;
 `;
 
 const SubCont = styled.div`
@@ -16,7 +34,7 @@ const SubCont = styled.div`
 
 const Container = styled.div`
     width: 50%;
-    border-bottom: 5px solid #EA7317;
+    // border-bottom: 5px solid #EA7317;
 `;
 
 const Listings = styled.h2`
@@ -61,21 +79,47 @@ const Box = styled.div`
     display: inline-flex;
     flex-direction: column;
 `
-const BoxContent = styled.div`
-    display: inline-flex;
+const Box2 = styled.div`
+    background-color: #FEC601;
+    width: 95%;
+    border: 2px solid black;
+    margin: 20px;
+    padding: 30px;
+    box-sizing: border-box;
     align-items: center;
+    border-radius: 16px;
+    display: inline-flex;
+    // justify-content: center;
+`;
+
+const BoxContent = styled.div`
+    display: flex;
+    align-items: center;
+    width: 85%;
+    justify-content: center;
 `
 
-const ProfileSlider = () =>{
-    const [selected, setSelected] = useState(1);
-    const [slider, setSlider] = useState(false);
-    const [bgcolor, setBgColor] = useState(false);
+const ProfileSlider = ({header}) =>{
+    // const [selected, setSelected] = useState(1);
+    // const [slider, setSlider] = useState(false);
+    // const [bgcolor, setBgColor] = useState(false);
 
 
  return <Main>
-     <SubCont>
 
-    <Text>
+     <HeaderContainer>
+        <Header>
+             {header}
+        </Header>
+     </HeaderContainer>
+
+
+     <DividerCont>
+        <Divider />
+     </DividerCont>
+     
+
+    {/* <Text>
         <Listings selected={selected === 1} slider={slider === false} bgcolor={bgcolor === false} onClick={()=>{
             setSelected(1);
             setSlider(false);
@@ -92,27 +136,30 @@ const ProfileSlider = () =>{
             setSelected(1);
             setSlider(true);
             setBgColor(true);
-        }}>
-    <Container>
+        }}> */}
+    {/* <Container>
 
-    </Container>
-    </BorderContainer>
+    </Container> */}
+    {/* </BorderContainer> */}
 
-    </SubCont>
-    <Box selected={selected === 1} slider={slider === true} bgcolor={bgcolor === true}>
+   
+    {/* <Box selected={selected === 1} slider={slider === true} bgcolor={bgcolor === true}> */}
+    <Box2>
         <BoxContent>
             <ProfilePost />
             <ExpandedMenu />
         </BoxContent>
-    </Box>
+        </Box2>
+    {/* </Box> */}
     </Main> 
     
 }
 
 ProfileSlider.defaultProps = {
-   slider: 'flex-start',
-   selected: '#EA7317',
-   bgcolor: '#FEC601'
+//    slider: 'flex-start',
+//    selected: '#EA7317',
+//    bgcolor: '#FEC601'
+    header: 'My Listings'
 }
 
 
