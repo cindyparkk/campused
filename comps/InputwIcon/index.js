@@ -42,11 +42,11 @@ const Input = styled.input`
     padding-left: 40px;
 `
 
-const InputwIcon = ({ title, placeholder, icon}) => {
+const InputwIcon = ({ title, placeholder, icon, type, onChange}) => {
     return <Contain>
         <Title>{title}</Title>
         <Box>
-            <Input type="text" placeholder={placeholder}></Input>
+            <Input type={type} placeholder={placeholder} onChange={onChange}></Input>
             <Icon src={icon}></Icon>
         </Box>
     </Contain>
@@ -55,7 +55,9 @@ const InputwIcon = ({ title, placeholder, icon}) => {
 InputwIcon.defaultProps = {
     title: "Title",
     placeholder:"Placeholder",
-    icon:"/user_icon.png"
+    icon:"/user_icon.png",
+    type:"text",
+    onChange:()=>{}
 }
 
 export default InputwIcon;

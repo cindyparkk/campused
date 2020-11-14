@@ -3,7 +3,6 @@ import Button from '../comps/Button';
 import InputwIcon from '../comps/InputwIcon';
 
 import axios from 'axios';
-
 import Router from 'next/router';
 
 
@@ -13,30 +12,44 @@ function clickSignup(){
   }
 }
 
-function clickLogin(){
-  if(true){
-    Router.push("/home")
-    // add in useEffect / animations
-  }
-}
+// function clickLogin(){
+//   if(true){
+//     Router.push("/home");
+//     // add in useEffect / animations
+//   }
+// }
 
 export default function Start() {
 
-  const [name, setName] = useState("");
-  const HandleLogin = async ()=>{
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    console.log("clicked");
+  const HandleLogin = async (e)=>{
 
-    var resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api");
+    console.log("clicked", e, email, password);
 
-    console.log(resp.data);
+    try{
+      console.log("");
+       var resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/login", {
+       email:email,
+       password:password
+     });
+    } catch {
+      console.log("Failed");
+    }
+     console.log(resp.data);
+    Router.push("/home");
   }
 
   return  <div className="page">
     <div className="page_start">
       <img className="home_logo"src="/logo_colour.png"/>
-      <InputwIcon placeholder="Email address" title="Log in"/>
-      <InputwIcon icon="/lock.png" placeholder="Password" title=""/>
+      <InputwIcon placeholder="Email address" title="Log in" onChange={(e)=>{
+        setEmail(e.target.value);
+      }}/>
+      <InputwIcon icon="/lock.png" placeholder="Password" type="password" title="" onChange={(e)=>{
+        setPassword(e.target.value);
+      }}/>
       <p>Don't have an account? Click here to <a href="/signup" onClick={clickSignup}>create an account.</a></p>
       <Button text="Log In" bgcolor="#73BFB8" onClick={HandleLogin} />
     </div>
