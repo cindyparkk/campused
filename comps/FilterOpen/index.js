@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import CircleButton from '../../comps/CircleButton';
+import DropDown from '../../comps/DropDown';
 
-// import close from '../../public/close2.png';
-// import filter from '../../public/filter.png';
 
 const Contain = styled.div`
     max-width: 367px;
@@ -24,6 +23,10 @@ const Main = styled.div`
     justify-content: flex-end;
     flex-direction: column;
     position: relative;
+`;
+
+const Cont = styled.div`
+
 `;
 
 const Content = styled.div`
@@ -131,6 +134,33 @@ const GrayBackground = styled.div`
     opacity: ${props=>props.gray ? "1" : "0"};
 `;
 
+const DropDownContainer = styled.div`
+    border: 1px solid black;
+    
+`;
+
+const Desktop = styled.div`
+
+`;
+
+const ContainDesktop = styled.div`
+    max-width: 367px;
+    // min-height: 617px;
+    border-radius: 17px;
+    background: #FFFFFF;
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 17px;
+    transform-origin: top;
+    overflow: hidden;
+    max-height: ${props=>props.showfilters ? "617px" : "0px"};
+    transition: 0.5s ease-in-out;
+    z-index: 4;
+`;
+
+const Mobile = styled.div`
+
+`;
+
 const FilterOpen = () => {
     const [showfilters, setFilter] = useState(false);
     const [gray, showGray] = useState(false);
@@ -139,7 +169,75 @@ const FilterOpen = () => {
 
 
 
-    return <Main>
+    return <Cont>
+
+    {/* DESKTOP */}
+
+    {process.browser && window.innerWidth > 500 ? <Desktop>
+        <DropDownContainer showfilters={showfilters} onClick={()=>{
+            setFilter(!showfilters);
+        }}>
+            <DropDown title='Filters' />
+        </DropDownContainer>
+
+
+        <ContainDesktop showfilters={showfilters}>
+        <Content>
+            <Top>
+                <Title>Filters</Title>
+                <Icon src='/close2.png' showfilters={showfilters} onClick={()=>{
+                setFilter(!showfilters);
+            }}></Icon>
+            </Top>
+            <div>
+                <Subtitle>Price</Subtitle>
+                <Box>
+                    <div>$0 - $29</div>
+                    {/* <Input type="checkmark"></Input> */}
+                    <Checkbox type="checkbox"></Checkbox>
+                </Box>
+                <Box>
+                    <div>$30 - $59</div>
+                    {/* <Input type="checkmark"></Input> */}
+                    <Checkbox type="checkbox"></Checkbox>
+                </Box>
+                <Box>
+                    <div>$60 - $100</div>
+                    {/* <Input type="checkmark"></Input> */}
+                    <Checkbox type="checkbox"></Checkbox>
+                </Box>
+            </div>
+            <div>
+                <Subtitle>Furniture Age</Subtitle>
+                <Box>
+                    <div>0 - 6 months</div>
+                    {/* <Input type="checkmark"></Input> */}
+                    <Checkbox type="checkbox"></Checkbox>
+                </Box>
+                <Box>
+                    <div>7 - 12 months</div>
+                    {/* <Input type="checkmark"></Input> */}
+                    <Checkbox type="checkbox"></Checkbox>
+                </Box>
+                <Box>
+                    <div>2+ years</div>
+                    {/* <Input type="checkmark"></Input> */}
+                    <Checkbox type="checkbox"></Checkbox>
+                </Box>
+            </div>
+        </Content>
+        
+    </ContainDesktop>
+
+    </Desktop> : null}
+
+
+{/* MOBILE */}
+
+{process.browser && window.innerWidth < 500 ?<Mobile>
+
+    <Main>
+
     
         <FilterContainer showfilters={showfilters} hide={hide} gray={gray} filterbutton={filterbutton} onClick={()=>{
                 setFilter(!showfilters);
@@ -246,6 +344,8 @@ const FilterOpen = () => {
     </Contain>
     
     </Main>
+    </Mobile> : null}
+    </Cont> 
 }
 
 export default FilterOpen;

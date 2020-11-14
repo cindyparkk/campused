@@ -5,6 +5,7 @@ import Footer from '../../comps/Footer';
 import Category from '../../comps/Category';
 import Post from '../../comps/Post';
 import Button from '../../comps/Button';
+import FilterOpen from '../../comps/FilterOpen';
 
 import Router from 'next/router';
 
@@ -23,6 +24,7 @@ export default function Home() {
               <Category />
             </div>
             <Button text="+ Add a Listing" color="#FFF" bgcolor="#3DA5D9" fsize="26px" onClick={createAListing}/>
+            <FilterOpen />
           </div>
           <div className="page_right">
               <Post />
