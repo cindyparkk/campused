@@ -11,7 +11,7 @@ export default function Signup() {
 
     console.log("clicked");
 
-    var resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api");
+    var resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api");
 
     console.log(resp);
   }
