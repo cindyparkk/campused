@@ -183,23 +183,22 @@ const Footer = () =>{
     
 
     <TextContainer>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         <Link href="/furniture-market"><Furniture>Furniture Market</Furniture></Link>
         <Link href="/about"><About onClick={clickAbout}>About Us</About></Link>
        <Link href="/home"><LeaveIn>Leave-in's Market</LeaveIn></Link>
-=======
-        <Furniture onClick={clickFurniture}>Furniture Market</Furniture>
-        <About onClick={clickAbout}>About Us</About>
-        <LeaveIn onClick={clickLeavein}>Leave-in's Market</LeaveIn>
->>>>>>> edited footer, profile page
-=======
 
         <Furniture onClick={clickFurniture}>Furniture Market</Furniture>
         <About onClick={clickAbout}>About Us</About>
         <LeaveIn onClick={clickLeavein}>Leave-in's Market</LeaveIn>
 
->>>>>>> a2b921a23de5d27abaa48dbba060518ccb9ca437
+
+
+        <Furniture onClick={clickFurniture}>Furniture Market</Furniture>
+        <About onClick={clickAbout}>About Us</About>
+        <LeaveIn onClick={clickLeavein}>Leave-in's Market</LeaveIn>
+
+
     </TextContainer>
 
     <TextContainer2>
