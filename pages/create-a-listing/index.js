@@ -4,7 +4,6 @@ import HeaderMenu from '../../comps/HeaderMenu';
 import Footer from '../../comps/Footer';
 import CreateListing from '../../comps/CreateListing';
 import InputPost from '../../comps/InputPost';
-import Button from '../../comps/Button';
 
 import axios from 'axios';
 
@@ -47,18 +46,7 @@ export default function CreateAListing() {
       <Header />
       <HeaderMenu />
       <div className="page_contents">
-        <CreateListing>
-          <InputPost onChange={(e)=>{
-          setTitle(e.target.value);
-        }}/>
-          <InputPost title="Price" width="200px" placeholder="$" onChange={(e)=>{
-          setPrice(e.target.value);
-        }}/>
-        <div className="post_box">
-
-        </div>
-        <Button text="Post" fsize="26px" onClick={createPost}/>
-        </CreateListing>
+        <CreateListing />
       </div>
       <div className="footer">
         <Footer />

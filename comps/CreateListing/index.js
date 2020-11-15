@@ -6,6 +6,8 @@ import UploadImage from '../UploadImage';
 import Button from '../Button';
 
 import axios from 'axios';
+import BuildingCategory from '../BuildingCategory';
+import Router from 'next/router';
 
 const Main = styled.div`
     display: inline-flex;
@@ -62,7 +64,7 @@ const Checkbox = styled.input`
     height: 28px;
 `
 
-const CreateListing = ({pageTitle, onChange}) =>{
+const CreateListing = ({pageTitle}) =>{
 
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState("");
@@ -71,10 +73,14 @@ const CreateListing = ({pageTitle, onChange}) =>{
     const [dormnum, setDormnum] = useState("");
     const [furniture, setFurniture] = useState(false);
     const [leavein, setLeavein] = useState(false);
+    const [category, setCategory] = useState("");
+    // const [checked, setChecked] = useState(false);
+
+    // const handleFurn = () => setChecked(!furniture);
 
     const createPost = async (e)=>{
     
-        console.log("clicked", e, price, title, building, desc, dormnum, furniture);
+        console.log("clicked", title, price, leavein, furniture, building, category, dormnum, desc);
     
        try{
          console.log("");
@@ -82,12 +88,14 @@ const CreateListing = ({pageTitle, onChange}) =>{
           title: title,
           price: price,
           building: building,
-          desc: desc,
-          dormnum: dormnum,
-          furniture: furniture,
-          leavein: leavein
+          category: category,
+          description: desc,
+          dormRoomNumber: dormnum,
+          isFurniture: furniture,
+          isLeave: leavein
         });
         console.log(resp.data);
+
         Router.push("/post-sucess");
         
        } catch {
@@ -101,30 +109,37 @@ const CreateListing = ({pageTitle, onChange}) =>{
  <Container>
     <Content>
         <Text>{pageTitle}</Text>
-        {/* <InputPost onChange={(e)=>{
+        <InputPost onChange={(e)=>{
         setTitle(e.target.value);
       }}/>
         <InputPost title="Price" width="200px" placeholder="$" onChange={(e)=>{
         setPrice(e.target.value);
-      }}/> */}
+      }}/>
         <Box>
             <p>Select a Category</p>
             <div>
                 <Checkbox type="checkbox" name="leave-in" onChange={(e)=>{
-        setLeavein(e.target.value);
-      }}></Checkbox>
+                    setLeavein(!leavein);
+                }}></Checkbox>
                 <label for="leave-in">Leave-in</label>
             </div>
             <div>
                 <Checkbox type="checkbox" name="furniture" onChange={(e)=>{
-        setFurniture(e.target.value);
-      }}></Checkbox>
+                    setFurniture(!furniture);
+                    // setFurniture(e.target.value);
+                }}></Checkbox>
                 <label for="furniture">Furniture</label>
             </div>
         </Box>
         <Box>
             <p>Building</p>
-            <SmallCategory />
+            {/* <BuildingCategory /> */}
+            <InputPost title="Building" onChange={(e)=>{
+                setBuilding(e.target.value);
+                }}/>
+            <InputPost title="category" onChange={(e)=>{
+                setCategory(e.target.value);
+                }}/>
         </Box>
         <InputPost title="Dorm Room Number" width="300px" placeholder="Enter room number" onChange={(e)=>{
         setDormnum(e.target.value);
@@ -144,8 +159,7 @@ const CreateListing = ({pageTitle, onChange}) =>{
 }
 
 CreateListing.defaultProps = {
-    pageTitle: "Create a Listing",
-    onChange:()=>{}
+    pageTitle: "Create a Listing"
 }
 
 
