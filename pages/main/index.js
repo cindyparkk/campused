@@ -9,7 +9,7 @@ import Router from 'next/router';
 
 function clicktoleavein() {
   if (true) {
-      Router.push("/leave-in");
+      Router.push("/home");
   }
 }
 
