@@ -101,6 +101,13 @@ const SmallCategory =({expand,onCategorySelect,name1,name2,name3,name4})=> {
 
 
     const [expanded, setExpanded] = useState(false);
+    const [bed, setBed] = useState(false);
+
+    function onCategorySelect(str){
+        if(str === "bed"){
+            setBed(true);
+        }
+    }
 
     useEffect(() => {
         setExpanded(expand);
@@ -120,7 +127,7 @@ return <div>
 
     <Expand expanded={expanded}>
 
-        <div onClick={()=> {
+        <div bed={bed} onClick={()=> {
             onCategorySelect("bed");}}>
            {name1}</div>
          <div onClick={()=> {
