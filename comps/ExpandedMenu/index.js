@@ -46,6 +46,8 @@ const Main = styled.div`
     min-width: 216px;
     min-height: 236px;
     position: absolute;
+    top: ${props=>props.expanded ? "0" : ""};
+    left: ${props=>props.expanded ? "-40px" : ""};
     height: auto;
     background: #FFFFFF;
     border: 2px solid #000000;
@@ -53,25 +55,31 @@ const Main = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     // display: inline-flex;
-    visibility: ${props=>props.expanded ? "visible" : "hidden"};
+
+    visibility: ${props=>props.expanded ? "visible" : "none"};
+
     opacity: ${props=>props.expanded ? 1 : 0};
     height: ${props=>props.expanded ? "auto" : "0px"};
 `
 
 const ExpandedMenu = ({expand, onMenuSelect}) => {
     const [expanded, setExpanded] = useState(false);
+    const [sold, setSold] = useState(false);
     
     function onMenuSelect(str){
         if (str==="marksold"){
-            Router.push("/");
+            setSold(true);
+        } else if (str === "edit"){
+            Router.push("/edit-listing");
         }
     }
 
     useEffect(()=>{
         setExpanded(expand);
-    }, [expand])
+    }, [expand]);
+    
 
-    return <Contain>
+    return <Contain >
         <InitialButton expanded={expanded} onClick={()=>{
             setExpanded(!expanded);
             }}>
