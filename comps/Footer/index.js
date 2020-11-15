@@ -9,8 +9,8 @@ const Main = styled.div`
     align-items: center;
     width: 100%;
     marign: 0;
-    position: absolute;
     left: 0;
+    margin-top: 65px;
 `;
 
 const Container = styled.div`

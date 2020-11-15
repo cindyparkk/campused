@@ -10,6 +10,7 @@ import ProfileSlider from '../comps/ProfileSlider';
 import Saved from '../comps/Saved';
 import ProductDescription from '../comps/ProductDescription';
 import Profile from '../comps/Profile';
+import DropDown from '../comps/DropDown';
 
 
 export default {
@@ -27,3 +28,4 @@ export const ProfileListingsAndWishlist = () => <ProfileSlider />
 export const SavedButton = () => <Saved />
 export const ProductPageDescription = () => <ProductDescription />
 export const ProfileIconAndName = () => <Profile />
+export const DropDownUI = () => <DropDown />
