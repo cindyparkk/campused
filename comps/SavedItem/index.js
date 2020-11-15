@@ -28,7 +28,7 @@ const Container = styled.div`
 
 const Text = styled.div`
     margin-left: 30px;
-    line-height: 0.3;
+    line-height: 0.7;
 `;
 
 const Title = styled.h4`
@@ -44,13 +44,22 @@ const Image = styled.img`
 
 const ImageContainer = styled.div`
     max-width: 300px;
-    max-height: 300px;
+
+    @media (max-width: 500px) {
+        min-width: 70px;
+ 
+  }
 `;
 
 const Description = styled.p`
 font-family: 'Assistant', sans-serif;
 font-weight: 300;
 line-height: 1;
+
+@media (max-width: 500px) {
+    line-height: 0.7;
+
+}
 `;
 
 const Price = styled.h3`
