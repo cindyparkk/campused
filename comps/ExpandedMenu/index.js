@@ -46,8 +46,8 @@ const Main = styled.div`
     min-width: 216px;
     min-height: 236px;
     position: absolute;
-    top: ${props=>props.expanded ? "0" : ""};
-    left: ${props=>props.expanded ? "-40px" : ""};
+    // top: ${props=>props.expanded ? "0" : ""};
+    // left: ${props=>props.expanded ? "-100px" : ""};
     height: auto;
     background: #FFFFFF;
     border: 2px solid #000000;
@@ -60,6 +60,7 @@ const Main = styled.div`
 
     opacity: ${props=>props.expanded ? 1 : 0};
     height: ${props=>props.expanded ? "auto" : "0px"};
+    transition: 0.3s;
 `
 
 const ExpandedMenu = ({expand, onMenuSelect}) => {

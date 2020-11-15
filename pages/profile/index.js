@@ -9,14 +9,20 @@ import ExpandedMenu from '../../comps/ExpandedMenu';
 import Link from 'next/link';
 import Router from 'next/router';
 
+function createListing(){
+  if(true){
+    Router.push("/create-a-listing");
+  }
+}
+
 export default function ProfilePage() {
   return  <div className="page">
       <Header />
       <HeaderMenu />
       <div className="profile">
         <Profile />
+        <Button onClick={createListing} bgcolor="#3DA5D9" color="#FFF" text="Make a listing" fsize="24px"/>
       </div>
-      <Link href="/create-a-listing"><Button bgcolor="#3DA5D9" color="#FFF" text="Make a listing" fsize="24px"/></Link>
       <ProfileSlider />
       <div className="footer">
         <Footer />
