@@ -16,7 +16,7 @@ const Container = styled.div`
     box-sizing: border-box;
     box-shadow: 0px 4px 0px #18191F;
     border-radius: 16px;
-    min-width: 414px;
+    width: 100%;
     max-height: 137px;
     margin-left: 20px;
     margin-right: 20px;

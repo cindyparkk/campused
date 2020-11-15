@@ -12,6 +12,7 @@ font-weight:bold;
 font-size:24px;
 display:inline-flex;
 flex-direction:column;
+margin-bottom:5px;
 `;
 
 const DropDownMenu = styled.div`
