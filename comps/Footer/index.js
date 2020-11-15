@@ -183,9 +183,11 @@ const Footer = () =>{
     
 
     <TextContainer>
+
         <Furniture onClick={clickFurniture}>Furniture Market</Furniture>
         <About onClick={clickAbout}>About Us</About>
         <LeaveIn onClick={clickLeavein}>Leave-in's Market</LeaveIn>
+
     </TextContainer>
 
     <TextContainer2>

@@ -7,6 +7,8 @@ import ProfileSlider from '../../comps/ProfileSlider';
 import ProfilePost from '../../comps/ProfilePost';
 import Divider from '../../comps/Divider';
 import ProdictDescription from '../../comps/ProductDescription';
+import ProductDetails from '../../comps/ProductDetails';
+import PostSlide from '../../comps/PostSlide';
 
 export default function Product() {
   return  <div className="page">
@@ -16,10 +18,13 @@ export default function Product() {
           <div>
               {/* product image */}
           </div>
-          <div>
-              <Button />
-          </div>
+      
       </div>
+
+     <PostSlide />
+      
+      <ProductDetails />
+
       <div className="product_description">
         <Divider />
         <ProdictDescription />
