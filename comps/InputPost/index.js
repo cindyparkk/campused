@@ -27,7 +27,7 @@ const Input = styled.input`
 const InputPost = ({title, placeholder, width, type, onChange}) => {
     return <Contain width={width}>
         <Title>{title}</Title>
-        <Input type={type} placeholder={placeholder}></Input>
+        <Input type={type} placeholder={placeholder} onChange={onChange}></Input>
     </Contain>
 }
 

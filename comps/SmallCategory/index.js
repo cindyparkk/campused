@@ -97,7 +97,7 @@ const Arrow = styled.img`
 
 
 
-const SmallCategory =({expand,onCategorySelect,name1,name2,name3,name4})=> {
+const SmallCategory =({expand,onCategorySelect,name1,name2,name3,name4, title, onChange})=> {
 
 
     const [expanded, setExpanded] = useState(false);
@@ -119,15 +119,15 @@ return <div>
         setExpanded(!expanded);
     }}>
         <DropDownBox>
-            <div>Select a Category</div>
+            <div>{title}</div>
             <Arrow src="/arrowdown.png" />
 
         </DropDownBox>
     </DropDownMenu>
 
-    <Expand expanded={expanded}>
+    <Expand expanded={expanded} onChange={onChange}>
 
-        <div bed={bed} onClick={()=> {
+        <div onClick={()=> {
             onCategorySelect("bed");}}>
            {name1}</div>
          <div onClick={()=> {
@@ -146,13 +146,13 @@ return <div>
 }
     
 SmallCategory.defaultProps = {
-
-expand:false,
-name1:"Bedroom",
-name2:"Kitchen",
-name3:"Bathroom",
-name4:"Living room & \n General Furniture"
-
+    expand:false,
+    name1:"Bedroom",
+    name2:"Kitchen",
+    name3:"Bathroom",
+    name4:"Living room & \n General Furniture",
+    title: "Select a Category",
+    onChange:()=>{}
 }
 
 
