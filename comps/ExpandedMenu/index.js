@@ -55,7 +55,9 @@ const Main = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     // display: inline-flex;
+
     visibility: ${props=>props.expanded ? "visible" : "none"};
+
     opacity: ${props=>props.expanded ? 1 : 0};
     height: ${props=>props.expanded ? "auto" : "0px"};
 `
