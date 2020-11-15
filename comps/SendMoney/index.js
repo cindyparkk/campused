@@ -8,7 +8,12 @@ const Container = styled.div`
     border-radius: 17px;
                 font-family: 'Montserrat', sans-serif;
                 font-weight:bold;
-    width: 511px;
+    min-width: 511px;
+
+    @media (max-width: 500px){
+        min-width:300px;
+     }
+
     height: auto;
     background-color: #F3F3F3;
     border:solid 1px #000000;   

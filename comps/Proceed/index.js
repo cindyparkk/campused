@@ -6,13 +6,32 @@ import Router from 'next/router';
 const Contain = styled.div`
 display: inline-flex;
 flex-direction:row;
-cursor: pointer;
+cursor: pointer; 
+min-width:300px;
 
+    @media (max-width: 500px){
+        min-width:100px;
+        left-margin:-30px;
+    }
+    h5 {
+
+    @media (max-width: 500px){
+        font-size:21px;
+        margin-right:0;
+    }
 `;
 
 const Arrow = styled.img`
     min-width:75px;
-    height:75px;
+    min-height:75px;
+
+    @media (max-width: 500px){
+        width:25%;
+        height:25%;
+        margin-right:25%;
+     
+    }
+ 
     margin:25px;
 
 `;

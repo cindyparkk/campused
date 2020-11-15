@@ -6,6 +6,10 @@ import styled from 'styled-components';
 const Contain = styled.div`
     // min-width: 392px;
     min-width:400px;
+    @media (max-width: 500px){
+        min-width:300px;
+        
+    }
     min-height: 45px;
     display: inline-flex;
     flex-direction: column;
@@ -18,7 +22,6 @@ const Input = styled.input`
     background: #FFFFFF;
     border: 2px solid #000000;
     box-sizing: border-box;
- 
   
     padding-left: 20px;
 `;
