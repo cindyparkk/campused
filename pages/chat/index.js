@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Header from '../../comps/Header';
 import ChatHeader from '../../comps/ChatHeader';
-
+import Router from 'next/router';
 
 import Chatroom from '../Chatroom';
 
