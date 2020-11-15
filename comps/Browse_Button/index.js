@@ -13,6 +13,10 @@ const ButtonBox = styled.h6`
     align-items: center;
     justify-content: center;
     min-width: 390px;
+    
+    @media (max-width: 500px){
+        min-width:200px;
+     }
     min-height: 60px;
     background: ${props=>props.bgcolor ? props.bgcolor : "#FEC601"};
     border: 2px solid #000000;
