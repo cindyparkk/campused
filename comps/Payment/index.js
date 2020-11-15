@@ -31,8 +31,9 @@ const Container = styled.div`
          width: 80%;
      }
 
-     @media(max-width: 480px){
-        width: 85%;
+     @media(max-width: 500px){
+        width: 80%;
+        padding:1%;
      }
     `;
 
@@ -55,6 +56,14 @@ const Second = styled.div`
         font-weight: 800;
         font-size: 27px;
     }
+
+
+
+        @media(max-width: 500px){
+            padding-left:4%;
+         }
+    
+   
     `;
 const Title = styled.h6`
     font-size: 28px;
