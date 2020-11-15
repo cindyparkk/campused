@@ -10,7 +10,7 @@ const Main = styled.div`
     width: 100%;
     marign: 0;
     left: 0;
-    margin-top: 65px;
+    // margin-top: 65px;
 `;
 
 const Container = styled.div`

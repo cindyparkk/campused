@@ -99,6 +99,7 @@ body, html {
     width: 100%;
 }
 
+
 .home_logo {
     width: 250px;
     margin-bottom: 30px;
@@ -200,6 +201,9 @@ textarea {
 
 .profile {
     margin-top: 20px;
+    @include flexIt();
+    display: inline-flex;
+    flex-direction: column;
 }
 
 // home page

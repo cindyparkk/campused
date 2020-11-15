@@ -147,9 +147,9 @@ const ProfileSlider = ({header}) =>{
     <Box2>
         <BoxContent>
             <ProfilePost />
-            <ExpandedMenu />
+
         </BoxContent>
-        </Box2>
+    </Box2>
     {/* </Box> */}
     </Main> 
     
