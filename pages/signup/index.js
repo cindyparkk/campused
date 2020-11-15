@@ -22,7 +22,6 @@ export default function Signup() {
   // const [handle, setHandle] = useState("");
 
   const HandleSignup = async (e)=>{
-    // Router.back();
 
     console.log("clicked", e, name, password, email, confirmPassword);
 
@@ -39,11 +38,11 @@ export default function Signup() {
       confirmPassword: confirmPassword,
       name: name
     });
+    Router.push("/home");
    } catch {
      console.log("Failed");
+    //  show error if password is less than 6 characters
    }
-
-    Router.push("/home")
 
     // console.log(resp.data, resp.data.token);
     // if(resp.data.token){

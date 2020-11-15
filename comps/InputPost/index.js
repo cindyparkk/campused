@@ -24,7 +24,7 @@ const Input = styled.input`
     padding-left: 20px;
 `
 
-const InputPost = ({title, placeholder, width, type}) => {
+const InputPost = ({title, placeholder, width, type, onChange}) => {
     return <Contain width={width}>
         <Title>{title}</Title>
         <Input type={type} placeholder={placeholder}></Input>
@@ -35,7 +35,8 @@ InputPost.defaultProps = {
     title: "Title",
     placeholder: "Enter Title",
     width: null,
-    type: "text"
+    type: "text",
+    onChange:()=>{}
 }
 
 export default InputPost;
