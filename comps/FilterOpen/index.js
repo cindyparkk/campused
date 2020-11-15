@@ -136,6 +136,7 @@ const GrayBackground = styled.div`
 
 const DropDownContainer = styled.div`
     border: 1px solid black;
+    background: #FFF;
     
 `;
 
