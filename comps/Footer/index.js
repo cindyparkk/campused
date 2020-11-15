@@ -184,16 +184,6 @@ const Footer = () =>{
 
     <TextContainer>
 
-        <Link href="/furniture-market"><Furniture>Furniture Market</Furniture></Link>
-        <Link href="/about"><About onClick={clickAbout}>About Us</About></Link>
-       <Link href="/home"><LeaveIn>Leave-in's Market</LeaveIn></Link>
-
-        <Furniture onClick={clickFurniture}>Furniture Market</Furniture>
-        <About onClick={clickAbout}>About Us</About>
-        <LeaveIn onClick={clickLeavein}>Leave-in's Market</LeaveIn>
-
-
-
         <Furniture onClick={clickFurniture}>Furniture Market</Furniture>
         <About onClick={clickAbout}>About Us</About>
         <LeaveIn onClick={clickLeavein}>Leave-in's Market</LeaveIn>
