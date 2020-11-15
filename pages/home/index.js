@@ -8,12 +8,30 @@ import Button from '../../comps/Button';
 
 import Router from 'next/router';
 
+import axios from 'axios';
+
 function createAListing() {
   console.log("clicked");
     Router.push("/create-a-listing");
 }
 
 export default function Home() {
+
+  const [post, setPost] = useState("");
+
+  const HandlePost = async ()=>{
+
+    console.log("clicked");
+
+      console.log("");
+      var resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/getPost");
+
+      // console.log("Failed");
+
+     console.log(resp.data);
+    // Router.push("/home");
+  }
+
   return  <div className="page">
        <Header />
       <HeaderMenu />
@@ -21,6 +39,7 @@ export default function Home() {
           <div className="page_left">
             <div>
               <Category />
+              <Button onClick={HandlePost} />
             </div>
             <Button text="+ Add a Listing" color="#FFF" bgcolor="#3DA5D9" fsize="26px" onClick={createAListing}/>
           </div>
