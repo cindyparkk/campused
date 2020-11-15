@@ -1,10 +1,10 @@
-import { Router } from 'next/router';
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import CircleButton from '../../comps/CircleButton';
+import Router from 'next/router';
 
 const Contain = styled.div`
-
+    position: relative;
 `
 const Content = styled.div`
     display: inline-flex;
@@ -39,11 +39,13 @@ const Content = styled.div`
 const InitialButton = styled.div`
     transition: 0.3s;
     opacity: ${props=>props.expanded ? "0" : "1"};
+    display: inline-flex;
 `
 
 const Main = styled.div`
     min-width: 216px;
     min-height: 236px;
+    position: absolute;
     height: auto;
     background: #FFFFFF;
     border: 2px solid #000000;
@@ -51,7 +53,7 @@ const Main = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     // display: inline-flex;
-    display: ${props=>props.expanded ? "inline-flex" : "hidden"};
+    visibility: ${props=>props.expanded ? "visible" : "hidden"};
     opacity: ${props=>props.expanded ? 1 : 0};
     height: ${props=>props.expanded ? "auto" : "0px"};
 `

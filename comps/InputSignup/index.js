@@ -22,10 +22,10 @@ const Input = styled.input`
     margin-top: ${props=>props.margin ? props.margin : 0};
 `
 
-const InputSignup = ({title, placeholder, type, margin}) => {
+const InputSignup = ({title, placeholder, type, margin, onChange}) => {
     return <Contain>
         <Title>{title}</Title>
-        <Input type={type} placeholder={placeholder} margin={margin}></Input>
+        <Input type={type} placeholder={placeholder} margin={margin} onChange={onChange}></Input>
     </Contain>
 }
 
@@ -33,7 +33,8 @@ InputSignup.defaultProps = {
     title:"Title",
     placeholder:"ex: John",
     type: "text",
-    margin: null
+    margin: null,
+    onChange:()=>{}
 }
 
 export default InputSignup;

@@ -21,7 +21,7 @@ const DropDownMenu = styled.div`
     border-radius: 16px;
     padding:5px 10px;
     max-height: 71px;
-    min-width: 321px;
+    min-width: 350px;
 `;
 
 const DropDownBox = styled.div`
@@ -40,22 +40,22 @@ const Arrow = styled.img`
 
 const Expand = styled.div`
 
-min-width: 570px;
+    min-width: 350px;
 
-margin-top:5px;
-background: #FFFFFF;
-border: 2px solid #000000;
-box-sizing: border-box;
-border-radius: 16px;
+    margin-top:5px;
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    border-radius: 16px;
 
-margin-bottom:15px;
+    margin-bottom:15px;
 
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     // width:100%;
     // padding:10px;
     height: 100%;
 
-    display:${props=>props.expanded ? "inline-flex" : "hidden"};
+    display:${props=>props.expanded ? "inline-flex" : "none"};
     max-height:${props=>props.expanded ? "auto" : "0px"};
     font-size:${props=>props.expanded ? "24px" : "0px"};
     opacity:${props=>props.expanded ? 1 : 0};

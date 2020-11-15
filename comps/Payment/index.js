@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import Button from '../Button';
+
 import Browse_Button from '../Browse_Button';
 
 const Container = styled.div`
@@ -18,6 +18,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin:4% 0%;
 
 
      p {

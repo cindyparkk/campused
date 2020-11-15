@@ -14,6 +14,7 @@ export default function Payment2() {
     return   <div className="page">
      <Header />
      <HeaderMenu/>
+     
       <Payment />
   
       <div className="footer">
