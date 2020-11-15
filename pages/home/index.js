@@ -39,11 +39,12 @@ export default function Home() {
       <div className="page_home">
           <div className="page_left">
             <div>
-              <Category />
-              <Button onClick={HandlePost} />
+            <Category title="Choose a Building" name1="Brock Hall" name2="Walter Gage " name1="Ponderosa" name1="Thunderbird" />
+              {/* <Button onClick={HandlePost} /> */}
             </div>
-            <Button text="+ Add a Listing" color="#FFF" bgcolor="#3DA5D9" fsize="26px" onClick={createAListing}/>
             <FilterOpen />
+            <Button text="+ Add a Listing" color="#FFF" bgcolor="#3DA5D9" fsize="26px" onClick={createAListing}/>
+
           </div>
           <div className="page_right">
               <Post />
