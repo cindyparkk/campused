@@ -135,9 +135,39 @@ const Copyright = styled.p`
     margin: 50px 0px 10px 0px;
 `;
 
+function clickHome(){
+    if(true){
+        Router.push("/home");
+    }
+}
+
 function clickAbout(){
     if(true){
         Router.push("/about");
+    }
+}
+
+function clickFurniture(){
+    if(true){
+        Router.push("/furniture-market");
+    }
+}
+
+function clickLeavein(){
+    if(true){
+        Router.push("/leave-in");
+    }
+}
+
+function clickFAQ(){
+    if(true){
+        Router.push("/faq");
+    }
+}
+
+function clickProfile(){
+    if(true){
+        Router.push("/profile");
     }
 }
 
@@ -147,20 +177,22 @@ const Footer = () =>{
  
  <Container>
 
-    <Link href="/home"><ImageContainer>
+    <ImageContainer onClick={clickHome}>
         <Campused src='/logo.png' />
-    </ImageContainer></Link>
+    </ImageContainer>
     
 
     <TextContainer>
-        <Link href="/furniture-market"><Furniture>Furniture Market</Furniture></Link>
-        <Link href="/about"><About onClick={clickAbout}>About Us</About></Link>
-       <Link href="/home"><LeaveIn>Leave-in's Market</LeaveIn></Link>
+
+        <Furniture onClick={clickFurniture}>Furniture Market</Furniture>
+        <About onClick={clickAbout}>About Us</About>
+        <LeaveIn onClick={clickLeavein}>Leave-in's Market</LeaveIn>
+
     </TextContainer>
 
     <TextContainer2>
-        <Link href="/faq"><FAQ>FAQ Page</FAQ></Link>
-        <Link href="/profile"><Profile>My Profile</Profile></Link>
+        <FAQ onClick={clickFAQ}>FAQ Page</FAQ>
+        <Profile onClick={clickProfile}>My Profile</Profile>
     </TextContainer2>
 
     <Socials>
