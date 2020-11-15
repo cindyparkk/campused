@@ -10,8 +10,6 @@ export default function Product() {
   return  <div className="page">
       <Header />
       <ChatHeader />
-      <h1
-      style={{color:"#EA7317", textAlign:"left", alignSelf: 'flex-start', marginLeft:"40px", marginBottom:"-10px"}}>Messages</h1>
         <div className="chat_page">
         <Chatroom />
         </div>
