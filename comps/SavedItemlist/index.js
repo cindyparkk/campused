@@ -42,10 +42,6 @@ const SavedItemlist = ({}) =>{
 
 
  return <Main>
-
-       
-
-  
      
          <Header>Saved</Header>
          <BoxContent>

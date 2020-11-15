@@ -54,7 +54,7 @@ const InputwIcon = ({ title, placeholder, icon, type, onChange}) => {
 
 InputwIcon.defaultProps = {
     title: "Title",
-    placeholder:"Placeholder",
+    placeholder:"Placeholder", 
     icon:"/user_icon.png",
     type:"text",
     onChange:()=>{}

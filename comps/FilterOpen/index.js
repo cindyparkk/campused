@@ -16,6 +16,7 @@ const Contain = styled.div`
     max-height: ${props=>props.showfilters ? "617px" : "0px"};
     transition: 0.5s ease-in-out;
     z-index: 4;
+   
 `
 const Main = styled.div`
     height: 700px;
@@ -135,7 +136,7 @@ const GrayBackground = styled.div`
 `;
 
 const DropDownContainer = styled.div`
-    border: 1px solid black;
+    // border: 1px solid black;
     background: #FFF;
     
 `;
