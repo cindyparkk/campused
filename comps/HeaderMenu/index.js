@@ -86,6 +86,14 @@ function clickFurniture(){
     }
 }
 
+function clickSaved(){
+    if(true){
+        Router.push("/wishlist");
+    }
+}
+
+
+
 const HeaderMenu = ({fontSize}) =>{
     const [selected, setSelected] = useState(1);
     const [state, setState] = useState(false);
@@ -126,16 +134,20 @@ const HeaderMenu = ({fontSize}) =>{
          
 
         
-        {process.browser && window.innerWidth > 630 ? <Saved selected3={selected === 3} onClick={()=>{
+        {process.browser && window.innerWidth > 630 ? <Link href="/wishlist">
+        <Saved selected3={selected === 3} onClick={()=>{
             setSelected(3);
-        }}>Saved</Saved>: null}
+        }}>Saved</Saved> 
+        </Link>: null}
 
         
 
         
-        {process.browser && window.innerWidth < 630 ? <Saved2 selected3={selected === 3} onClick={()=>{
+        {process.browser && window.innerWidth < 630 ? <Link href="/wishlist">
+       <Saved2 selected3={selected === 3} onClick={()=>{
             setSelected(3);
-        }}>Saved</Saved2>: null}
+        }}>Saved</Saved2>: 
+             </Link> : null}
 
        
 
