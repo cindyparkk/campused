@@ -164,6 +164,13 @@ body, html {
     width: 100%;
 }
 
+.faqfix{
+    justify-content: flex-start;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
 // create a listing page
 textarea {
     height: 200px;
