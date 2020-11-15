@@ -36,6 +36,7 @@ const Arrow = styled.img`
     max-width: 29px;
     height: auto;
     transform: ${props=>props.expanded ? "rotate(180deg)" : "none"};
+    transition: 0.3s;
 `;
 
 const Expand = styled.div`
