@@ -74,7 +74,7 @@ const Saved2 = styled.h4`
 function clickLeavein(){
     if(true){
         setTimeout(function (){
-            Router.push("/leave-in");
+            Router.push("/home");
         }, 600)
     }
 }
