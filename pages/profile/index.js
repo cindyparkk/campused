@@ -5,8 +5,9 @@ import Footer from '../../comps/Footer';
 import Button from '../../comps/Button';
 import ProfileSlider from '../../comps/ProfileSlider';
 import Profile from '../../comps/Profile';
+import Rating from '../../comps/Rating';
 import ExpandedMenu from '../../comps/ExpandedMenu';
-import Link from 'next/link';
+
 import Router from 'next/router';
 
 function createListing(){
@@ -21,6 +22,9 @@ export default function ProfilePage() {
       <HeaderMenu />
       <div className="profile">
         <Profile />
+        <div className="rating">
+          <Rating />
+        </div>
         <Button onClick={createListing} bgcolor="#3DA5D9" color="#FFF" text="Make a listing" fsize="24px"/>
       </div>
       <ProfileSlider />
