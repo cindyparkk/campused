@@ -6,22 +6,20 @@ import Router from 'next/router';
 const Contain = styled.div`
 display: inline-flex;
 flex-direction:row;
-
+cursor: pointer;
 
 `;
 
 const Arrow = styled.img`
-
     min-width:75px;
     height:75px;
     margin:25px;
-    
 
 `;
 
 function clicktoPayment() {
     if (true) {
-        Router.push("/Paypal");
+        Router.push("/paypal");
     }
 }
 

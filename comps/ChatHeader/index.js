@@ -35,7 +35,7 @@ max-width: 50px;
         max-width: 50px;
     }
     height: 50px;
-
+cursor: pointer;
 `;
 
 const UserImage = styled.img`
@@ -66,10 +66,23 @@ min-width:45px;
   }
 
 `;
+
+function clickPrev(){
+    if(true){
+      Router.back();
+    }
+  }
+
+function clickPayment(){
+    if(true){
+        Router.push("/payment");
+    }
+}
+
 const ChatHeader = ({user,imgurl}) =>{
     return <Main>
         <Container>
-        <Icon src="lefticon.png" />
+        <Icon src="lefticon.png" onClick={clickPrev}/>
            
         <User> 
            <UserImage src={imgurl}>
@@ -77,7 +90,7 @@ const ChatHeader = ({user,imgurl}) =>{
                </UserImage>
            <h3>{user}</h3> 
         </User>
-            <Paynow>
+            <Paynow onClick={clickPayment}>
             <Button bgcolor="#3DA5D9" text="Pay Now" color="#FFFFFF" />
             </Paynow>
        
