@@ -2,8 +2,9 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import InputPost from '../InputPost';
 import SmallCategory from '../SmallCategory';
-// import UploadImage from '../UploadImage';
+import UploadImage from '../UploadImage';
 import Button from '../Button';
+import CreateAListing from '../../pages/create-a-listing';
 
 const Main = styled.div`
     display: inline-flex;
@@ -60,12 +61,12 @@ const Checkbox = styled.input`
     height: 28px;
 `
 
-const CreateListing = () =>{
+const CreateListing = ({title}) =>{
  return <Main>
  
  <Container>
     <Content>
-        <Text>Create a Listing</Text>
+        <Text>{title}</Text>
         <InputPost />
         <InputPost title="Price" width="200px" placeholder="$"/>
         <Box>
@@ -84,6 +85,7 @@ const CreateListing = () =>{
             <SmallCategory />
         </Box>
         <InputPost title="Dorm Room Number" width="300px" placeholder="Enter room number"/>
+        <UploadImage title="Add Photo(s)"/>
         <Box>
             <p>Description</p>
             <textarea placeholder="Write a description..."></textarea>
@@ -95,6 +97,9 @@ const CreateListing = () =>{
     </Main>
 }
 
+CreateListing.defaultProps = {
+    title: "Create a Listing"
+}
 
 
 export default CreateListing;

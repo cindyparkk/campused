@@ -11,8 +11,8 @@ const Container = styled.div`
 
 `;
 
-const Title = styled.h4`
-    margin:0;
+const Title = styled.p`
+    font-size: 28px;
 `;
 
 const Upload = styled.div`
@@ -22,6 +22,7 @@ const Upload = styled.div`
     border:solid 1px #000000;
     width:392px;
     height:156px;
+    background-color: #FFF;
 
     display:flex;
     flex-direction:column;
@@ -51,10 +52,10 @@ const Icon = styled.img`
 
 `;
 
-const UploadImage =({text1,camera}) => {
+const UploadImage =({title,camera}) => {
 
     return <Container>
-        <Title>{text1}</Title>
+        <Title>{title}</Title>
         <Upload>
             <Camera>
             <Icon src={camera}/>
@@ -68,7 +69,7 @@ const UploadImage =({text1,camera}) => {
 
 UploadImage.defaultProps = {
   
-    text1:"Default",
+    title:"Default",
     camera:"/camera.png"
    
 }
