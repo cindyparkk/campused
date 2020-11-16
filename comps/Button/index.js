@@ -4,14 +4,15 @@ import styled from 'styled-components';
 const Contain = styled.div`
     margin: 0;
     display: inline-flex;
-    min-width: 126px;
+    min-width: 80px;
+    width: 100%;
 `
 
 const ButtonBox = styled.h6`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 126px;
+    min-width: 80px;
     min-height: 46px;
     background: ${props=>props.bgcolor ? props.bgcolor : "#FEC601"};
     border: 2px solid #000000;
