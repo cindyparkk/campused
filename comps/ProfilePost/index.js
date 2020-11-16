@@ -34,6 +34,7 @@ const Text = styled.div`
 const Title = styled.h4`
     font-family: 'Assistant', sans-serif;
     font-weight: 300;
+    line-height: 0.7;
 `;
 
 const Image = styled.img`
