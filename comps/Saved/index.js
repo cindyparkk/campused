@@ -5,7 +5,6 @@ import CircleButton from '../CircleButton';
 
 const Main = styled.div`
    display: inline-block;
-   position: absolute;
    justify-content: flex-end;
 `;
 
