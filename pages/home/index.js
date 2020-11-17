@@ -1,4 +1,4 @@
-import React, {useState, useQuery} from 'react';
+import React, {useState, useQuery, useEffect} from 'react';
 import Header from '../../comps/Header';
 import HeaderMenu from '../../comps/HeaderMenu';
 import Footer from '../../comps/Footer';
@@ -17,42 +17,34 @@ function createAListing() {
     Router.push("/create-a-listing");
 }
 
+
 export default function Home() {
 
-<<<<<<< HEAD
-  
-=======
-  const [post, setPost] = useState("");
+  const [post, setPost] = useState([]);
 
-  const HandlePost = async ()=>{
-
-    console.log("clicked");
-
-      console.log("");
-      var resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/getPost");
-
-      // console.log("Failed");
-
-     console.log(resp.data);
-    // Router.push("/home");
+ useEffect(() => {
+// if []. run once when the row loads, and don't run again
+  async function fetchData() {
+    const request = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/getPost");
+    //console.log(request);
+    setPost(request.data);
+    return request;
   }
+  fetchData();
+ }, []);
 
->>>>>>> a2b921a23de5d27abaa48dbba060518ccb9ca437
+ console.log(post);
+  
   return  <div className="page">
        <Header />
       <HeaderMenu />
       <div className="page_home">
           <div className="page_left">
             <div>
-<<<<<<< HEAD
             
               <Category />
-=======
-            <Category title="Choose a Building" name1="Brock Hall" name2="Walter Gage " name1="Ponderosa" name1="Thunderbird" />
-              {/* <Button onClick={HandlePost} /> */}
->>>>>>> a2b921a23de5d27abaa48dbba060518ccb9ca437
             </div>
-            
+           
 
             {process.browser && window.innerWidth > 940 ? <div className="addlisting">
             <Button center="center" text="+ Add a Listing" color="#FFF" bgcolor="#3DA5D9" fsize="26px" onClick={createAListing}/>
@@ -62,8 +54,31 @@ export default function Home() {
             <FilterOpen /><CircleButton icon="/addblack.svg" iconwidth="40px" width="50px" height="50px" onClick={createAListing} /></div> </div> :null}
           </div>
           <div className="page_right">
+
+
+
+
+          
+          <div className="Fullstack">
+              <h1>test for api</h1>
+              <div>{post.map(info => (
+               <div> <div>{info.building}</div>
+                <h1>{info.title}</h1>
+                <img src={info.photoUrl} alt="uploadedimg" height="150" width="150" />
+                
+                <div>{info.price}</div>
+                <div>{info.dormRoom}</div>
+                </div>
+              ))}</div>
+              
+            </div>
+
+
+
               <Post />
           </div>
+
+
       </div>
       
       <div className="footer">
