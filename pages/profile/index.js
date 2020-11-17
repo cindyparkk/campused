@@ -22,7 +22,7 @@ export default function ProfilePage() {
   const [image, setImage] = useState("");
 
   const handleProfile = async () =>{
-      console.log("clicked", title, price, leavein, furniture, building, category, dormnum, desc);
+      console.log("clicked", name, image);
 
       var resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user");
 
@@ -42,6 +42,8 @@ export default function ProfilePage() {
         <div className="rating">
           <Rating />
         </div>
+        {/* testing out async call: */}
+        {/* <Button onClick={handleProfile}/> */}
         <Button onClick={createListing} bgcolor="#3DA5D9" color="#FFF" text="Make a listing" fsize="24px"/>
       </div>
       <ProfileSlider />

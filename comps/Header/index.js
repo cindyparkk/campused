@@ -5,6 +5,8 @@ import Router from 'next/router';
 import CircleButton from '../CircleButton';
 import Menu from '../Menu';
 
+import axios from 'axios';
+
 
 const Main = styled.div`
     background-color: white;
