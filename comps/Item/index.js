@@ -16,16 +16,17 @@ const Container = styled.div`
 `;
 
 const Image_Box = styled.div`
-    min-width: 185px;
-    min-height: 205px;
-    margin-bottom:5px;
+    // min-width: 185px;
+    // min-height: 205px;
+    // margin-bottom:5px;
 `;
 
 
-const Item_Image = styled.img`
-        
-    width: 100%;
-    height: 100%;
+const Item_Image = styled.img`    
+    // width: 100%;
+    // height: 100%;
+    max-width: 400px;
+    height: auto;
     border: 2px solid #9A9A9A;
     border-radius: 16px;
     filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.26));
@@ -35,6 +36,7 @@ const Item_Image = styled.img`
     object-fit:cover;
     margin:0;
     padding:0;
+    // if imgurl = null, display none
 `;
 
 const Item_Title = styled.h4`
@@ -57,10 +59,8 @@ const Item = ({title, price, imgurl, onChange}) => {
 
     return <Container>
         <Image_Box>
-        <Item_Image src={imgurl}/>
+            <Item_Image src={imgurl}/>
         </Image_Box>   
-      
-
          <Item_Title>
              {title}
          </Item_Title>
@@ -76,7 +76,7 @@ Item.defaultProps = {
    
     title:"UBC Dorm Room 12",
     price:"$100",
-    imgurl:"/userpost.png",
+    imgurl: null,
     onChange:()=>{}
 }
 
