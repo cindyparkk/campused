@@ -45,14 +45,17 @@ const Box = styled.div`
     div {
         display: inline-flex;
         align-items: center;
-        margin: 10px 0;
         
         label {
             font-size: 20px;
             margin-left: 10px;
         }
     }
-`
+`;
+
+const Option = styled.div`
+    margin: 10px 0;
+`;
 
 const Text = styled.h1`
     color: black;
@@ -77,6 +80,18 @@ const CreateListing = ({pageTitle}) =>{
     // const [checked, setChecked] = useState(false);
 
     // const handleFurn = () => setChecked(!furniture);
+
+    const handleFurniture = (str) => {
+        if(str === "bed"){
+            setCategory("Bedroom");
+        } else if (str === "kit"){
+            setCategory("Kitchen");
+        } else if (str === "bath"){
+            setCategory("Bathroom");
+        } else if (str === "liv"){
+            setCategory("Living room & General Furniture");
+        }
+    }
 
     const createPost = async (e)=>{
     
@@ -117,30 +132,38 @@ const CreateListing = ({pageTitle}) =>{
       }}/>
         <Box>
             <p>Select a Category</p>
-            <div>
+            <Option>
                 <Checkbox type="checkbox" name="leave-in" onChange={(e)=>{
                     setLeavein(!leavein);
                 }}></Checkbox>
                 <label for="leave-in">Leave-in</label>
-            </div>
-            <div>
+            </Option>
+            <Option>
                 <Checkbox type="checkbox" name="furniture" onChange={(e)=>{
                     setFurniture(!furniture);
                     // setFurniture(e.target.value);
                 }}></Checkbox>
                 <label for="furniture">Furniture</label>
-            </div>
+            </Option>
         </Box>
-        <Box>
+        {leavein == true ? <Box>
             <p>Building</p>
-            {/* <BuildingCategory /> */}
-            <InputPost title="Building" onChange={(e)=>{
+            <BuildingCategory onChange={(e)=>{
                 setBuilding(e.target.value);
                 }}/>
-            <InputPost title="category" onChange={(e)=>{
+            {/* <InputPost title="Building" onChange={(e)=>{
+                setBuilding(e.target.value);
+                }}/> */}
+        </Box> : null}
+        {furniture == true ? <Box>
+            <p>Furniture Category</p>
+            <SmallCategory onCategorySelect={handleFurniture} onChange={(e)=>{
                 setCategory(e.target.value);
                 }}/>
-        </Box>
+            {/* <InputPost title="category" onChange={(e)=>{
+                setCategory(e.target.value);
+                }}/> */}
+        </Box> : null}
         <InputPost title="Dorm Room Number" width="300px" placeholder="Enter room number" onChange={(e)=>{
         setDormnum(e.target.value);
       }}/>
