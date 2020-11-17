@@ -122,7 +122,16 @@ function clickHome(){
     }
 }
 
-const Header = ({profileicon}) =>{
+const Header = ({imgurl}) =>{
+
+    const [img, setImg] = useState(null);
+    // add async in comp is okay??? not okay??
+    const handleProfile = async () => {
+        var resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user/image");
+
+        console.log(resp.data);
+        setImg(resp.data.image);
+    }
     return <Main>
     <Center>
             <Logo onClick={clickHome}>
@@ -137,7 +146,7 @@ const Header = ({profileicon}) =>{
             <SearchContainer onClick={clickSearch}>
                 <CircleButton icon="/search.svg" width="32px" height="32px"/>
             </SearchContainer>
-            <Profile src={profileicon} onClick={clickProfile}/>
+            <Profile src={imgurl} onClick={clickProfile, handleProfile}/>
         </FlexEnd>
 
     </Container>
@@ -148,7 +157,7 @@ const Header = ({profileicon}) =>{
 
    
    Header.defaultProps = {
-       profileicon: "/profileicon.jpg"
+       imgurl: "/profileicon.jpg"
    }
 
    
