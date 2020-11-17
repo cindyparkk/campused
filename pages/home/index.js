@@ -7,10 +7,12 @@ import Post from '../../comps/Post';
 import Button from '../../comps/Button';
 import FilterOpen from '../../comps/FilterOpen';
 import CircleButton from '../../comps/CircleButton';
+import Item from '../../comps/Item';
 
 import Router from 'next/router';
 
 import axios from 'axios';
+// import { info } from 'node-sass';
 
 function createAListing() {
   console.log("clicked");
@@ -56,27 +58,24 @@ export default function Home() {
           </div>
           <div className="page_right">
 
-
-
-
           
           <div className="Fullstack">
               <h1>test for api</h1>
-              <div>{post.map(info => (
-               <div> <div>{info.building}</div>
+              <div className="post">{post.map(info => (
+               <div>
+                {/* <Post imgurl={info.photoUrl} price={info.price} title={info.title}/> */}
+
+                <Item imgurl={info.photoUrl} price={info.price} title={info.title}/>
+
+                {/* <div>{info.building}</div>
                 <h1>{info.title}</h1>
                 <img src={info.photoUrl} alt="uploadedimg" height="150" width="150" />
-                
                 <div>{info.price}</div>
-                <div>{info.dormRoom}</div>
+                <div>{info.dormRoom}</div> */}
                 </div>
               ))}</div>
               
             </div>
-
-
-
-              <Post />
           </div>
 
 

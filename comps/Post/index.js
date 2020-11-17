@@ -55,17 +55,16 @@ const Item_list = styled.div`
     grid-column-gap:2%;
 `;
 
-const Post = ({title, n, x, imgsrc}) => {
+const Post = ({pageTitle, n, x, imgurl, price, title}) => {
     return <Contain>
         <Content>
-            <Title>{title}</Title>
+            <Title>{pageTitle}</Title>
             <Item_list>
-            <Item></Item>
-            <Item imgurl={imgsrc} text1='1 Bed 1Bath UBC Dorm' text2='$99'></Item>
-            <Item imgurl={imgsrc} text1='Plant pot' text2='$10'></Item>
-            <Item imgurl={imgsrc} text1='Round white table' text2='$100'></Item>
-            <Item imgurl={imgsrc} text1='2 Matteresses' text2='$99'></Item>
-            <Item imgurl={imgsrc} text1='Desk with selves' text2='$90'></Item>
+            <Item imgurl={imgurl} title={title} price={price}></Item>
+            {/* <Item imgurl={imgurl} title={title} price={price}></Item>
+            <Item imgurl={imgurl} title={title} price={price}></Item>
+            <Item imgurl={imgurl} title={title} price={price}></Item>
+            <Item imgurl={imgurl} title={title} price={price}></Item> */}
             </Item_list>
            
         </Content>
@@ -78,10 +77,12 @@ const Post = ({title, n, x, imgsrc}) => {
 }
 
 Post.defaultProps = {
-    title: "Recent Posts",
+    pageTitle: "Recent Posts",
     n: 1,
     x: 3,
-    imgsrc: '/userpost.png'
+    imgurl: null,
+    title: null,
+    price: null
 }
 
 export default Post;
