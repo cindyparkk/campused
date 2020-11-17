@@ -175,7 +175,7 @@ const FilterOpen = () => {
 
     {/* DESKTOP */}
 
-    {process.browser && window.innerWidth > 500 ? <Desktop>
+    {process.browser && window.innerWidth > 940 ? <Desktop>
         <DropDownContainer showfilters={showfilters} onClick={()=>{
             setFilter(!showfilters);
         }}>
@@ -236,7 +236,7 @@ const FilterOpen = () => {
 
 {/* MOBILE */}
 
-{process.browser && window.innerWidth < 500 ?<Mobile>
+{process.browser && window.innerWidth < 940 ?<Mobile>
 
     <Main>
 

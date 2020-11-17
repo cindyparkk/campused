@@ -225,7 +225,7 @@ textarea {
     flex-direction: row;
 }
 .page_left {
-    @include flexIt();
+    // @include flexIt();
     justify-content: flex-start;
     flex-direction: column;
     flex-grow: 1;
@@ -236,6 +236,28 @@ textarea {
     margin: 20px 10px;
 
 } 
+.addlisting{
+    @include flexIt();
+    border: 2px solid blue;
+}
+.mobileadd{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    z-index: 2;
+    position: absolute;
+    overflow: hidden;
+    width: 90%;
+    right:4%;
+    left: 4%;
+    align-items: baseline;
+}
+.mobilecontainer{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
 // product page
 .product_description {
     width: 100%;

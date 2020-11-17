@@ -22,7 +22,7 @@ const DropDownMenu = styled.div`
     border-radius: 16px;
     padding:5px 10px;
     max-height: 71px;
-    min-width: 350px;
+    
 `;
 
 const DropDownBox = styled.div`
@@ -35,6 +35,7 @@ const DropDownBox = styled.div`
 
 const Arrow = styled.img`
     max-width: 29px;
+    margin-left: 10px;
     height: auto;
     transform: ${props=>props.expanded ? "rotate(180deg)" : "none"};
     transition: 0.3s;
@@ -42,7 +43,7 @@ const Arrow = styled.img`
 
 const Expand = styled.div`
 
-    min-width: 350px;
+    min-width: 100px;
 
     margin-top:5px;
     background: #FFFFFF;
@@ -85,7 +86,7 @@ const Expand = styled.div`
     }
 `;
 const Title = styled.h4`
-    white-space: nowrap;
+    // white-space: nowrap;
 `
 
 const Category =({expand,onCategorySelect,arrow,name1,name2,name3,name4,title})=> {
