@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
+import axios from 'axios';
+import Router from 'next/router';
 
 const Main = styled.div`
     display: flex;
@@ -29,6 +31,7 @@ const PFP = styled.img`
 
 
 const Profile = ({name, icon}) =>{
+
     return <Main>
 
     <Container>
