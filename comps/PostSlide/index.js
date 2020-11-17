@@ -10,7 +10,6 @@ const Container = styled.div`
 position: relative;
 display: flex;
 max-width: 90%;
-border: 1px solid red;
 align-items: center;
 margin-left: 40px;
 overflow: hidden;
@@ -18,12 +17,10 @@ overflow: hidden;
 
 const Info = styled.div`
 flex-grow:1;
-border: 1px solid black;
 `;
 
 const Info2 = styled.div`
 flex-grow:1;
-border: 2px solid black;
 position: relative;
 width: 100%;
 `;
@@ -75,7 +72,6 @@ margin:20px 10px ;
 
 const Info3 = styled.div`
   display: flex;
-  border: 1px solid green;
   overflow: hidden;
 `;
 
@@ -85,7 +81,6 @@ const TimeDiv = styled.div`
 `;
 
 const SavedDiv = styled.div`
-  border: 1px solid red;
   max-width: 150px;
   height: 150px;
   margin-left: 50px;
@@ -94,7 +89,6 @@ const SavedDiv = styled.div`
 `;
 
 const ButtonDiv = styled.div`
-  border: 1px solid blue;
   max-width: 150px;
   overflow: hidden;
 `;
@@ -109,13 +103,10 @@ const PriceMobile = styled.h4`
 
 const Info3Mobile = styled.div`
 display: flex;
-border: 1px solid green;
 overflow: hidden;
 `;
 
 const SavedDivMobile = styled.div`
-  
-  border: 1px solid blue;
   max-width: 150px;
   height: 150px;
   // margin-left: 50px;
