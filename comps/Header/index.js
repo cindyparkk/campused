@@ -87,7 +87,7 @@ const Profile = styled.img`
     margin-right: 10px;
     margin-left: 10px;
     cursor: pointer;
-    z-index: 10;
+    z-index: 5;
 `;
 
 const FlexEnd = styled.div`
