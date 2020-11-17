@@ -24,30 +24,22 @@ const Image_Box = styled.div`
 
 const Item_Image = styled.img`
         
-width: 100%;
-height: 100%;
-
-
-border: 2px solid #9A9A9A;
-border-radius: 16px;
-
-// box-sizing: border-box;
-// background-size: cover;
-// background-position: center;
-        
-        object-fit:cover;
-        margin:0;
-        padding:0;
-    
-
-
+    width: 100%;
+    height: 100%;
+    border: 2px solid #9A9A9A;
+    border-radius: 16px;
+    filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.26));
+    // box-sizing: border-box;
+    // background-size: cover;
+    // background-position: center;
+    object-fit:cover;
+    margin:0;
+    padding:0;
 `;
 
 const Item_Title = styled.h4`
 
     color:#18191F;
- 
-    
     margin:5px 5px 0px 0px;
     word-wrap: break-word;
 
@@ -61,7 +53,7 @@ const Item_Price = styled.h6`
 
 
 
-const Item = ({text1,text2,imgurl}) => {
+const Item = ({title, price, imgurl, onChange}) => {
 
     return <Container>
         <Image_Box>
@@ -70,10 +62,10 @@ const Item = ({text1,text2,imgurl}) => {
       
 
          <Item_Title>
-             {text1}
+             {title}
          </Item_Title>
          <Item_Price>
-             {text2}
+             {price}
          </Item_Price>
 
     </Container>
@@ -82,10 +74,10 @@ const Item = ({text1,text2,imgurl}) => {
 
 Item.defaultProps = {
    
-    text1:"UBC Dorm Room 12",
-    text2:"$100",
-    imgurl:"/userpost.png"
-
+    title:"UBC Dorm Room 12",
+    price:"$100",
+    imgurl:"/userpost.png",
+    onChange:()=>{}
 }
 
 

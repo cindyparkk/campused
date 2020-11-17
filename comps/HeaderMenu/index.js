@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import Link from 'next/link';
 import Router from 'next/router';
 
 const Main = styled.div`
@@ -75,7 +74,7 @@ const Saved2 = styled.h4`
 function clickLeavein(){
     if(true){
         setTimeout(function (){
-            Router.push("/leave-in");
+            Router.push("/home");
         }, 600)
     }
 }
@@ -86,6 +85,14 @@ function clickFurniture(){
     }
 }
 
+function clickSaved(){
+    if(true){
+        Router.push("/saved");
+    }
+}
+
+
+
 const HeaderMenu = ({fontSize}) =>{
     const [selected, setSelected] = useState(1);
     const [state, setState] = useState(false);
@@ -94,47 +101,51 @@ const HeaderMenu = ({fontSize}) =>{
     
         <Container>
         
-        {process.browser && window.innerWidth > 630 ? <Link href="/leave-in">
+        {process.browser && window.innerWidth > 630 ? 
             <LeaveIn selected={selected === 1} onClick={()=>{
-            setSelected(1);
-        }}>Leave-in's</LeaveIn> 
-        </Link>: null}
+            setSelected(1); 
+            clickLeavein;
+        }}>Leave-in's</LeaveIn> : null}
         
 
         
-        {process.browser && window.innerWidth < 630 ? <Link href="/leave-in">
+        {process.browser && window.innerWidth < 630 ?
             <LeaveIn2 selected={selected === 1} onClick={()=>{
             setSelected(1);
-        }}>Leave-in's</LeaveIn2> 
-        </Link>: null}
+            clickLeavein;
+        }}>Leave-in's</LeaveIn2>: null}
         
 
         
-        {process.browser && window.innerWidth > 630 ? <Link href="/furniture-market">
+        {process.browser && window.innerWidth > 630 ? 
                 <Furniture selected2={selected === 2} onClick={()=>{
                 setSelected(2);
-            }}>Furniture</Furniture>
-            </Link>: null}
+                clickFurniture;
+            }}>Furniture</Furniture>: null}
                 
 
        
-        {process.browser && window.innerWidth < 630 ? <Link href="/furniture-market">
+        {process.browser && window.innerWidth < 630 ? 
                 <Furniture2 selected2={selected === 2} onClick={()=>{
                 setSelected(2);
-            }}>Furniture</Furniture2>
-            </Link>: null}
+                clickFurniture;
+            }}>Furniture</Furniture2>: null}
          
 
         
-        {process.browser && window.innerWidth > 630 ? <Saved selected3={selected === 3} onClick={()=>{
+        {process.browser && window.innerWidth > 630 ?
+        <Saved selected3={selected === 3} onClick={()=>{
             setSelected(3);
-        }}>Saved</Saved>: null}
+            clickSaved;
+        }}>Saved</Saved> : null}
 
         
 
         
-        {process.browser && window.innerWidth < 630 ? <Saved2 selected3={selected === 3} onClick={()=>{
+        {process.browser && window.innerWidth < 630 ? 
+       <Saved2 selected3={selected === 3} onClick={()=>{
             setSelected(3);
+            clickSaved;
         }}>Saved</Saved2>: null}
 
        

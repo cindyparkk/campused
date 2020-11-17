@@ -1,48 +1,57 @@
 import React, {useState} from 'react';
-
 import Header from '../../comps/Header';
 import HeaderMenu from '../../comps/HeaderMenu';
 import Footer from '../../comps/Footer';
-import BigCategory from '../../comps/Category';
+import Category from '../../comps/Category';
 import Post from '../../comps/Post';
-
+import Button from '../../comps/Button';
 import FilterOpen from '../../comps/FilterOpen';
+
+import Router from 'next/router';
 
 import axios from 'axios';
 
-export default function Furniture() {
+function createAListing() {
+  console.log("clicked");
+    Router.push("/create-a-listing");
+}
 
-  const Handle = async ()=>{
+export default function Home() {
+
+  const [post, setPost] = useState("");
+
+  const HandlePost = async ()=>{
 
     console.log("clicked");
 
-    var resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api");
+      console.log("");
+      var resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/getPost");
 
-    console.log(resp.data);
+      // console.log("Failed");
+
+     console.log(resp.data);
+    // Router.push("/home");
   }
-  
-    return   <div className="page">
-     <Header />
-     <HeaderMenu/>
-    <br></br>
-    <div className="category">
-    <BigCategory />
-    </div>
- 
-    <div className="itempost">
-    <Post />
-    </div>
-    
-    <div className="icons">
-    <FilterOpen />
-    </div>
 
-     <div className="footer">
-          <Footer />
+  return  <div className="page">
+       <Header />
+      <HeaderMenu />
+      <div className="page_home">
+          <div className="page_left">
+            <div>
+              <Category />
+              {/* <Button onClick={HandlePost} /> */}
+            </div>
+            <FilterOpen />
+            <Button text="+ Add a Listing" color="#FFF" bgcolor="#3DA5D9" fsize="26px" onClick={createAListing}/>
+
+          </div>
+          <div className="page_right">
+              <Post />
+          </div>
       </div>
-  
+      <div className="footer">
+        <Footer />
+      </div>
     </div>
-   
-    
-  }
-  
+}

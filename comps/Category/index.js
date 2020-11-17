@@ -12,6 +12,7 @@ font-weight:bold;
 font-size:24px;
 display:inline-flex;
 flex-direction:column;
+margin-bottom:5px;
 `;
 
 const DropDownMenu = styled.div`
@@ -36,6 +37,7 @@ const Arrow = styled.img`
     max-width: 29px;
     height: auto;
     transform: ${props=>props.expanded ? "rotate(180deg)" : "none"};
+    transition: 0.3s;
 `;
 
 const Expand = styled.div`

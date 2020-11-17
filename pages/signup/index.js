@@ -19,6 +19,7 @@ export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+<<<<<<< HEAD
   const [error, setError] = useState("");
   const HandleSignup = async (e)=>{
     // Router.back();
@@ -42,6 +43,39 @@ export default function Signup() {
     
 
     
+=======
+  // const [handle, setHandle] = useState("");
+
+  const HandleSignup = async (e)=>{
+    // Router.back();
+
+    console.log("clicked", e, name, password, email, confirmPassword);
+
+    /*
+      if confirm !== pass 
+        setError("password sucks")
+        return false
+    */
+   try{
+     console.log("");
+      await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/signup", {
+      email:email,
+      password:password,
+      confirmPassword: confirmPassword,
+      name: name
+    });
+   } catch {
+     console.log("Failed");
+   }
+
+    Router.push("/home")
+
+    // console.log(resp.data, resp.data.token);
+    // if(resp.data.token){
+    //   //store the token in sessionStorage
+    //   //route to the next page
+    // }
+>>>>>>> a2b921a23de5d27abaa48dbba060518ccb9ca437
   }
   return  <div className="page">
       <img className="home_logo"src="/logo_colour.png"/>
@@ -53,8 +87,14 @@ export default function Signup() {
         <h6>Back to Log in</h6>
       </div>
       <h3 className="home_title">Sign up</h3>
+<<<<<<< HEAD
       
       
+=======
+      <InputSignup title="Full Name" placeholder="ex: John Doe" onChange={(e)=>{
+        setName(e.target.value);
+      }}/>
+>>>>>>> a2b921a23de5d27abaa48dbba060518ccb9ca437
       <InputSignup title="Email Address" placeholder="ex: johndoe@gmail.com" onChange={(e)=>{
         setEmail(e.target.value);
       }}/>
@@ -62,9 +102,14 @@ export default function Signup() {
         setPassword(e.target.value);
       }}/>
       <InputSignup title="" placeholder="Confirm Password" type="password" margin="-35px" onChange={(e)=>{
+<<<<<<< HEAD
         setConfirmPassword(e.target.value)}} />
       <InputSignup title="FullName" placeholder="ex: Doe"
       onChange={(e)=>{setName(e.target.value)}}/>
+=======
+        setConfirmPassword(e.target.value);
+        }}/>
+>>>>>>> a2b921a23de5d27abaa48dbba060518ccb9ca437
       {/* <InputSignup title="Name of university/college" placeholder="ex: University of British Columbia"/> */}
       <Button text="Create Account" bgcolor="#73BFB8" onClick={HandleSignup}/>
     </div>

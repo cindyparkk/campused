@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import ExpandedMenu from '../ExpandedMenu';
+
 
 const Main = styled.div`
     display: flex;
@@ -56,7 +56,7 @@ line-height: 1;
 const Price = styled.h3`
 `;
 
-const ProfilePost = ({title, description, price, image}) =>{
+const SavedItem = ({title, description, price, image}) =>{
     return <Main>
 
     <Container>
@@ -71,13 +71,12 @@ const ProfilePost = ({title, description, price, image}) =>{
                 <Price>${price}</Price>
             </Text>
 
-    </Container>
-    <ExpandedMenu />
+        </Container>
    
    </Main>
    }
 
-   ProfilePost.defaultProps = {
+  SavedItem.defaultProps = {
        title: 'Default Title',
        description: 'Description goes here...',
        price: '00',
@@ -86,4 +85,4 @@ const ProfilePost = ({title, description, price, image}) =>{
    
    
    
-   export default ProfilePost;
+   export default SavedItem;

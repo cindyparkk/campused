@@ -27,66 +27,72 @@ const DividerCont = styled.div`
     margin-bottom: 20px;
 `;
 
-const SubCont = styled.div`
-    width: 100%;
-    margin: 0;
-`;
+// const SubCont = styled.div`
+//     width: 100%;
+//     margin: 0;
+// `;
 
-const Container = styled.div`
-    width: 50%;
-    // border-bottom: 5px solid #EA7317;
-`;
+// const Container = styled.div`
+//     width: 50%;
+//     // border-bottom: 5px solid #EA7317;
+// `;
 
-const Listings = styled.h2`
-    cursor: pointer;
-    transition: 0.25s;
-    :hover{
-        color: #EA7317;
-    }
-    color: ${props=>props.selected ? '#EA7317' : 'black'};
-`;
+// const Listings = styled.h2`
+//     cursor: pointer;
+//     transition: 0.25s;
+//     :hover{
+//         color: #EA7317;
+//     }
+//     color: ${props=>props.selected ? '#EA7317' : 'black'};
+// `;
 
-const Wishlist = styled.h2`
-    cursor: pointer;
-    transition: 0.25s;
-    :hover{
-        color: #EA7317;
-    }
-    color: ${props=>props.selected ? '#EA7317' : 'black'};
-`;
+// const Wishlist = styled.h2`
+//     cursor: pointer;
+//     transition: 0.25s;
+//     :hover{
+//         color: #EA7317;
+//     }
+//     color: ${props=>props.selected ? '#EA7317' : 'black'};
+// `;
 
-const Text = styled.div`
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-`;
+// const Text = styled.div`
+//     display: flex;
+//     justify-content: space-around;
+//     width: 100%;
+// `;
 
-const BorderContainer = styled.div`
-    width: 100%;
-    display: flex;
-    transition: transform 0.5s;
-    justify-content: ${props=>props.slider ? 'flex-end' : 'flex-start'};
-`;
+// const BorderContainer = styled.div`
+//     width: 100%;
+//     display: flex;
+//     transition: transform 0.5s;
+//     justify-content: ${props=>props.slider ? 'flex-end' : 'flex-start'};
+// `;
 
-const Box = styled.div`
-    background-color: ${props=>props.bgcolor ? '#F89C55' : "#FEC601"};
-    width: 95%;
-    border: 2px solid black;
-    margin: 20px;
-    padding: 30px;
-    box-sizing: border-box;
-    border-radius: 16px;
-    display: inline-flex;
-    flex-direction: column;
-`
+// const Box = styled.div`
+//     background-color: ${props=>props.bgcolor ? '#F89C55' : "#FEC601"};
+//     width: 95%;
+//     border: 2px solid black;
+//     margin: 20px;
+//     padding: 30px;
+//     box-sizing: border-box;
+//     border-radius: 16px;
+//     display: inline-flex;
+//     flex-direction: column;
+// `
 const Box2 = styled.div`
     background-color: #FEC601;
+  
+    display: flex;
+    width: 100%;
+    // justify-content: center;
+    flex-direction: column;
+    
     width: 95%;
     border: 2px solid black;
     margin: 20px;
     padding: 30px;
     box-sizing: border-box;
-    align-items: center;
+    // align-items: center;
     border-radius: 16px;
     display: inline-flex;
     // justify-content: center;
@@ -95,7 +101,7 @@ const Box2 = styled.div`
 const BoxContent = styled.div`
     display: flex;
     align-items: center;
-    width: 85%;
+    width:100%;
     justify-content: center;
 `
 
@@ -145,11 +151,10 @@ const ProfileSlider = ({header}) =>{
    
     {/* <Box selected={selected === 1} slider={slider === true} bgcolor={bgcolor === true}> */}
     <Box2>
-        <BoxContent>
+      <BoxContent>
             <ProfilePost />
-            <ExpandedMenu />
         </BoxContent>
-        </Box2>
+    </Box2>
     {/* </Box> */}
     </Main> 
     

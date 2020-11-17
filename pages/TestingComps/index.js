@@ -10,6 +10,7 @@ import Saved from '../../comps/Saved';
 import ProductDescription from '../../comps/ProductDescription';
 import Profile from '../../comps/Profile';
 import FilterOpen from '../../comps/FilterOpen';
+import DropDown from '../../comps/DropDown';
 
 import Item from '../../comps/Item';
 import Post from '../../comps/Post';
@@ -29,13 +30,15 @@ export default function Home() {
       <Saved />
       <ProductDescription />
       <Profile /> */}
-      {/* <FilterOpen /> */}
+      <FilterOpen />
 
-      <div>
+      {/* <div>
         <Item />
         <Post />
-      </div>
+      </div> */}
       <Rating></Rating>
+
+      <DropDown />
     </div>
   
 }
