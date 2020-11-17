@@ -32,6 +32,7 @@ export default function Home() {
   }
   fetchData();
  }, []);
+//  [post] will update every time there is an update in post
 
  console.log(post);
   
