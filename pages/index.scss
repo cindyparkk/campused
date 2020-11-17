@@ -238,7 +238,6 @@ textarea {
 } 
 .addlisting{
     @include flexIt();
-    border: 2px solid blue;
 }
 .mobileadd{
     display: flex;
