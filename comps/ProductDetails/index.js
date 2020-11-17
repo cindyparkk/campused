@@ -8,7 +8,7 @@ justify-content: center;
 flex-direction: column;
 
 width:100%;
-margin-left:70px;
+margin-left:40px;
 `;
 
 const Title = styled.h6`

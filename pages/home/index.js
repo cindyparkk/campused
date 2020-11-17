@@ -6,6 +6,7 @@ import Category from '../../comps/Category';
 import Post from '../../comps/Post';
 import Button from '../../comps/Button';
 import FilterOpen from '../../comps/FilterOpen';
+import CircleButton from '../../comps/CircleButton';
 
 import Router from 'next/router';
 
@@ -51,9 +52,14 @@ export default function Home() {
               {/* <Button onClick={HandlePost} /> */}
 >>>>>>> a2b921a23de5d27abaa48dbba060518ccb9ca437
             </div>
-            <FilterOpen />
-            <Button text="+ Add a Listing" color="#FFF" bgcolor="#3DA5D9" fsize="26px" onClick={createAListing}/>
+            
 
+            {process.browser && window.innerWidth > 940 ? <div className="addlisting">
+            <Button center="center" text="+ Add a Listing" color="#FFF" bgcolor="#3DA5D9" fsize="26px" onClick={createAListing}/>
+            </div>:null}
+
+            {process.browser && window.innerWidth < 940 ? <div className='mobilecontainer'> <div className='mobileadd'>
+            <FilterOpen /><CircleButton icon="/addblack.svg" iconwidth="40px" width="50px" height="50px" onClick={createAListing} /></div> </div> :null}
           </div>
           <div className="page_right">
               <Post />

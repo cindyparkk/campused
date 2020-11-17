@@ -9,7 +9,7 @@ export default function EditListing() {
       <Header />
       <HeaderMenu />
       <div className="page_contents">
-        <CreateListing title="Edit Listing"/>
+        <CreateListing pageTitle="Edit Listing"/>
       </div>
       <div className="footer">
         <Footer />

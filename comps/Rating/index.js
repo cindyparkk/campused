@@ -5,8 +5,8 @@ import styled from 'styled-components';
 const Cont = styled.div`
   display:flex;
   img {
-    width:40px;
-    height:40px;
+    width: ${props=>props.width ? props.width : "40px"};
+    height: ${props=>props.height ? props.height : "40px"};
     margin-right: 5px;
     cursor: pointer;
   }
@@ -19,7 +19,7 @@ const filled = "/star.png";
 
 
 
-const Rating = ({numstars, onClick}) => {
+const Rating = ({numstars, onClick, width, height}) => {
 
   const [stars, setStars] = useState(0);
 
@@ -27,7 +27,7 @@ const Rating = ({numstars, onClick}) => {
     setStars(numstars);
   }, [numstars]);
 
-  return <Cont>
+  return <Cont width={width} height={height}>
     <div onClick={()=>{
       setStars(1);
       onClick(1);
@@ -62,7 +62,9 @@ const Rating = ({numstars, onClick}) => {
 }
 
 Rating.defaultProps = {
-  onClick:()=>{}
+  onClick:()=>{},
+  width: "40px",
+  height: "40px"
 }
 
 

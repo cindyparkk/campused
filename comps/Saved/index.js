@@ -5,6 +5,7 @@ import CircleButton from '../CircleButton';
 
 const Main = styled.div`
    display: inline-block;
+   justify-content: flex-end;
 `;
 
 const Icon = styled.img`
@@ -41,7 +42,7 @@ const AddedContainer = styled.div`
     max-width: 200px;
     position: relative;
     transition: opacity 3s;
-    display: ${props=>props.message ? "flex" : "none"};
+    visibility: ${props=>props.message ? "visible" : "hidden"};
     opacity: ${props=>props.fade ? "0" : "1"};
 `;
 

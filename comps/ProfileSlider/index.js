@@ -89,8 +89,8 @@ const Box2 = styled.div`
     
     width: 95%;
     border: 2px solid black;
-    margin: 20px;
-    padding: 30px;
+    margin: 3%;
+    padding: 2%;
     box-sizing: border-box;
     // align-items: center;
     border-radius: 16px;

@@ -34,11 +34,12 @@ export default function Start() {
        email:email,
        password:password
      });
+     console.log(resp.data);
+     Router.push("/home");
     } catch {
       console.log("Failed");
     }
-     console.log(resp.data);
-    Router.push("/home");
+
   }
 
   return  <div className="page">

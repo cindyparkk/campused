@@ -164,6 +164,13 @@ body, html {
     width: 100%;
 }
 
+.faqfix{
+    justify-content: flex-start;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
 // create a listing page
 textarea {
     height: 200px;
@@ -218,7 +225,7 @@ textarea {
     flex-direction: row;
 }
 .page_left {
-    @include flexIt();
+    // @include flexIt();
     justify-content: flex-start;
     flex-direction: column;
     flex-grow: 1;
@@ -229,10 +236,36 @@ textarea {
     margin: 20px 10px;
 
 } 
+.addlisting{
+    @include flexIt();
+    border: 2px solid blue;
+}
+.mobileadd{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    z-index: 2;
+    position: absolute;
+    overflow: hidden;
+    width: 90%;
+    right:4%;
+    left: 4%;
+    align-items: baseline;
+}
+.mobilecontainer{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
 // product page
 .product_description {
     width: 100%;
 
+}
+
+#time{
+    width: 20px;
 }
 
 //furniture_maret_app page 
@@ -266,16 +299,25 @@ textarea {
 }
 
 
+
 //main page 
 
 .main_part1 {
     display: flex;
     flex-direction: row;
-    
+    width:100%;
  
+
+  
+
 
     img {
         min-width:279px;
+        @media (max-width: 500px){
+            min-width:150px;
+         
+         }
+    
         height: auto;
 
         border: 3px solid black;
@@ -289,7 +331,7 @@ textarea {
 
     div {
         flex-grow: 1;
-        width: 50%;
+        width: 45%;
         margin: 4%;
     }
 }
@@ -298,11 +340,15 @@ textarea {
 .main_part2 {
     display: flex;
     flex-direction: row;
+    width:100%;
+
 
     div {
         flex-grow: 1;
-        // width: 50%;
+        width: 65%;
         margin: 4%;
+      
+     
     }
 
     img {
@@ -314,6 +360,10 @@ textarea {
         box-sizing: border-box;
         box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.65);
         margin:5%;
+
+        @media (max-width: 500px){
+            min-width:40%;
+         }
     
     }
   

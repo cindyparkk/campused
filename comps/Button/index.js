@@ -2,16 +2,19 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 const Contain = styled.div`
-    margin: 0;
-    display: inline-flex;
-    min-width: 126px;
-`
+    // margin: 0;
+    // display: inline-flex;
+    // min-width: 80px;
+    // width: 100%;
+    display: flex;
+    justify-content: ${props=>props.center ? props.center : "flex-start"};
+`;
 
 const ButtonBox = styled.h6`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 126px;
+    min-width: 80px;
     min-height: 46px;
     background: ${props=>props.bgcolor ? props.bgcolor : "#FEC601"};
     border: 2px solid #000000;
@@ -35,9 +38,9 @@ const ButtonBox = styled.h6`
 //     margin-right: 5px;
 // `
 
-const Button = ({bgcolor, text, fsize, color, onClick}) => {
+const Button = ({bgcolor, text, fsize, color, onClick, center}) => {
     return <Contain>
-        <ButtonBox bgcolor={bgcolor} fsize={fsize} color={color}
+        <ButtonBox bgcolor={bgcolor} fsize={fsize} color={color} center={center}
         onClick={onClick}>
             {/* <Icon src={icon}></Icon> */}
             {text}
@@ -50,6 +53,7 @@ Button.defaultProps = {
     text: "Contact Seller",
     fsize: "17px",
     color: null,
+    center: "flex-start",
     onClick:()=>{}
 }
 

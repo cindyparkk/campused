@@ -2,15 +2,10 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-min-width: 252px;
-
-
-display:inline-flex;
-flex-direction:column;
-
-padding:0px;
-
-
+    min-width: 252px;
+    display:inline-flex;
+    flex-direction:column;
+    padding:0px;
 `;
 
 const DropDownMenu = styled.div`
@@ -58,8 +53,19 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     transition:opacity 0.3s;
     flex-direction: column;
+    justify-content: space-around;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
 
     div{
+        padding: 20px 0px;
+        width: 100%;
+        height: 100%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
         &:hover{
             background-color:#FE9A4C;
         }
@@ -71,13 +77,10 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 0px 0px 14px 14px;
         }
 
-        padding:20px;
-
         // margin:10px;
         // margin:${props=>props.expanded ? "10px" : "0px"};
         cursor:pointer;
-       
-       
+
     
     }
 `;
@@ -86,6 +89,8 @@ const Arrow = styled.img`
     max-width: 22px;
     height: auto;
     padding-right: 10px;
+    transform: ${props=>props.expanded ? "rotate(180deg)" : "none"};
+    transition: 0.3s;
 `;
 
 // const ArrowDiv = styled.div`
@@ -97,14 +102,23 @@ const Arrow = styled.img`
 
 
 
-const SmallCategory =({expand,onCategorySelect,name1,name2,name3,name4})=> {
+const SmallCategory =({expand,onCategorySelect,name1,name2,name3,name4, title, onChange})=> {
 
 
     const [expanded, setExpanded] = useState(false);
+    // const [bed, setBed] = useState(false);
+    // const [category, setCategory] = useState("");
+
+    function onCategorySelect(str){
+        if(str === "bed"){
+            console.log("bed selected")
+        } 
+    }
 
     useEffect(() => {
         setExpanded(expand);
-    },[expand])
+    },[expand]);
+
 
 return <div>
 <Container>
@@ -112,14 +126,12 @@ return <div>
         setExpanded(!expanded);
     }}>
         <DropDownBox>
-            <div>Select a Category</div>
-            <Arrow src="/arrowdown.png" />
-
+            <div>{title}</div>
+            <div><Arrow src="/arrowdown.png" /></div>
         </DropDownBox>
     </DropDownMenu>
 
-    <Expand expanded={expanded}>
-
+    <Expand expanded={expanded} onChange={onChange}>
         <div onClick={()=> {
             onCategorySelect("bed");}}>
            {name1}</div>
@@ -139,13 +151,13 @@ return <div>
 }
     
 SmallCategory.defaultProps = {
-
-expand:false,
-name1:"Bedroom",
-name2:"Kitchen",
-name3:"Bathroom",
-name4:"Living room & \n General Furniture"
-
+    expand:false,
+    name1:"Bedroom",
+    name2:"Kitchen",
+    name3:"Bathroom",
+    name4:"Living room & \n General Furniture",
+    title: "Select a Category",
+    onChange:()=>{}
 }
 
 

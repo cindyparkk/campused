@@ -11,7 +11,7 @@ import ProductDetails from '../../comps/ProductDetails';
 import PostSlide from '../../comps/PostSlide';
 
 export default function Product() {
-  return  <div className="page">
+  return  <div>
       <Header />
       <HeaderMenu />
       <div>
@@ -21,7 +21,7 @@ export default function Product() {
       
       </div>
 
-     <PostSlide />
+     <PostSlide price={"$00"} />
       
       <ProductDetails />
 
@@ -29,7 +29,7 @@ export default function Product() {
         <Divider />
         <ProdictDescription />
       </div>
-      <div className="footer">
+      <div>
         <Footer />
       </div>
     </div>

@@ -8,22 +8,27 @@ import Divider from '../Divider';
 const Contain = styled.div`
 
 
+margin-bottom:5%;
+margin-left:-1%;
 `;
 
 const Container = styled.div`
 
-    margin:50px;
+
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 17px;
               
-    width: 511px;
+    min-width: 511px;
+    @media (max-width: 500px){
+        min-width:300px;
+     }
     height: auto;
     background-color: #F3F3F3;
     border:solid 1px #000000;   
-    padding-left:70px;
-
+    padding:5%;
+    display:flex;
+    flex-direction:column;
     align-items: center;
-
     justify-content: center;
 
 
@@ -36,7 +41,11 @@ const Container = styled.div`
     `;
 
 const Input = styled.div`
-    display:inline;
+    // display:inline;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
 
 `;
 

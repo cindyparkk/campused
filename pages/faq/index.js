@@ -29,7 +29,7 @@ export default function FAQ() {
                     can come back to it later. You can view your wishlist in the hamburger menu or from your profile by clicking 
                     ‘Wishlist’ next to ‘My Listings.’</p>
             </div>
-            <div>
+            <div className='faqfix'>
                 <h6>Q: Are the posts I see selling furniture located at schools all over BC?</h6>
                 <p>No. All listings for furniture are filtered according to your school only. Your school is selected when creating 
                     an account.</p>
