@@ -20,7 +20,7 @@ function createAListing() {
 }
 
 
-export default function Home() {
+export default function Leavein() {
 
   const [post, setPost] = useState([]);
 
