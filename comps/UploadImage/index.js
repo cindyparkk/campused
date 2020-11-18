@@ -20,7 +20,9 @@ const Upload = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 17px;
     border:solid 1px #000000;
-    width:392px;
+    // width:392px;
+    min-width: 200px;
+    max-width: 392px;
     height:156px;
     background-color: #FFF;
 
@@ -52,6 +54,11 @@ const Icon = styled.img`
 
 `;
 
+const Mobile = styled.div`
+    font-size: 14pt;
+    margin-top: 8px;
+`;
+
 const UploadImage =({title,camera}) => {
 
     return <Container>
@@ -61,7 +68,7 @@ const UploadImage =({title,camera}) => {
             <Icon src={camera}/>
             </Camera>
          
-           <p>Upload Photo(s)</p>
+            {process.browser && window.innerWidth > 435 ?<p>Upload Photo(s)</p> : <Mobile>Upload Photo(s)</Mobile>}
         </Upload>
     </Container>
 }
