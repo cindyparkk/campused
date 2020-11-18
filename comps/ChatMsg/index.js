@@ -7,9 +7,10 @@ const Container = styled.div`
     display:flex;
     flex-direciton:row;
     width:100%;
-    justify-content: center;
+    display: flex;
     align-items: center;
-    width: 100%;
+
+
     
     
 
@@ -17,49 +18,66 @@ const Container = styled.div`
 const Box = styled.div`
 width: 100%;
 display: flex;
+margin:20px;
 
-justify-content: space-around;
-flex-flow: row wrap;
-align-items: stretch;
+
+
+
 
 `;
 const UserImage = styled.img`
-flex-grow:1;
+
 border-radius: 50%;
 
-min-width: 50px;
-@media (max-width: 500px){
-    min-width: 50px;
+max-width: 100px;
+@media (max-width: 375px){
+    max-width: 50px;
+    height:50px;
 }
-min-height:50px;
-margin-right: 10px;
-margin-left: 10px;
+height:100px;
+
+margin:20px;
 cursor: pointer;
-position:absolute;
+
+
+
 `;
 
 const Message = styled.div`
-flex-grow:3;
+
+margin-top:5%;
+margin-left:3%;
+
+
+
+
+
 `;
 
 const User  = styled.h6`
+
+margin:0;
+color:#3DA5D9;
 
 `;
 
 const User_text = styled.p`
 
+
+@media (max-width: 375px){
+   margin:1%;
+}
 `;
 
 const ChatMsg =({imgurl,name,message}) => {
     return <Container>
                 <Box>
+        
              <UserImage src={imgurl}/ >
-
             <Message>
                 <User> {name} </User>
                 <User_text>{message}</User_text>
             </Message>
-
             </Box>
         </Container>
     
