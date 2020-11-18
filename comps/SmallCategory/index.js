@@ -45,8 +45,8 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     // padding:10px;
     height: 100%;
 
-
-    display:${props=>props.expanded ? "inline-flex" : "hidden"};
+    // display: inline-flex;
+    display:${props=>props.expanded ? "inline-flex" : "none"};
     max-height:${props=>props.expanded ? "auto" : "0px"};
     font-size:${props=>props.expanded ? "24px" : "0px"};
     opacity:${props=>props.expanded ? 1 : 0};
@@ -57,32 +57,32 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     box-sizing: border-box;
     height: 100%;
     width: 100%;
+    z-index: 10;
+`;
 
-    div{
-        padding: 20px 0px;
-        width: 100%;
-        height: 100%;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
+const ExpandItem = styled.div`
+    z-index: 0;
+    padding: 20px 0px;
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 
-        &:hover{
-            background-color:#FE9A4C;
-        }
-        
-        &:first-child:hover {
-            border-radius: 14px 14px 0px 0px;
-        }
-        &:nth-child(4):hover{
-            border-radius: 0px 0px 14px 14px;
-        }
-
-        // margin:10px;
-        // margin:${props=>props.expanded ? "10px" : "0px"};
-        cursor:pointer;
-
-    
+    &:hover{
+        background-color:#FE9A4C;
     }
+
+    &:first-child:hover {
+        border-radius: 14px 14px 0px 0px;
+    }
+    &:nth-child(4):hover{
+        border-radius: 0px 0px 14px 14px;
+    }
+
+    // margin:10px;
+    // margin:${props=>props.expanded ? "10px" : "0px"};
+    cursor:pointer;
 `;
 
 const Arrow = styled.img`
@@ -132,18 +132,18 @@ return <div>
     </DropDownMenu>
 
     <Expand expanded={expanded} onChange={onChange}>
-        <div onClick={()=> {
+        <ExpandItem onClick={()=> {
             onCategorySelect("bed");}}>
-           {name1}</div>
-         <div onClick={()=> {
+           {name1}</ExpandItem>
+         <ExpandItem onClick={()=> {
             onCategorySelect("kit");}}>
-            {name2}</div>
-         <div onClick={()=> {
+            {name2}</ExpandItem>
+         <ExpandItem onClick={()=> {
             onCategorySelect("bath");}}>
-            {name3}</div>
-        <div onClick={()=> {
+            {name3}</ExpandItem>
+        <ExpandItem onClick={()=> {
             onCategorySelect("liv");}}>
-           {name4}</div>
+           {name4}</ExpandItem>
     </Expand>
     </Container>
     </div>
