@@ -237,8 +237,14 @@ textarea {
 
 } 
 .addlisting{
+    flex-direction: column;
     @include flexIt();
 }
+.filterdesktop{
+    margin-top: 20px;
+}
+
+//leave-in/furniture market
 .mobileadd{
     display: flex;
     justify-content: space-between;
