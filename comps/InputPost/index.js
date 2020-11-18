@@ -22,6 +22,7 @@ const Input = styled.input`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 17px;
     padding-left: 20px;
+    text-transform: capitalize;
 `
 
 const InputPost = ({title, placeholder, width, type, onChange}) => {

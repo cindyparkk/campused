@@ -40,11 +40,10 @@ const Item_Image = styled.img`
 `;
 
 const Item_Title = styled.h4`
-
     color:#18191F;
     margin:5px 5px 0px 0px;
     word-wrap: break-word;
-
+    text-transform: initial;
 `;
 
 const Item_Price = styled.h6`

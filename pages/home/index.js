@@ -44,11 +44,8 @@ export default function Home() {
       <div className="page_home">
           <div className="page_left">
             <div>
-            
               <Category />
             </div>
-           
-
             {process.browser && window.innerWidth > 940 ? <div className="addlisting">
             <Button center="center" text="+ Add a Listing" color="#FFF" bgcolor="#3DA5D9" fsize="26px" onClick={createAListing}/>
             </div>:null}
@@ -57,14 +54,13 @@ export default function Home() {
             <FilterOpen /><CircleButton icon="/addblack.svg" iconwidth="40px" width="50px" height="50px" onClick={createAListing} /></div> </div> :null}
           </div>
           <div className="page_right">
-
-          
           <div className="Fullstack">
-              <h1>test for api</h1>
-              <div className="post">{post.map(info => (
+              <div className="post">
+                <div className="post_list">
+                <h3>Recent Posts</h3>
+                {post.map(info => (
                <div>
                 {/* <Post imgurl={info.photoUrl} price={info.price} title={info.title}/> */}
-
                 <Item imgurl={info.photoUrl} price={info.price} title={info.title}/>
 
                 {/* <div>{info.building}</div>
@@ -74,6 +70,7 @@ export default function Home() {
                 <div>{info.dormRoom}</div> */}
                 </div>
               ))}</div>
+              </div>
               
             </div>
           </div>
