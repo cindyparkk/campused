@@ -74,7 +74,7 @@ const Saved2 = styled.h4`
 function clickLeavein(){
     if(true){
         setTimeout(function (){
-            Router.push("/home");
+            Router.push("/leave-in");
         }, 600)
     }
 }
@@ -104,7 +104,7 @@ const HeaderMenu = ({fontSize}) =>{
         {process.browser && window.innerWidth > 630 ? 
             <LeaveIn selected={selected === 1} onClick={()=>{
             setSelected(1); 
-            clickLeavein;
+            clickLeavein();
         }}>Leave-in's</LeaveIn> : null}
         
 
@@ -112,7 +112,7 @@ const HeaderMenu = ({fontSize}) =>{
         {process.browser && window.innerWidth < 630 ?
             <LeaveIn2 selected={selected === 1} onClick={()=>{
             setSelected(1);
-            clickLeavein;
+            clickLeavein();
         }}>Leave-in's</LeaveIn2>: null}
         
 
@@ -120,7 +120,7 @@ const HeaderMenu = ({fontSize}) =>{
         {process.browser && window.innerWidth > 630 ? 
                 <Furniture selected2={selected === 2} onClick={()=>{
                 setSelected(2);
-                clickFurniture;
+                clickFurniture();
             }}>Furniture</Furniture>: null}
                 
 
@@ -128,7 +128,7 @@ const HeaderMenu = ({fontSize}) =>{
         {process.browser && window.innerWidth < 630 ? 
                 <Furniture2 selected2={selected === 2} onClick={()=>{
                 setSelected(2);
-                clickFurniture;
+                clickFurniture();
             }}>Furniture</Furniture2>: null}
          
 
@@ -136,7 +136,7 @@ const HeaderMenu = ({fontSize}) =>{
         {process.browser && window.innerWidth > 630 ?
         <Saved selected3={selected === 3} onClick={()=>{
             setSelected(3);
-            clickSaved;
+            clickSaved();
         }}>Saved</Saved> : null}
 
         
@@ -145,7 +145,7 @@ const HeaderMenu = ({fontSize}) =>{
         {process.browser && window.innerWidth < 630 ? 
        <Saved2 selected3={selected === 3} onClick={()=>{
             setSelected(3);
-            clickSaved;
+            clickSaved();
         }}>Saved</Saved2>: null}
 
        
