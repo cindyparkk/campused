@@ -20,7 +20,7 @@ function clicktofurniture() {
 }
 
 
-export default function MainPage() {
+export default function Home() {
     return  <div className="page">
         <Header />
         <HeaderMenu />
