@@ -6,6 +6,7 @@ import Category from '../../comps/Category';
 import Post from '../../comps/Post';
 import Button from '../../comps/Button';
 import FilterOpen from '../../comps/FilterOpen';
+import CircleButton from '../../comps/CircleButton';
 
 import Router from 'next/router';
 
