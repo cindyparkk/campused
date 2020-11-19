@@ -38,7 +38,7 @@ export default function Home() {
        <Header />
       <HeaderMenu />
       <div className="page_home">
-          <div className="page_left">
+          <div className="col-4 menu">
             <div>
               <Category />
               {/* <Button onClick={HandlePost} /> */}
@@ -53,7 +53,7 @@ export default function Home() {
 
 
           </div>
-          <div className="page_right">
+          <div className="col-3 right">
               <Post />
           </div>
       </div>

@@ -218,50 +218,6 @@ textarea {
     margin: 10px 0 -30px 0;
 }
 
-// home page
-.page_home {
-    width:100%;
-    display: inline-flex;
-    flex-direction: row;
-}
-.page_left {
-    // @include flexIt();
-    justify-content: flex-start;
-    flex-direction: column;
-    flex-grow: 1;
-    margin: 20px 10px;
-}
-.page_right {
-    flex-grow: 3;
-    margin: 20px 10px;
-
-} 
-.addlisting{
-    flex-direction: column;
-    @include flexIt();
-}
-.filterdesktop{
-    margin-top: 20px;
-}
-
-//leave-in/furniture market
-.mobileadd{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    z-index: 2;
-    position: absolute;
-    overflow: hidden;
-    width: 90%;
-    right:4%;
-    left: 4%;
-    align-items: baseline;
-}
-.mobilecontainer{
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-}
 
 // product page
 .product_description {
@@ -380,7 +336,7 @@ textarea {
         
         flex-grow: 1;
         width: 30%;
-       margin-left: 20%;
+       margin-left: 24%;
 
         @media (max-width: 375px){
         width: 25%;
@@ -399,21 +355,22 @@ textarea {
     img {
         max-width:279px;
         max-height:278px;
-        margin-top:-1%;
+    
+
         @media (max-width: 375px){
             max-width:170px;
             max-height:170px;
             margin-top:9%;
          
          }
-    
+
         
 
         border: 3px solid black;
         box-sizing: border-box;
         border-radius: 22px;
         box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.65);
-        margin-top:5%;
+        margin-top:3%;
 
 
     
@@ -615,4 +572,81 @@ textarea {
 .checkbox {
     width: 28px;
     height: 28px;
+}
+
+
+
+
+
+// home page
+
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+  }
+  
+
+  
+.page_home {
+    width:100%;
+    // display: inline-flex;
+    // flex-direction: row;
+}
+
+
+ 
+
+// .page_left {
+//     // @include flexIt();
+//     justify-content: flex-start;
+//     flex-direction: column;
+//     flex-grow: 1;
+//     margin: 20px 10px;
+// }
+
+
+.col-3 {width: 55%;
+margin-left:5%;
+
+@media only screen and (max-width: 375px) {
+    /* For mobile phones: */
+    width: 85%;
+      margin-left:4%;
+    margin-bottom: 2%;
+    }
+}
+
+
+
+.addlisting{
+    flex-direction: column;
+    @include flexIt();
+}
+.filterdesktop{
+    margin-top: 20px;
+}
+
+
+
+
+
+
+//leave-in/furniture market
+.mobileadd{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    z-index: 2;
+    position: absolute;
+    overflow: hidden;
+    width: 90%;
+    right:4%;
+    left: 4%;
+    align-items: baseline;
+}
+.mobilecontainer{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
 }
