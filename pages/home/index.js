@@ -24,9 +24,12 @@ export default function Home() {
     return  <div className="page">
         <Header />
         <HeaderMenu />
-       <h2 text-align="left">Welcome to campused!</h2>
+        <div className="home_header">
+        <h2>Welcome to campused!</h2>
+        </div>
+      
 
-        <div className="main_part1">
+         <div className="main_part1">
           <img src="/userpost4.png"></img>
           <div>
           <p>Get your furniture without having to move a single piece! <br/>Student furniture can be left in the campus dorm for the next person to use.</p>
