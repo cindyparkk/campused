@@ -42,7 +42,7 @@ export default function Leavein() {
        <Header />
       <HeaderMenu />
       <div className="page_home">
-          <div className="page_left">
+      <div className="col-4 menu">
             <div>
               <Category />
             </div>
@@ -53,7 +53,9 @@ export default function Leavein() {
             {process.browser && window.innerWidth < 940 ? <div className='mobilecontainer'> <div className='mobileadd'>
             <FilterOpen /><CircleButton icon="/addblack.svg" iconwidth="40px" width="50px" height="50px" onClick={createAListing} /></div> </div> :null}
           </div>
-          <div className="page_right">
+
+
+       <div className="col-3 right">
           <div className="Fullstack">
               <div className="post">
                 <div className="post_list">

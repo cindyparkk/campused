@@ -218,50 +218,6 @@ textarea {
     margin: 10px 0 -30px 0;
 }
 
-// home page
-.page_home {
-    width:100%;
-    display: inline-flex;
-    flex-direction: row;
-}
-.page_left {
-    // @include flexIt();
-    justify-content: flex-start;
-    flex-direction: column;
-    flex-grow: 1;
-    margin: 20px 10px;
-}
-.page_right {
-    flex-grow: 3;
-    margin: 20px 10px;
-
-} 
-.addlisting{
-    flex-direction: column;
-    @include flexIt();
-}
-.filterdesktop{
-    margin-top: 20px;
-}
-
-//leave-in/furniture market
-.mobileadd{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    z-index: 2;
-    position: absolute;
-    overflow: hidden;
-    width: 90%;
-    right:4%;
-    left: 4%;
-    align-items: baseline;
-}
-.mobilecontainer{
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-}
 
 // product page
 .product_description {
@@ -305,35 +261,58 @@ textarea {
 
 
 
-//main page 
-
+//home page 
+.home_header {
+    text-align:  center;
+    margin:4%;
+}
 .main_part1 {
     display: flex;
     flex-direction: row;
     width:100%;
+    justify-content: center;
+    margin-left:38%;
+
+    @media (max-width: 375px) {
+
+        margin-left:10%;
+    }
 
     img {
-        min-width:279px;
-        @media (max-width: 500px){
-            min-width:150px;
+        max-width:279px;
+        max-height:278px;
+        @media (max-width: 375px){
+            max-width:170px;
+            max-height:170px;
+            margin-top:9%;
          
          }
     
-        height: auto;
+        
 
         border: 3px solid black;
         box-sizing: border-box;
         border-radius: 22px;
         box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.65);
-        margin:5%;
+        margin-top:5%;
 
         
     }
 
     div {
         flex-grow: 1;
-        width: 45%;
-        margin: 4%;
+        width: 30%;
+        margin: 3%;
+
+        p {
+            margin-right:4%;
+            @media (max-width: 375px){
+                margin-right:10%;
+                margin-bottom:-15px;
+            }
+        }
+        
+       
     }
 }
 
@@ -342,29 +321,58 @@ textarea {
     display: flex;
     flex-direction: row;
     width:100%;
+    justify-content: center;
+    margin-right:38%;
+    margin-top:5%;
+    margin-bottom:5%;
 
+
+    @media (max-width: 375px){
+            margin-top:-20px;
+            margin-right:3%;
+    }
 
     div {
+        
         flex-grow: 1;
-        width: 65%;
-        margin: 4%;
-      
-     
+        width: 30%;
+       margin-left: 24%;
+
+        @media (max-width: 375px){
+        width: 25%;
+        margin: 3%;
+        }
+
+        p {
+            margin-left:20%;
+            @media (max-width: 375px){
+                margin-left:10%;
+                margin-bottom:-15px;
+            }
+        }
     }
 
     img {
-        min-width:279px;
-        height: auto;
+        max-width:279px;
+        max-height:278px;
+    
+
+        @media (max-width: 375px){
+            max-width:170px;
+            max-height:170px;
+            margin-top:9%;
+         
+         }
+
+        
 
         border: 3px solid black;
-        border-radius: 22px;
         box-sizing: border-box;
+        border-radius: 22px;
         box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.65);
-        margin:5%;
+        margin-top:3%;
 
-        @media (max-width: 500px){
-            min-width:40%;
-         }
+
     
     }
   
@@ -564,4 +572,81 @@ textarea {
 .checkbox {
     width: 28px;
     height: 28px;
+}
+
+
+
+
+
+// home page
+
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+  }
+  
+
+  
+.page_home {
+    width:100%;
+    // display: inline-flex;
+    // flex-direction: row;
+}
+
+
+ 
+
+// .page_left {
+//     // @include flexIt();
+//     justify-content: flex-start;
+//     flex-direction: column;
+//     flex-grow: 1;
+//     margin: 20px 10px;
+// }
+
+
+.col-3 {width: 55%;
+margin-left:5%;
+
+@media only screen and (max-width: 375px) {
+    /* For mobile phones: */
+    width: 85%;
+      margin-left:4%;
+    margin-bottom: 2%;
+    }
+}
+
+
+
+.addlisting{
+    flex-direction: column;
+    @include flexIt();
+}
+.filterdesktop{
+    margin-top: 20px;
+}
+
+
+
+
+
+
+//leave-in/furniture market
+.mobileadd{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    z-index: 2;
+    position: absolute;
+    overflow: hidden;
+    width: 90%;
+    right:4%;
+    left: 4%;
+    align-items: baseline;
+}
+.mobilecontainer{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
 }
