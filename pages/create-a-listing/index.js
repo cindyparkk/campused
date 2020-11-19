@@ -72,10 +72,10 @@ export default function CreateAListing() {
         <div className="listing_contents">
 
           <h1>Create a Listing</h1>
-          <InputPost onChange={(e)=>{
+          <InputPost width="90%" onChange={(e)=>{
             setTitle(e.target.value);
           }}/>
-          <InputPost title="Price" width="200px" placeholder="$" onChange={(e)=>{
+          <InputPost title="Price" width="150px" placeholder="$" onChange={(e)=>{
             setPrice(e.target.value);
           }}/>
 

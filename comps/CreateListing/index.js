@@ -13,6 +13,7 @@ const Main = styled.div`
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
     width: 100%;
 `;
 
@@ -20,18 +21,19 @@ const Container = styled.div`
     background-color: #F2F2F2;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 13px;
-    width: 100%;
     height: 100%;
+    width: 100%;
     margin: 17px;
     padding: 40px;
     display: inline-flex;
     flex-direction: column;
+    overflow: hidden;
 `;
 
 const Content = styled.div`
     display: inline-flex;
     flex-direction: column;
-    width: 80%;
+    // width: 80%;
 `
 const Box = styled.div`
     display: inline-flex;

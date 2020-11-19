@@ -237,8 +237,14 @@ textarea {
 
 } 
 .addlisting{
+    flex-direction: column;
     @include flexIt();
 }
+.filterdesktop{
+    margin-top: 20px;
+}
+
+//leave-in/furniture market
 .mobileadd{
     display: flex;
     justify-content: space-between;
@@ -513,6 +519,7 @@ textarea {
     justify-content: center;
     align-items: center;
     width: 100%;
+    overflow: hidden;
 }
 
 .listing_contents {
@@ -525,6 +532,7 @@ textarea {
     padding: 40px;
     display: inline-flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .listing_box {
