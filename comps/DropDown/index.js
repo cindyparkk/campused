@@ -19,7 +19,8 @@ const DropDownMenu = styled.div`
     border-radius: 16px;
     padding:5px 10px;
     max-height: 71px;
-    min-width: 350px;
+    // min-width: 350px;
+    // width: 100%;
 `;
 
 const DropDownBox = styled.div`

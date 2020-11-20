@@ -1,89 +1,52 @@
-import React, {useState, useQuery, useEffect} from 'react';
+import React, {useState} from 'react';
 import Header from '../../comps/Header';
 import HeaderMenu from '../../comps/HeaderMenu';
 import Footer from '../../comps/Footer';
-import Category from '../../comps/Category';
-import Post from '../../comps/Post';
+import Browse_Button from '../../comps/Browse_Button';
 import Button from '../../comps/Button';
-import FilterOpen from '../../comps/FilterOpen';
-import CircleButton from '../../comps/CircleButton';
-
 import Router from 'next/router';
 
-import axios from 'axios';
 
-function createAListing() {
-  console.log("clicked");
-    Router.push("/create-a-listing");
+function clicktoleavein() {
+  if (true) {
+      Router.push("/home");
+  }
+}
+
+function clicktofurniture() {
+  if (true) {
+      Router.push("/furnitre_market");
+  }
 }
 
 
 export default function Home() {
-
-  const [post, setPost] = useState([]);
-
- useEffect(() => {
-// if []. run once when the row loads, and don't run again
-  async function fetchData() {
-    const request = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/getPost");
-    //console.log(request);
-    setPost(request.data);
-    return request;
-  }
-  fetchData();
- }, []);
-//  [post] will update every time there is an update in post
-
- console.log(post);
-  
-  return  <div className="page">
-       <Header />
-      <HeaderMenu />
-      <div className="page_home">
-          <div className="page_left">
-            <div>
-            
-              <Category />
-            </div>
-           
-
-            {process.browser && window.innerWidth > 940 ? <div className="addlisting">
-            <Button center="center" text="+ Add a Listing" color="#FFF" bgcolor="#3DA5D9" fsize="26px" onClick={createAListing}/>
-            </div>:null}
-
-            {process.browser && window.innerWidth < 940 ? <div className='mobilecontainer'> <div className='mobileadd'>
-            <FilterOpen /><CircleButton icon="/addblack.svg" iconwidth="40px" width="50px" height="50px" onClick={createAListing} /></div> </div> :null}
-          </div>
-          <div className="page_right">
-
-
-
-
-          
-          <div className="Fullstack">
-              <h1>test for api</h1>
-              <div>{post.map(info => (
-               <div> <div>{info.building}</div>
-                <h1>{info.title}</h1>
-                <img src={info.photoUrl} alt="uploadedimg" height="150" width="150" />
-                
-                <div>{info.price}</div>
-                <div>{info.dormRoom}</div>
-                </div>
-              ))}</div>
-              
-            </div>
-
-
-
-              <Post />
-          </div>
-
-
-      </div>
+    return  <div className="page">
+        <Header />
+        <HeaderMenu />
+        <div className="home_header">
+        <h2>Welcome to campused!</h2>
+        </div>
       
-      <div className="footer">
-        <Footer />
+
+         <div className="main_part1">
+          <img src="/userpost4.png"></img>
+          <div>
+          <p>Get your furniture without having to move a single piece! <br/>Student furniture can be left in the campus dorm for the next person to use.</p>
+         <Button text="Check it out" onClick={clicktoleavein}/>
+          </div>
+        </div>
+ 
+        <div className="main_part2">
+        <div>
+        <p>Tired of searching through several websites for the cheapest deals? <br/>Find the furniture you’re looking for all under $100!</p>       
+       <Browse_Button text="Go to Furniture Market"  bgcolor="#73BFB8" onClick={clicktofurniture}/>
+        </div>
+       <img src="/userpost3.png"></img>
+       </div>
+
+        <div className="footer">
+          <Footer />
+        </div>
       </div>
-    </div>
-}
+  }

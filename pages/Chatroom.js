@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import '../pages/chat/chat.css';
 
-import Message from './Message.js';
+import Message from '../comps/Message';
 import OrderInfo from '../comps/OrderInfo/index.js';
 import Divider from '../comps/Divider';
 
