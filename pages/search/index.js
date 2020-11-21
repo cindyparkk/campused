@@ -8,12 +8,12 @@ export default function SearchPage() {
 
   const [post, setPost] = useState([]);
 
-  const handleSearch = async (keyword) =>{
-    var resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/getPost"), {
-      keyword: keyword
-    };
+  // const handleSearch = async (keyword) =>{
+  //   var resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/getPost"), {
+  //     keyword: keyword
+  //   };
 
-  }
+  // }
 
   return  <div className="page">
       <Search />
