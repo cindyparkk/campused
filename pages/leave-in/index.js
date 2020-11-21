@@ -44,7 +44,7 @@ export default function Leavein() {
       <div className="page_home">
       <div className="col-4 menu">
             <div>
-              <Category />
+              <Category name1="Brock Hall" name2="Walter Gage" name3="Ponnderosa" name4="Thunderbird"/>
             </div>
             {process.browser && window.innerWidth > 940 ?<div className="filterdesktop"><FilterOpen /> <div className="addlisting">
             <Button center="center" text="+ Add a Listing" color="#FFF" bgcolor="#3DA5D9" fsize="26px" onClick={createAListing}/>
