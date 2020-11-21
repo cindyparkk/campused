@@ -14,13 +14,14 @@ const Form = styled.form`
 
 const Select = styled.select`
     display:inline-flex;
+    width: 250px;
     min-height: 67px;
-    border: 1px solid #000000;
+    border: ${props=>props.border ? props.border : "2px solid #000000"};
     border-radius: 17px;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 20px;
-    font-family: "Assistant", sans-serif;
+    font-family: ${props=>props.font ? props.font : "'Assistant', sans-serif"};
     font-size: 15pt;
     background-color: #FFF;
 
@@ -52,18 +53,27 @@ select > option:hover {
 `;
 
 
-const DropdownFurn =({})=> {
+const DropdownFurn =({font, name1, name2, name3, name4, border})=> {
     return <Container>
         <Form>
-            <Select>
+            <Select font={font} border={border}>
                 <Option>Select a Category</Option>
-                <Option>Bedroom</Option>
-                <Option>Kitchen</Option>
-                <Option>Bathroom</Option>
-                <Option>Living room, General Furniture</Option>
+                <Option>{name1}</Option>
+                <Option>{name2}</Option>
+                <Option>{name3}</Option>
+                <Option>{name4}</Option>
             </Select>
         </Form>
     </Container>
 };
+
+DropdownFurn.defaultProps = {
+    font: "'Assistant', sans-serif",
+    border: "2px solid black",
+    name1: "Title 1",
+    name2: "Title 2",
+    name3: "Title 3",
+    name4: "Title 4"
+}
 
 export default DropdownFurn;
