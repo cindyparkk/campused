@@ -46,12 +46,13 @@ export default function Leavein() {
             <div>
               <Category name1="Brock Hall" name2="Walter Gage" name3="Ponnderosa" name4="Thunderbird"/>
             </div>
-            {process.browser && window.innerWidth > 940 ?<div className="filterdesktop"><FilterOpen /> <div className="addlisting">
+            
+            {process.browser && window.innerWidth > 940 ? <div className="filterdesktop"><FilterOpen /> <div className="addlisting">
             <Button center="center" text="+ Add a Listing" color="#FFF" bgcolor="#3DA5D9" fsize="26px" onClick={createAListing}/>
             </div></div>:null}
 
             {process.browser && window.innerWidth < 940 ? <div className='mobilecontainer'> <div className='mobileadd'>
-            <FilterOpen /><CircleButton icon="/addblack.svg" iconwidth="40px" width="50px" height="50px" onClick={createAListing} /></div> </div> :null}
+            <FilterOpen /><CircleButton icon="/addblack.svg" iconwidth="50px" width="50px" height="50px" onClick={createAListing} /></div> </div> :null}
           </div>
 
 
