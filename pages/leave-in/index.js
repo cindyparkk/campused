@@ -8,6 +8,7 @@ import Button from '../../comps/Button';
 import FilterOpen from '../../comps/FilterOpen';
 import CircleButton from '../../comps/CircleButton';
 import Item from '../../comps/Item';
+import DropdownFurn from '../../comps/DropdownFurn';
 
 import Router from 'next/router';
 
@@ -44,7 +45,8 @@ export default function Leavein() {
       <div className="page_home">
       <div className="col-4 menu">
             <div>
-              <Category name1="Brock Hall" name2="Walter Gage" name3="Ponnderosa" name4="Thunderbird"/>
+              <DropdownFurn font={"'Montserrat', sans-serif"} name1={"Brock Hall"} name2={"Walter Gage"} name3={"Ponnderosa"} name4={"Thunderbird"}/>
+              {/* <Category name1="Brock Hall" name2="Walter Gage" name3="Ponnderosa" name4="Thunderbird"/> */}
             </div>
             
             {process.browser && window.innerWidth > 940 ? <div className="filterdesktop"><FilterOpen /> <div className="addlisting">

@@ -100,9 +100,10 @@ export default function CreateAListing() {
 
             {leavein == true ? <div className="listing_box">
               <p>Building</p>
-              <BuildingCategory onChange={(e)=>{
+              {/* <BuildingCategory onChange={(e)=>{
                   setBuilding(e.target.value);
-                  }}/>
+                  }}/> */}
+              <DropdownFurn name1={"Bedroom"} name2={"Bathroom"} name3={"Kitchen"} name4={"Living Room & General Furniture"} border={"1px solid black"}/>
               {/* <InputPost title="Building" onChange={(e)=>{
                   setBuilding(e.target.value);
                   }}/> */}
@@ -116,7 +117,7 @@ export default function CreateAListing() {
             {/* <InputPost title="category" onChange={(e)=>{
                 setCategory(e.target.value);
                 }}/> */}
-                <DropdownFurn />
+                <DropdownFurn name1={"Bedroom"} name2={"Bathroom"} name3={"Kitchen"} name4={"Living Room & General Furniture"}  border={"1px solid black"}/>
             </div> : null}
 
             {leavein == true ? <InputPost title="Dorm Room Number" width="300px" placeholder="Enter room number" onChange={(e)=>{
