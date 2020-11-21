@@ -19,8 +19,9 @@ const Container = styled.div`
     border-radius: 17px;
               
     min-width: 511px;
-    @media (max-width: 500px){
+    @media (max-width: 375px){
         min-width:300px;
+    margin-left:-3%;
      }
     height: auto;
     background-color: #F3F3F3;
