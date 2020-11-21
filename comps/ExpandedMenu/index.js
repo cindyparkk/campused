@@ -5,7 +5,8 @@ import Router from 'next/router';
 
 const Contain = styled.div`
     position: relative;
-`
+    z-index: 6;
+`;
 const Content = styled.div`
     display: inline-flex;
     flex-direction: column;
@@ -13,6 +14,7 @@ const Content = styled.div`
     box-sizing: border-box;
     height: 100%;
     width: 100%;
+    z-index: 6;
     
     div {
         cursor: pointer;
@@ -40,6 +42,7 @@ const InitialButton = styled.div`
     transition: 0.3s;
     opacity: ${props=>props.expanded ? "0" : "1"};
     display: inline-flex;
+    
 `
 
 const Main = styled.div`
@@ -54,18 +57,31 @@ const Main = styled.div`
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
+    right: 0;
+    top: 0;
     // display: inline-flex;
 
-    visibility: ${props=>props.expanded ? "visible" : "none"};
+    visibility: ${props=>props.expanded ? "visible" : "hidden"};
 
     opacity: ${props=>props.expanded ? 1 : 0};
     height: ${props=>props.expanded ? "auto" : "0px"};
     transition: 0.3s;
-`
+`;
+
+const CloseBackground = styled.div`
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    visibility: ${props=>props.visibilityback ? "visibile" : "hidden"};
+`;
 
 const ExpandedMenu = ({expand, onMenuSelect}) => {
     const [expanded, setExpanded] = useState(false);
     const [sold, setSold] = useState(false);
+    const [visibilityback, setVisibilityBack] = useState(false);
     
     function onMenuSelect(str){
         if (str==="marksold"){
@@ -81,12 +97,17 @@ const ExpandedMenu = ({expand, onMenuSelect}) => {
     
 
     return <Contain >
-        <InitialButton expanded={expanded} onClick={()=>{
+        <InitialButton expanded={expanded} visibilityback={visibilityback} onClick={()=>{
             setExpanded(!expanded);
+            setVisibilityBack(true);
             }}>
             <CircleButton icon='/dropdown.png' iconwidth="5px" iconheight="21px" expanded={expanded}/>
             
         </InitialButton>
+        <CloseBackground expanded={expanded} visibilityback={visibilityback} onClick={()=>{
+            setExpanded(false);
+            setVisibilityBack(false);
+        }}></CloseBackground>
         <Main expanded={expanded}>
             <Content>
                 <div onClick={()=>{
