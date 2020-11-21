@@ -12,17 +12,43 @@ import Button from '../../comps/Button';
 import Router from 'next/router';
 
 import axios from 'axios';
+import UploadImager from "./UploadImage";
+import { saveToken, getToken, getTokenDetails, removeToken } from './userManager'
+
+function token() {
+  const token = getToken()
+  if (!token) {
+    return {}
+  }
+  return { Authorization: `Bearer ${token}` }
+}
+
+function http({method, path, params}) {
+  console.log(token())
+  const headers = {
+    ...token(),
+    "Access-Control-Allow-Origin" : "*",
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+  }
+  console.log('headers', headers)
+  if (method == 'get') {
+    return axios[method](path, { headers })
+  }
+  return axios[method](path, params, { headers })
+}
 
 export default function CreateAListing() {
 
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
-  const [building, setBuilding] = useState("");
+  const [building, setBuilding] = useState("category");
   const [desc, setDesc] = useState("");
-  const [dormnum, setDormnum] = useState("");
+  const [dormnum, setDormnum] = useState("category");
   const [furniture, setFurniture] = useState(false);
   const [leavein, setLeavein] = useState(false);
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("category");
+  const [imageUrl, setImageUrl] = useState([]);
 
   const handleFurniture = (str) => {
     if(str === "bed"){
@@ -50,7 +76,8 @@ export default function CreateAListing() {
        description: desc,
        dormRoomNumber: dormnum,
        isFurniture: furniture,
-       isLeave: leavein
+       isLeave: leavein,
+       imageUrls: imageUrl
      });
      console.log(resp.data);
 
@@ -66,11 +93,12 @@ export default function CreateAListing() {
   return  <div className="page">
       <Header />
       <HeaderMenu />
+     
       <div className="page_contents">
         {/* <CreateListing /> */}
         <div className="create_listing">
         <div className="listing_contents">
-
+        
           <h1>Create a Listing</h1>
           <InputPost width="90%" onChange={(e)=>{
             setTitle(e.target.value);
@@ -118,6 +146,8 @@ export default function CreateAListing() {
             {leavein == true ? <InputPost title="Dorm Room Number" width="300px" placeholder="Enter room number" onChange={(e)=>{
               setDormnum(e.target.value);
             }}/> : null}
+            
+           <UploadImager setImageUrl={setImageUrl} />
             <UploadImage title="Add Photo(s)"/>
 
             <div className="listing_box">
