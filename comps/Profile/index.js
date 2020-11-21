@@ -30,9 +30,9 @@ const PFP = styled.img`
 
 
 
-const Profile = ({name, icon}) =>{
+const Profile = ({name, icon, onChange}) =>{
 
-    return <Main>
+    return <Main onChange={onChange}>
 
     <Container>
         <PFP src= {icon} />
@@ -45,7 +45,8 @@ const Profile = ({name, icon}) =>{
 
    Profile.defaultProps = {
       name:'My Name',
-      icon: '/profileicon.jpg'
+      icon: '/profileicon.jpg',
+      onChange:()=>{}
    }
    
    

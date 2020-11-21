@@ -146,7 +146,7 @@ const Header = ({imgurl}) =>{
             <SearchContainer onClick={clickSearch}>
                 <CircleButton icon="/search.svg" width="32px" height="32px"/>
             </SearchContainer>
-            <Profile src={imgurl} onClick={clickProfile, handleProfile}/>
+            <Profile src={imgurl} onClick={clickProfile}/>
         </FlexEnd>
 
     </Container>

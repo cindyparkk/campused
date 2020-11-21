@@ -24,7 +24,7 @@ export default function ProfilePage() {
   const handleProfile = async () =>{
       console.log("clicked", name, image);
 
-      var resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user");
+      var resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user/");
 
       console.log(resp.data);
 
