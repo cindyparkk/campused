@@ -110,9 +110,9 @@ export default function CreateAListing() {
 
             {furniture == true ? <div className="listing_box">
               <p>Furniture Category</p>
-              <SmallCategory onCategorySelect={handleFurniture} onChange={(e)=>{
+              {/* <SmallCategory onCategorySelect={handleFurniture} onChange={(e)=>{
                 setCategory(e.target.value);
-                }}/>
+                }}/> */}
             {/* <InputPost title="category" onChange={(e)=>{
                 setCategory(e.target.value);
                 }}/> */}

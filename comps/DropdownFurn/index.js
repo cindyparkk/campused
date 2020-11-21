@@ -20,19 +20,37 @@ const Select = styled.select`
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 20px;
+    font-family: "Assistant", sans-serif;
+    font-size: 15pt;
     background-color: #FFF;
+
+    select > option:hover { 
+        background-color: red !important;
+    }
 `;
 
 const Option = styled.option`
-min-width: 252px;
-margin-top:5px;
-background: #FFFFFF;
-border: 2px solid #000000;
-box-sizing: border-box;
-border-radius: 16px;
 
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-`
+background-color: white;
+font-size: 14pt;
+font-family: "Assistant", sans-serif;
+font-weight: 300;
+
+
+
+select > option:hover { 
+    background-color: red !important;
+}
+
+// min-width: 252px;
+// margin-top:5px;
+// // background: #FFFFFF;
+// border: 2px solid #000000;
+// box-sizing: border-box;
+// border-radius: 16px;
+// box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+`;
+
 
 const DropdownFurn =({})=> {
     return <Container>
