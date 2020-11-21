@@ -49,6 +49,7 @@ const IconContainer = styled.div`
     max-height: 70px;
     position: absolute;
     margin-right: 40px;
+    cursor: pointer;
 `;
 
 const SearchContainer = styled.div`
