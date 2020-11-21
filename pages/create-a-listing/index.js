@@ -8,6 +8,7 @@ import SmallCategory from '../../comps/SmallCategory';
 import BuildingCategory from '../../comps/BuildingCategory';
 import UploadImage from '../../comps/UploadImage';
 import Button from '../../comps/Button';
+import DropdownFurn from '../../comps/DropdownFurn';
 
 import Router from 'next/router';
 
@@ -33,6 +34,8 @@ export default function CreateAListing() {
         setCategory("Bathroom");
     } else if (str === "liv"){
         setCategory("Living room & General Furniture");
+    } else {
+      str === "furniture";
     }
 }
 
@@ -113,6 +116,7 @@ export default function CreateAListing() {
             {/* <InputPost title="category" onChange={(e)=>{
                 setCategory(e.target.value);
                 }}/> */}
+                <DropdownFurn />
             </div> : null}
 
             {leavein == true ? <InputPost title="Dorm Room Number" width="300px" placeholder="Enter room number" onChange={(e)=>{
