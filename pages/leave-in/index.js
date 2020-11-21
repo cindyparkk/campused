@@ -51,8 +51,8 @@ export default function Leavein() {
             <Button center="center" text="+ Add a Listing" color="#FFF" bgcolor="#3DA5D9" fsize="26px" onClick={createAListing}/>
             </div></div>:null}
 
-            {process.browser && window.innerWidth < 940 ? <div className='mobilecontainer'> <div className='mobileadd'>
-            <FilterOpen /><CircleButton icon="/addblack.svg" iconwidth="50px" width="50px" height="50px" onClick={createAListing} /></div> </div> :null}
+            {process.browser && window.innerWidth < 940 ? <div className='mainmobile'> <div className='mobilecontainer'> <div className='mobileadd'>
+            <FilterOpen /><CircleButton icon="/addblack.svg" iconwidth="50px" width="50px" height="50px" onClick={createAListing} /></div> </div> </div> :null}
           </div>
 
 

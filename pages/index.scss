@@ -651,23 +651,22 @@ margin-left:5%;
     height: 50px;
     z-index: 2;
     position: absolute;
-    border: 1px solid black;
-    bottom: 50;
+    bottom: 100px;
 }
-.mobilecontainer{
-    overflow: hidden;
-    width: 100%;
-    border: 1px solid blue;
-    display: flex;
-    height: 50px;
-}
-.mainmobile{
-    border: 2px solid red;
-    width: 100%;
-    overflow: hidden;
-    justify-content: center;
-    z-index: 5;
-    // position: relative;
-    // bottom: 50;
-    height: 100%;
-}
+// .mobilecontainer{
+//     overflow: hidden;
+//     width: 100%;
+//     border: 1px solid blue;
+//     display: flex;
+//     height: 50px;
+// }
+// .mainmobile{
+//     border: 2px solid rgb(0, 255, 42);
+//     width: 100%;
+//     overflow: hidden;
+//     justify-content: center;
+//     z-index: 5;
+//     // position: relative;
+//     // bottom: 50;
+//     height: 100%;
+// }
