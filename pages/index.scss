@@ -634,19 +634,29 @@ margin-left:5%;
 
 //leave-in/furniture market
 .mobileadd{
-    display: flex;
+    display: inline-flex;
     justify-content: space-between;
-    flex-direction: row;
+    width: 90%;
+    height: 50px;
     z-index: 2;
     position: absolute;
-    overflow: hidden;
-    width: 90%;
-    right:4%;
-    left: 4%;
-    align-items: baseline;
+    border: 1px solid black;
+    bottom: 50;
 }
 .mobilecontainer{
+    overflow: hidden;
+    width: 100%;
+    border: 1px solid blue;
     display: flex;
+    height: 50px;
+}
+.mainmobile{
+    border: 2px solid red;
+    width: 100%;
+    overflow: hidden;
     justify-content: center;
-    align-items: baseline;
+    z-index: 5;
+    // position: relative;
+    // bottom: 50;
+    height: 100%;
 }
