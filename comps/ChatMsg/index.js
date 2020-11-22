@@ -48,17 +48,13 @@ const Message = styled.div`
 margin-top:5%;
 margin-left:3%;
 
-
-
-
-
 `;
 
 const User  = styled.h6`
 
 margin:0;
 color:#3DA5D9;
-
+cursor: pointer;
 `;
 
 const User_text = styled.p`
@@ -73,7 +69,7 @@ const ChatMsg =({imgurl,name,message}) => {
     return <Container>
                 <Box>
         
-             <UserImage src={imgurl}/ >
+             <UserImage src={imgurl}/>
             <Message>
                 <User> {name} </User>
                 <User_text>{message}</User_text>

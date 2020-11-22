@@ -78,14 +78,23 @@ const CloseBackground = styled.div`
     visibility: ${props=>props.visibilityback ? "visibile" : "hidden"};
 `;
 
-const ExpandedMenu = ({expand, onMenuSelect}) => {
+const ExpandedMenu = ({expand, onMenuSelect, sold}) => {
     const [expanded, setExpanded] = useState(false);
     const [visibilityback, setVisibilityBack] = useState(false);
     const [state, setState] = useState(0);
+    const [text, setText] = useState("Mark as Sold");
 
     useEffect(()=>{
         setExpanded(expand);
     }, [expand]);
+
+    // const handleSold = () => {
+    //     if(sold === true){
+    //         setText("Undo");
+    //     } else {
+    //         setText();
+    //     }
+    // }
     
 
     return <Contain >
@@ -102,7 +111,7 @@ const ExpandedMenu = ({expand, onMenuSelect}) => {
         }}></CloseBackground>
         <Main expanded={expanded}>
             <Content>
-                <div onClick={()=>{
+                <div sold={sold} onClick={()=>{
                 onMenuSelect("marksold");}}>Mark as Sold</div>
                 <div onClick={()=>{
                 onMenuSelect("edit");}}>Edit</div>

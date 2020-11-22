@@ -36,7 +36,7 @@ export default function EditListing() {
     
     try{
       console.log("");
-       var resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/createPost", {
+       var resp = await axios.put("https://us-central1-campused-15cf0.cloudfunctions.net/api/post/", {
        title: title,
        price: price,
        building: building,
