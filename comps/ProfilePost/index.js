@@ -55,9 +55,11 @@ line-height: 1;
 `;
 
 const Price = styled.h3`
+    color: ${props=>props.sold ? "#FF0000" : "#000"};
+    text-transform: ${props=>props.sold ? "uppercase" : ""};
 `;
 
-const ProfilePost = ({title, description, price, image}) =>{
+const ProfilePost = ({title, description, price, image, sold}) =>{
     return <Main>
 
     <Container>
@@ -69,7 +71,8 @@ const ProfilePost = ({title, description, price, image}) =>{
             <Text>
                 <Title>{title}</Title>
                 <Description>{description}</Description>
-                <Price>${price}</Price>
+                {sold == false ? <Price sold={sold}>${price}</Price> : null}
+                {sold == true ? <Price sold={sold}>sold</Price> : null}
             </Text>
 
     </Container>
@@ -81,7 +84,8 @@ const ProfilePost = ({title, description, price, image}) =>{
        title: 'Default Title',
        description: 'Description goes here...',
        price: '00',
-       image: '/userpost.png'
+       image: '/userpost.png',
+       sold: false
    }
    
    

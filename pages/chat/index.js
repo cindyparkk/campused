@@ -6,7 +6,7 @@ import Router from 'next/router';
 import Chatroom from '../Chatroom';
 
 
-export default function Product() {
+export default function Chat() {
   return  <div className="page">
       <Header />
       <ChatHeader />
