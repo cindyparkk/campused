@@ -78,9 +78,10 @@ export default function ProfilePage() {
       <Header />
       <HeaderMenu />
       <div className="profile">
+      {user.map((o, i)=>{
         <Profile name={o.name}
         icon={o.image}
-        />
+        />})}
         <div className="rating">
           <Rating />
         </div>
