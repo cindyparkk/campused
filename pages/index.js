@@ -23,6 +23,7 @@ function clickSignup(){
 
 export default function Start() {
 
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading,setLoading] = useState(true);

@@ -23,20 +23,21 @@ export default function ProfilePage() {
   const [image, setImage] = useState("");
   const [user, setUse] = useState([]);
 
-  // const handleProfile = async () =>{
-  //     console.log("clicked", name, image);
+  const handleProfile = async () =>{
+      console.log("clicked", name, image);
 
-  //     var resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user/");
+      var resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user/");
 
-  //     console.log(resp.data);
+      console.log(resp.data);
 
-  //     setName(resp.data.name);
-  //     setImage(resp.data.imageUrl);
-  // }
+      setName(resp.data.name);
+      setImage(resp.data.imageUrl);
+  }
 
   useEffect(() => {
     // if []. run once when the row loads, and don't run again
       async function fetchData() {
+<<<<<<< HEAD
         var resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user/");
 
         console.log(resp.data);
@@ -44,6 +45,12 @@ export default function ProfilePage() {
         // setName(resp.data.name);
         // setImage(resp.data.imageUrl);
         setUser([...resp.data]);
+=======
+        const resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user/");
+
+        setName(resp.data.name);
+        setImage(resp.data.imageUrl);
+>>>>>>> tamCodes
         return resp;
       }
       fetchData();
