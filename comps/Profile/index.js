@@ -20,6 +20,7 @@ const Container = styled.div`
 
 const Name = styled.h1`
     margin: 10px 0;
+    text-transform: capitalize;
 `;
 
 const PFP = styled.img`
