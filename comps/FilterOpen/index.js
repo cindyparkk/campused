@@ -154,7 +154,7 @@ const ContainDesktop = styled.div`
     background: #FFFFFF;
     box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 17px;
-    transform-origin: top;
+    transform-origin: bottom;
     overflow: hidden;
     max-height: ${props=>props.showfilters ? "617px" : "0px"};
     transition: 0.5s ease-in-out;
