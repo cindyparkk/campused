@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-    min-width: 252px;
+    width: 100%;
     display:inline-flex;
     flex-direction:column;
     padding:0px;
@@ -14,7 +14,7 @@ const Form = styled.form`
 
 const Select = styled.select`
     display:inline-flex;
-    width: 250px;
+    width: 100%;
     min-height: 67px;
     border: ${props=>props.border ? props.border : "2px solid #000000"};
     border-radius: 17px;
@@ -22,6 +22,7 @@ const Select = styled.select`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 20px;
     font-family: ${props=>props.font ? props.font : "'Assistant', sans-serif"};
+    font-weight: ${props=>props.fontweight ? props.fontweight : 300};
     font-size: 15pt;
     background-color: #FFF;
 
@@ -53,11 +54,12 @@ select > option:hover {
 `;
 
 
-const DropdownFurn =({text, font, name1, name2, name3, name4, border})=> {
+
+const DropdownFurn =({font, name1, name2, name3, name4, border, fontweight})=> {
     return <Container>
         <Form>
-            <Select font={font} border={border}>
-                <Option>{text}</Option>
+            <Select font={font} border={border} fontweight={fontweight}>
+                <Option>Select a Category</Option>
                 <Option>{name1}</Option>
                 <Option>{name2}</Option>
                 <Option>{name3}</Option>
@@ -74,7 +76,8 @@ DropdownFurn.defaultProps = {
     name1: "Bedroom",
     name2: "Bathroom",
     name3: "Kitchen",
-    name4: "Living Room & General Furniture"
+    name4: "Living Room & General Furniture",
+    fontweight: 300
 }
 
 export default DropdownFurn;
