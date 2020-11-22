@@ -8,14 +8,7 @@ import Router from 'next/router';
 import jwtDecode from 'jwt-decode';
 import Axios from 'axios';
 
-// if (typeof window === "undefined"){
-//   const token = localStorage.FBIdToken
 
-// if(token) {
-//   const decodedToken = jwtDecode(token);
-//   console.log(decodedToken);
-// }
-// }
 if (process.browser){
   const token = localStorage.FBIdToken
 
