@@ -54,16 +54,19 @@ select > option:hover {
 `;
 
 
-
-const DropdownFurn =({font, name1, name2, name3, name4, border, fontweight})=> {
+const DropdownFurn =({text, font, name1, name2, name3, name4, border, onChange, onCategorySelect})=> {
     return <Container>
         <Form>
-            <Select font={font} border={border} fontweight={fontweight}>
-                <Option>Select a Category</Option>
-                <Option>{name1}</Option>
-                <Option>{name2}</Option>
-                <Option>{name3}</Option>
-                <Option>{name4}</Option>
+            <Select font={font} border={border} onChange={onChange}>
+                <Option>{text}</Option>
+                <Option onClick={()=> {
+            onCategorySelect("option1");}}>{name1}</Option>
+                <Option onClick={()=> {
+            onCategorySelect("option2");}}>{name2}</Option>
+                <Option onClick={()=> {
+            onCategorySelect("option3");}}>{name3}</Option>
+                <Option onClick={()=> {
+            onCategorySelect("option4");}}>{name4}</Option>
             </Select>
         </Form>
     </Container>
@@ -77,7 +80,7 @@ DropdownFurn.defaultProps = {
     name2: "Bathroom",
     name3: "Kitchen",
     name4: "Living Room & General Furniture",
-    fontweight: 300
+    onChange:()=>{}
 }
 
 export default DropdownFurn;
