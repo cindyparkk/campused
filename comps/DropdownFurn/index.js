@@ -54,6 +54,7 @@ select > option:hover {
 `;
 
 
+
 const DropdownFurn =({font, name1, name2, name3, name4, border, fontweight})=> {
     return <Container>
         <Form>
@@ -69,13 +70,14 @@ const DropdownFurn =({font, name1, name2, name3, name4, border, fontweight})=> {
 };
 
 DropdownFurn.defaultProps = {
+    text: "Select a Category",
     font: "'Assistant', sans-serif",
     border: "2px solid black",
-    fontweight: 300,
-    name1: "Title 1",
-    name2: "Title 2",
-    name3: "Title 3",
-    name4: "Title 4"
+    name1: "Bedroom",
+    name2: "Bathroom",
+    name3: "Kitchen",
+    name4: "Living Room & General Furniture",
+    fontweight: 300
 }
 
 export default DropdownFurn;
