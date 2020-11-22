@@ -52,6 +52,7 @@ const Item1 = styled.h2`
     &:hover {
         color: #EA7317;
     }
+
     color: ${props=>props.selected ? '#EA7317' : 'black'};
 `;
 
@@ -72,6 +73,9 @@ const Item3 = styled.h2`
     margin-bottom: 20px;
 
     &:hover {
+        color: #EA7317;
+    }
+    &:active {
         color: #EA7317;
     }
     color: ${props=>props.selected ? '#EA7317' : 'black'};
@@ -224,27 +228,27 @@ const Menu = ({}) => {
 
 
 
-                {process.browser && window.innerWidth > 650 ? <Link href="/about"><Item5 selected={selected === 3} onClick={()=>{
-                setSelected(3);}, clickMessages}>Messages</Item5></Link> :null}
+                {process.browser && window.innerWidth > 650 ? <Item5 selected={selected === 3} onClick={()=>{
+                setSelected(3);}, clickMessages}>Messages</Item5> :null}
 
-                {process.browser && window.innerWidth < 650 ? <Link href="/about"><Item6 selected={selected === 3} onClick={()=>{
-                setSelected(3);}, clickMessages}>Messages</Item6></Link> :null}
-
-
-
-                {process.browser && window.innerWidth > 650 ? <Link href="/about"><Item7 selected={selected === 4} onClick={()=>{
-                setSelected(4);}, clickAbout}>About</Item7></Link> :null}
-
-                {process.browser && window.innerWidth < 650 ? <Link href="/about"><Item8 selected={selected === 4} onClick={()=>{
-                setSelected(4);}, clickAbout}>About</Item8></Link> :null}
+                {process.browser && window.innerWidth < 650 ? <Item6 selected={selected === 3} onClick={()=>{
+                setSelected(3);}, clickMessages}>Messages</Item6> :null}
 
 
 
-                {process.browser && window.innerWidth > 650 ?  <Link href="/faq"><Item9 selected={selected === 5} onClick={()=>{
-                setSelected(5);}, clickFAQ}>FAQ</Item9></Link> :null}
+                {process.browser && window.innerWidth > 650 ? <Item7 selected={selected === 4} onClick={()=>{
+                setSelected(4);}, clickAbout}>About</Item7>:null}
 
-                {process.browser && window.innerWidth < 650 ?  <Link href="/faq"><Item10 selected={selected === 5} onClick={()=>{
-                setSelected(5);}, clickFAQ}>FAQ</Item10></Link> :null}
+                {process.browser && window.innerWidth < 650 ? <Item8 selected={selected === 4} onClick={()=>{
+                setSelected(4);}, clickAbout}>About</Item8> :null}
+
+
+
+                {process.browser && window.innerWidth > 650 ?  <Item9 selected={selected === 5} onClick={()=>{
+                setSelected(5);}, clickFAQ}>FAQ</Item9> :null}
+
+                {process.browser && window.innerWidth < 650 ?  <Item10 selected={selected === 5} onClick={()=>{
+                setSelected(5);}, clickFAQ}>FAQ</Item10> :null}
 
 
         </Content>
