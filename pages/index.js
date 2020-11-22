@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Button from '../comps/Button';
 import InputwIcon from '../comps/InputwIcon';
 
+
 import axios from 'axios';
 import Router from 'next/router';
 
@@ -23,22 +24,26 @@ export default function Start() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const[loading,setLoading] = useState(true);
   const HandleLogin = async (e)=>{
 
-    console.log("clicked", e, email, password);
-
-    try{
-      console.log("");
-       var resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/login", {
-       email:email,
-       password:password
-     });
-     console.log(resp.data);
-     Router.push("/home");
-    } catch {
-      console.log("Failed");
-    }
+   e.preventDefault();
+  
+   const userData ={
+     email: email,
+     password: password
+     
+   };
+   axios
+    .post("https://us-central1-campused-15cf0.cloudfunctions.net/api/login", userData)
+    .then((res) => {
+      console.log(res.data);
+      const FBIdToken = `Bearer ${res.data.token}`
+      localStorage.setItem('FBIdToken', FBIdToken);
+      axios.defaults.headers.common["Authorization"] = FBIdToken
+      setLoading(false);
+      Router.push("/home");
+    })
 
   }
 
