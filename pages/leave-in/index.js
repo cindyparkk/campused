@@ -45,7 +45,7 @@ export default function Leavein() {
       <div className="page_home">
       <div className="col-4 menu">
             <div>
-              <DropdownFurn font={"'Montserrat', sans-serif"} name1={"Brock Hall"} name2={"Walter Gage"} name3={"Ponnderosa"} name4={"Thunderbird"}/>
+              <DropdownFurn fontweight={800} font={"'Montserrat', sans-serif"} name1={"Brock Hall"} name2={"Walter Gage"} name3={"Ponnderosa"} name4={"Thunderbird"}/>
               {/* <Category name1="Brock Hall" name2="Walter Gage" name3="Ponnderosa" name4="Thunderbird"/> */}
             </div>
             

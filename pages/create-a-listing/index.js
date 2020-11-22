@@ -103,7 +103,9 @@ export default function CreateAListing() {
               {/* <BuildingCategory onChange={(e)=>{
                   setBuilding(e.target.value);
                   }}/> */}
-              <DropdownFurn name1={"Bedroom"} name2={"Bathroom"} name3={"Kitchen"} name4={"Living Room & General Furniture"} border={"1px solid black"}/>
+                  <div className="categorydiv">
+              <DropdownFurn name1={"Bedroom"} name2={"Bathroom"} name3={"Kitchen"} name4={"Living Room & General Furniture"} border={"1px solid black"} fontweight={"100"}/>
+                </div>
               {/* <InputPost title="Building" onChange={(e)=>{
                   setBuilding(e.target.value);
                   }}/> */}
@@ -117,8 +119,9 @@ export default function CreateAListing() {
             {/* <InputPost title="category" onChange={(e)=>{
                 setCategory(e.target.value);
                 }}/> */}
+                <div className="categorydiv">
                 <DropdownFurn name1={"Bedroom"} name2={"Bathroom"} name3={"Kitchen"} name4={"Living Room & General Furniture"}  border={"1px solid black"}/>
-            </div> : null}
+            </div> </div> : null}
 
             {leavein == true ? <InputPost title="Dorm Room Number" width="300px" placeholder="Enter room number" onChange={(e)=>{
               setDormnum(e.target.value);
