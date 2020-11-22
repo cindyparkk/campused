@@ -37,7 +37,6 @@ export default function ProfilePage() {
   useEffect(() => {
     // if []. run once when the row loads, and don't run again
       async function fetchData() {
-<<<<<<< HEAD
         var resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user/");
 
         console.log(resp.data);
@@ -45,12 +44,6 @@ export default function ProfilePage() {
         // setName(resp.data.name);
         // setImage(resp.data.imageUrl);
         setUser([...resp.data]);
-=======
-        const resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user/");
-
-        setName(resp.data.name);
-        setImage(resp.data.imageUrl);
->>>>>>> tamCodes
         return resp;
       }
       fetchData();
@@ -85,10 +78,9 @@ export default function ProfilePage() {
       <Header />
       <HeaderMenu />
       <div className="profile">
-        {user.map((o, i)=>{
         <Profile name={o.name}
         icon={o.image}
-        />})}
+        />
         <div className="rating">
           <Rating />
         </div>
