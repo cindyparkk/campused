@@ -150,11 +150,11 @@ const ProfileSlider = ({header}) =>{
 
    
     {/* <Box selected={selected === 1} slider={slider === true} bgcolor={bgcolor === true}> */}
-    <Box2>
+    {/* <Box2>
       <BoxContent>
             <ProfilePost />
         </BoxContent>
-    </Box2>
+    </Box2> */}
     {/* </Box> */}
     </Main> 
     

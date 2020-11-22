@@ -73,7 +73,6 @@ const ProfilePost = ({title, description, price, image}) =>{
             </Text>
 
     </Container>
-    <ExpandedMenu />
    
    </Main>
    }
