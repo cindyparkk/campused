@@ -21,6 +21,7 @@ function createListing(){
 export default function ProfilePage() {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
+  const [user, setUse] = useState([]);
 
   // const handleProfile = async () =>{
   //     console.log("clicked", name, image);
@@ -33,17 +34,20 @@ export default function ProfilePage() {
   //     setImage(resp.data.imageUrl);
   // }
 
-  // useEffect(() => {
-  //   // if []. run once when the row loads, and don't run again
-  //     async function fetchData() {
-  //       const resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user/");
+  useEffect(() => {
+    // if []. run once when the row loads, and don't run again
+      async function fetchData() {
+        var resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user/");
 
-  //       setName(resp.data.name);
-  //       setImage(resp.data.imageUrl);
-  //       return resp;
-  //     }
-  //     fetchData();
-  //    }, []);
+        console.log(resp.data);
+
+        // setName(resp.data.name);
+        // setImage(resp.data.imageUrl);
+        setUser([...resp.data]);
+        return resp;
+      }
+      fetchData();
+     }, []);
 
   const [sold, setSold] = useState(false);
   const [deleted, setDeleted] = useState(false);
@@ -74,8 +78,8 @@ export default function ProfilePage() {
       <Header />
       <HeaderMenu />
       <div className="profile">
-        <Profile name={name}
-        icon={image}
+        <Profile name={o.name}
+        icon={o.image}
         />
         <div className="rating">
           <Rating />
