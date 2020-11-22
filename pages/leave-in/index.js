@@ -41,7 +41,7 @@ export default function Leavein() {
   
   return  <div className="page">
        <Header />
-      <HeaderMenu />
+      <HeaderMenu leaveintextcolor={"#EA7317"} />
       <div className="page_home">
       <div className="col-4 menu">
             <div>
