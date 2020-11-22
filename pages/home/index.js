@@ -19,9 +19,17 @@ function clicktofurniture() {
       Router.push("/furnitre_market");
   }
 }
-
+function getUserData() {
+ Axios.get('https://us-central1-campused-15cf0.cloudfunctions.net/api/user')
+ .then(res => {
+   console.log(res.data)
+ })
+ .catch(err => console.log(err))
+}
 
 export default function Home() {
+
+  
     return  <div className="page">
 
         <Header />
@@ -32,6 +40,9 @@ export default function Home() {
       
 
          <div className="main_part1">
+           <button onClick={getUserData}>
+             click me
+           </button>
           <img src="/userpost4.png"></img>
           <div>
           <p>Get your furniture without having to move a single piece! <br/>Student furniture can be left in the campus dorm for the next person to use.</p>

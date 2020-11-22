@@ -11,32 +11,16 @@ import Button from '../../comps/Button';
 import DropdownFurn from '../../comps/DropdownFurn';
 
 import Router from 'next/router';
-
+import jwtDecode from 'jwt-decode';
 import axios from 'axios';
 import UploadImager from "./UploadImage";
-import { saveToken, getToken, getTokenDetails, removeToken } from './userManager'
+if (process.browser){
+  const token = localStorage.FBIdToken
 
-function token() {
-  const token = getToken()
-  if (!token) {
-    return {}
-  }
-  return { Authorization: `Bearer ${token}` }
+if(token) {
+  const decodedToken = jwtDecode(token);
+  console.log(decodedToken);
 }
-
-function http({method, path, params}) {
-  console.log(token())
-  const headers = {
-    ...token(),
-    "Access-Control-Allow-Origin" : "*",
-    'Accept': 'application/json',
-    'Content-Type': 'application/json',
-  }
-  console.log('headers', headers)
-  if (method == 'get') {
-    return axios[method](path, { headers })
-  }
-  return axios[method](path, params, { headers })
 }
 
 export default function CreateAListing() {
@@ -49,7 +33,7 @@ export default function CreateAListing() {
   const [furniture, setFurniture] = useState(false);
   const [leavein, setLeavein] = useState(false);
   const [category, setCategory] = useState("category");
-  const [imageUrl, setImageUrl] = useState([]);
+  const [imageUrl, setImageUrl] = useState('something');
 
   const handleFurniture = (str) => {
     if(str === "bed"){
@@ -67,7 +51,7 @@ export default function CreateAListing() {
 
   const createPost = async (e)=>{
   
-    console.log("clicked", title, price, leavein, furniture, building, category, dormnum, desc);
+    console.log("clicked", title, price, leavein, furniture, building, category, dormnum, desc, imageUrl);
     
     try{
       console.log("");
@@ -155,7 +139,7 @@ export default function CreateAListing() {
               setDormnum(e.target.value);
             }}/> : null}
             
-           <UploadImager setImageUrl={setImageUrl} />
+           {/* <UploadImager setImageUrl={setImageUrl} /> */}
             <UploadImage title="Add Photo(s)"/>
 
             <div className="listing_box">
