@@ -37,7 +37,7 @@ export default function Home() {
 
   return  <div className="page">
        <Header />
-      <HeaderMenu />
+      <HeaderMenu furnituretextcolor={"#EA7317"}/>
       <div className="page_home">
           <div className="col-4 menu">
             <div>
