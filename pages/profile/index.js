@@ -46,6 +46,7 @@ export default function ProfilePage() {
   //    }, []);
 
   const [sold, setSold] = useState(false);
+  const [deleted, setDeleted] = useState(false);
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [building, setBuilding] = useState("");
@@ -62,22 +63,10 @@ export default function ProfilePage() {
           Router.push("/edit-listing");
           console.log("clicked");
 
-          var resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/getPost/:postId");
-
-          console.log(resp.data);
-          setTitle(resp.data.title);
-
-          await axios.put("https://us-central1-campused-15cf0.cloudfunctions.net/api/post/",{
-            title:title,
-            price: price,
-            building: building,
-            category: category,
-            description: desc,
-            dormRoomNumber: dormnum,
-            isFurniture: furniture,
-            isLeave: leavein
-          });
       } else if (str === "delete"){
+        setDeleted(true);
+
+        await axios.delete("https://us-central1-campused-15cf0.cloudfunctions.net/api/post/");
       } 
   }
 
@@ -98,7 +87,7 @@ export default function ProfilePage() {
       <ProfileSlider />
       <div className="profile_post">
         <div className="profile_post_list">
-          <ProfilePost />
+          <ProfilePost sold={sold}/>
           <ExpandedMenu onMenuSelect={handleMenu}/>
         </div>
       </div>

@@ -25,17 +25,23 @@ export default function CreateAListing() {
   const [leavein, setLeavein] = useState(false);
   const [category, setCategory] = useState("");
 
-  const handleFurniture = (str) => {
-    if(str === "bed"){
-        setCategory("Bedroom");
-    } else if (str === "kit"){
-        setCategory("Kitchen");
-    } else if (str === "bath"){
-        setCategory("Bathroom");
-    } else if (str === "liv"){
-        setCategory("Living room & General Furniture");
+  const handleCategory = (str) => {
+    if (leavein === false && furniture === true){
+    //     if(str === "option1"){
+    //       setCategory("Bedroom");
+    //   } else if (str === "option2"){
+    //       setCategory("Kitchen");
+    //   } else if (str === "option3"){
+    //       setCategory("Bathroom");
+    //   } else if (str === "option4"){
+    //       setCategory("Living room & General Furniture");
+    //   } 
+    // } else {
+    //   setCategory("furniture");
+    // }
+    setCategory(category);
     } else {
-      str === "furniture";
+      setCategory("empty");
     }
 }
 
@@ -43,26 +49,26 @@ export default function CreateAListing() {
   
     console.log("clicked", title, price, leavein, furniture, building, category, dormnum, desc);
     
-    try{
-      console.log("");
-       var resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/createPost", {
-       title: title,
-       price: price,
-       building: building,
-       category: category,
-       description: desc,
-       dormRoomNumber: dormnum,
-       isFurniture: furniture,
-       isLeave: leavein
-     });
-     console.log(resp.data);
+    // try{
+    //   console.log("");
+    //    var resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/createPost", {
+    //    title: title,
+    //    price: price,
+    //    building: building,
+    //    category: category,
+    //    description: desc,
+    //    dormRoomNumber: dormnum,
+    //    isFurniture: furniture,
+    //    isLeave: leavein
+    //  });
+    //  console.log(resp.data);
 
-     Router.push("/post-success");
+    //  Router.push("/post-success");
      
-    } catch {
-      console.log("Failed");
-     //  show error if not everything is filled out
-    }
+    // } catch {
+    //   console.log("Failed");
+    //  //  show error if not everything is filled out
+    // }
 
     }
   
@@ -100,28 +106,17 @@ export default function CreateAListing() {
 
             {leavein == true ? <div className="listing_box">
               <p>Building</p>
-              {/* <BuildingCategory onChange={(e)=>{
-                  setBuilding(e.target.value);
-                  }}/> */}
-                  <div className="categorydiv">
-               <DropdownFurn title={"Select the building"} name1={"Brock Hall"} name2={"Walter Gage"} name3={"Ponderosa"} name4={"Thunderbird"} border={"1px solid black"}/>
-                </div>
-              {/* <InputPost title="Building" onChange={(e)=>{
-                  setBuilding(e.target.value);
-                  }}/> */}
+              <DropdownFurn title={"Select the building"} name1={"Brock Hall"} name2={"Walter Gage"} 
+              name3={"Ponderosa"} name4={"Thunderbird"} border={"1px solid black"} onChange={(e)=>{
+                setBuilding(building);}} />
             </div> : null}
 
             {furniture == true ? <div className="listing_box">
               <p>Furniture Category</p>
-              {/* <SmallCategory onCategorySelect={handleFurniture} onChange={(e)=>{
-                setCategory(e.target.value);
-                }}/> */}
-            {/* <InputPost title="category" onChange={(e)=>{
-                setCategory(e.target.value);
-                }}/> */}
-                <div className="categorydiv">
-                <DropdownFurn border={"1px solid black"}/>
-            </div> </div> : null}
+                <DropdownFurn border={"1px solid black"} onChange={(e)=>{
+                setCategory(furniture); onClick={}
+                }} onCategorySelect={handleCategory}/>
+            </div> : null}
 
             {leavein == true ? <InputPost title="Dorm Room Number" width="300px" placeholder="Enter room number" onChange={(e)=>{
               setDormnum(e.target.value);
