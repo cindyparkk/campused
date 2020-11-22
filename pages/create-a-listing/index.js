@@ -76,13 +76,11 @@ export default function CreateAListing() {
      console.log(resp.data);
 
      Router.push("/post-success");
-
-   
      
-    // } catch {
-    //   console.log("Failed");
-    //  //  show error if not everything is filled out
-    // }
+    } catch {
+      console.log("Failed");
+     //  show error if not everything is filled out
+    }
 
     }
   
