@@ -11,19 +11,29 @@ import Button from '../../comps/Button';
 import DropdownFurn from '../../comps/DropdownFurn';
 
 import Router from 'next/router';
-
+import jwtDecode from 'jwt-decode';
 import axios from 'axios';
+import UploadImager from "./UploadImage";
+if (process.browser){
+  const token = localStorage.FBIdToken
+
+if(token) {
+  const decodedToken = jwtDecode(token);
+  console.log(decodedToken);
+}
+}
 
 export default function CreateAListing() {
 
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
-  const [building, setBuilding] = useState("");
+  const [building, setBuilding] = useState("category");
   const [desc, setDesc] = useState("");
-  const [dormnum, setDormnum] = useState("");
+  const [dormnum, setDormnum] = useState("category");
   const [furniture, setFurniture] = useState(false);
   const [leavein, setLeavein] = useState(false);
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("category");
+  const [imageUrl, setImageUrl] = useState('something');
 
   const handleCategory = (str) => {
     if (leavein === false && furniture === true){
@@ -47,23 +57,27 @@ export default function CreateAListing() {
 
   const createPost = async (e)=>{
   
-    console.log("clicked", title, price, leavein, furniture, building, category, dormnum, desc);
+    console.log("clicked", title, price, leavein, furniture, building, category, dormnum, desc, imageUrl);
     
-    // try{
-    //   console.log("");
-    //    var resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/createPost", {
-    //    title: title,
-    //    price: price,
-    //    building: building,
-    //    category: category,
-    //    description: desc,
-    //    dormRoomNumber: dormnum,
-    //    isFurniture: furniture,
-    //    isLeave: leavein
-    //  });
-    //  console.log(resp.data);
 
-    //  Router.push("/post-success");
+    try{
+      console.log("");
+       var resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/createPost", {
+       title: title,
+       price: price,
+       building: building,
+       category: category,
+       description: desc,
+       dormRoomNumber: dormnum,
+       isFurniture: furniture,
+       isLeave: leavein,
+       imageUrls: imageUrl
+     });
+     console.log(resp.data);
+
+     Router.push("/post-success");
+
+   
      
     // } catch {
     //   console.log("Failed");
@@ -75,11 +89,12 @@ export default function CreateAListing() {
   return  <div className="page">
       <Header />
       <HeaderMenu />
+     
       <div className="page_contents">
         {/* <CreateListing /> */}
         <div className="create_listing">
         <div className="listing_contents">
-
+        
           <h1>Create a Listing</h1>
           <InputPost width="90%" onChange={(e)=>{
             setTitle(e.target.value);
@@ -121,6 +136,8 @@ export default function CreateAListing() {
             {leavein == true ? <InputPost title="Dorm Room Number" width="300px" placeholder="Enter room number" onChange={(e)=>{
               setDormnum(e.target.value);
             }}/> : null}
+            
+           {/* <UploadImager setImageUrl={setImageUrl} /> */}
             <UploadImage title="Add Photo(s)"/>
 
             <div className="listing_box">
