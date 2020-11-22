@@ -42,6 +42,7 @@ export default function Home() {
 
   
     return  <div className="page">
+
         <Header />
         <HeaderMenu />
         <div className="home_header">

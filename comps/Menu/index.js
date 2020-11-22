@@ -48,147 +48,162 @@ const Item1 = styled.h2`
     font-size: 60pt;
     cursor: pointer;
     margin-bottom: 20px;
-
+    transition: 0.25s;
     &:hover {
         color: #EA7317;
     }
 
-    color: ${props=>props.selected ? '#EA7317' : 'black'};
+    // color: ${props=>props.selected ? '#EA7317' : 'black'};
+    color: ${props=>props.textColor ? "#EA7317" : "black"};
 `;
 
 const Item2 = styled.h4`
     font-size: 32pt;
     cursor: pointer;
     margin-bottom: 20px;
-
+    transition: 0.25s;
     &:hover {
         color: #EA7317;
     }
-    color: ${props=>props.selected ? '#EA7317' : 'black'};
+    // color: ${props=>props.selected ? '#EA7317' : 'black'};
+    color: ${props=>props.textColor ? "#EA7317" : "black"};
 `;
 
 const Item3 = styled.h2`
     font-size: 60pt;
     cursor: pointer;
     margin-bottom: 20px;
-
+    transition: 0.25s;
     &:hover {
         color: #EA7317;
     }
     &:active {
         color: #EA7317;
     }
-    color: ${props=>props.selected ? '#EA7317' : 'black'};
+    // color: ${props=>props.selected ? '#EA7317' : 'black'};
+    color: ${props=>props.textColor ? "#EA7317" : "black"};
 `;
 
 const Item4 = styled.h4`
     font-size: 32pt;
     cursor: pointer;
     margin-bottom: 20px;
-
+    transition: 0.25s;
     &:hover {
         color: #EA7317;
     }
-    color: ${props=>props.selected ? '#EA7317' : 'black'};
+    // color: ${props=>props.selected ? '#EA7317' : 'black'};
+    color: ${props=>props.textColor ? "#EA7317" : "black"};
 `;
 
 const Item5 = styled.h2`
     font-size: 60pt;
     cursor: pointer;
     margin-bottom: 20px;
-
+    transition: 0.25s;
     &:hover {
         color: #EA7317;
     }
-    color: ${props=>props.selected ? '#EA7317' : 'black'};
+    // color: ${props=>props.selected ? '#EA7317' : 'black'};
+    color: ${props=>props.messagestext ? props.messagestext : "black"};
 `;
 
 const Item6 = styled.h4`
     font-size: 32pt;
     cursor: pointer;
     margin-bottom: 20px;
-
+    transition: 0.25s;
     &:hover {
         color: #EA7317;
     }
-    color: ${props=>props.selected ? '#EA7317' : 'black'};
+    // color: ${props=>props.selected ? '#EA7317' : 'black'};
+    color: ${props=>props.messagestext ? props.messagestext : "black"};
 `;
 
 const Item7 = styled.h2`
     font-size: 60pt;
     cursor: pointer;
     margin-bottom: 20px;
-
+    transition: 0.25s;
     &:hover {
         color: #EA7317;
     }
-    color: ${props=>props.selected ? '#EA7317' : 'black'};
+    // color: ${props=>props.selected ? '#EA7317' : 'black'};
+    color: ${props=>props.abouttext ? props.abouttext : "black"};
 `;
 
 const Item8 = styled.h4`
     font-size: 32pt;
     cursor: pointer;
     margin-bottom: 20px;
-
+    transition: 0.25s;
     &:hover {
         color: #EA7317;
     }
-    color: ${props=>props.selected ? '#EA7317' : 'black'};
+    // color: ${props=>props.selected ? '#EA7317' : 'black'};
+    color: ${props=>props.abouttext ? props.abouttext : "black"};
 `;
 
 const Item9 = styled.h2`
     font-size: 60pt;
     cursor: pointer;
     margin-bottom: 20px;
-
+    transition: 0.25s;
     &:hover {
         color: #EA7317;
     }
-    color: ${props=>props.selected ? '#EA7317' : 'black'};
+    // color: ${props=>props.selected ? '#EA7317' : 'black'};
+    color: ${props=>props.faqtext ? props.faqtext : "black"};
 `;
 
 const Item10 = styled.h4`
     font-size: 32pt;  
     cursor: pointer;
     margin-bottom: 20px;
-
+    transition: 0.25s;
     &:hover {
         color: #EA7317;
     }
-    color: ${props=>props.selected ? '#EA7317' : 'black'};
+    // color: ${props=>props.selected ? '#EA7317' : 'black'};
+    color: ${props=>props.faqtext ? props.faqtext : "black"};
 `;
 
 function clickHome(){
     if(true){
         Router.push("/home");
+
     }
 }
 
 function clickAbout(){
     if(true){
         Router.push("/about");
+
     }
 }
 
 function clickProfile(){
     if(true){
         Router.push("/profile");
+
     }
 }
 
 function clickFAQ(){
     if(true){
         Router.push("/faq");
+
     }
 }
 
 function clickMessages(){
     if(true){
-        Router.push("/chatlist")
+        Router.push("/chatlist");
+
     }
 }
 
-const Menu = ({}) => {
+const Menu = ({hometext, profiletext, messagestext, abouttext, faqtext, textColor, MenuSelect}) => {
     const [selected, setSelected] = useState(1);
     const [hidden, setHidden] = useState(null);
 
@@ -212,43 +227,43 @@ const Menu = ({}) => {
         <Content showmenu={showmenu} showmenu={showmenu} hidden={hidden}>
 
 
-                {process.browser && window.innerWidth > 650 ? <Item1 selected={selected === 1} onClick={()=>{
-                setSelected(1)}, clickHome}>Home</Item1>: null}
+                {process.browser && window.innerWidth > 650 ? <Item1 selected={selected === 1} textColor={textColor} onClick={()=>{
+                MenuSelect("home")}, clickHome}>Home</Item1>: null}
 
-                {process.browser && window.innerWidth < 650 ? <Item2 selected={selected === 1} onClick={()=>{
-                setSelected(1)}, clickHome}>Home</Item2> : null}
-
-
-
-                {process.browser && window.innerWidth > 650 ? <Item3 selected={selected === 2} onClick={()=>{
-                setSelected(2);}, clickProfile}>Profile</Item3> : null}
-
-                {process.browser && window.innerWidth < 650 ? <Item4 selected={selected === 2} onClick={()=>{
-                setSelected(2);}, clickProfile}>Profile</Item4> : null}
+                {process.browser && window.innerWidth < 650 ? <Item2 selected={selected === 1} textColor={textColor} onClick={()=>{
+                MenuSelect("home")}, clickHome}>Home</Item2> : null}
 
 
 
-                {process.browser && window.innerWidth > 650 ? <Item5 selected={selected === 3} onClick={()=>{
-                setSelected(3);}, clickMessages}>Messages</Item5> :null}
+                {process.browser && window.innerWidth > 650 ? <Item3 selected={selected === 2} textColor={textColor} onClick={()=>{
+                MenuSelect("profile")}, clickProfile}>Profile</Item3> : null}
 
-                {process.browser && window.innerWidth < 650 ? <Item6 selected={selected === 3} onClick={()=>{
-                setSelected(3);}, clickMessages}>Messages</Item6> :null}
-
-
-
-                {process.browser && window.innerWidth > 650 ? <Item7 selected={selected === 4} onClick={()=>{
-                setSelected(4);}, clickAbout}>About</Item7>:null}
-
-                {process.browser && window.innerWidth < 650 ? <Item8 selected={selected === 4} onClick={()=>{
-                setSelected(4);}, clickAbout}>About</Item8> :null}
+                {process.browser && window.innerWidth < 650 ? <Item4 selected={selected === 2} textColor={textColor} onClick={()=>{
+                MenuSelect("profile")}, clickProfile}>Profile</Item4> : null}
 
 
 
-                {process.browser && window.innerWidth > 650 ?  <Item9 selected={selected === 5} onClick={()=>{
-                setSelected(5);}, clickFAQ}>FAQ</Item9> :null}
+                {process.browser && window.innerWidth > 650 ? <Item5 selected={selected === 3} messagestext={messagestext} onClick={()=>{
+                }, clickMessages}>Messages</Item5> :null}
 
-                {process.browser && window.innerWidth < 650 ?  <Item10 selected={selected === 5} onClick={()=>{
-                setSelected(5);}, clickFAQ}>FAQ</Item10> :null}
+                {process.browser && window.innerWidth < 650 ? <Item6 selected={selected === 3} messagestext={messagestext} onClick={()=>{
+                }, clickMessages}>Messages</Item6> :null}
+
+
+
+                {process.browser && window.innerWidth > 650 ? <Item7 selected={selected === 4} abouttext={abouttext} onClick={()=>{
+                }, clickAbout}>About</Item7>:null}
+
+                {process.browser && window.innerWidth < 650 ? <Item8 selected={selected === 4} abouttext={abouttext} onClick={()=>{
+                }, clickAbout}>About</Item8> :null}
+
+
+
+                {process.browser && window.innerWidth > 650 ?  <Item9 selected={selected === 5} faqtext={faqtext} onClick={()=>{
+                }, clickFAQ}>FAQ</Item9> :null}
+
+                {process.browser && window.innerWidth < 650 ?  <Item10 selected={selected === 5} faqtext={faqtext} onClick={()=>{
+                }, clickFAQ}>FAQ</Item10> :null}
 
 
         </Content>

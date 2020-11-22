@@ -80,16 +80,8 @@ const CloseBackground = styled.div`
 
 const ExpandedMenu = ({expand, onMenuSelect}) => {
     const [expanded, setExpanded] = useState(false);
-    const [sold, setSold] = useState(false);
     const [visibilityback, setVisibilityBack] = useState(false);
-    
-    function onMenuSelect(str){
-        if (str==="marksold"){
-            setSold(true);
-        } else if (str === "edit"){
-            Router.push("/edit-listing");
-        }
-    }
+    const [state, setState] = useState(0);
 
     useEffect(()=>{
         setExpanded(expand);

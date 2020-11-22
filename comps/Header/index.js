@@ -10,7 +10,6 @@ import axios from 'axios';
 
 const Main = styled.div`
     background-color: white;
-    // border: 1px solid black;
     width: 100%;
     margin: 0;
     position: relative;
@@ -91,6 +90,7 @@ const Profile = styled.img`
 `;
 
 const FlexEnd = styled.div`
+    margin-left: auto;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -124,6 +124,16 @@ function clickHome(){
 
 const Header = ({imgurl}) =>{
 
+   const [textColor, setTextColor] = useState(false);
+   const [textColor2, setTextColor2] = useState(false);
+
+    const HandleMenu = (str) =>{
+        if(str==="home"){
+            setTextColor("#EA7317");
+        } else if (str === "profile"){
+            setTextColor2("#EA7317");
+        }
+    }
     const [img, setImg] = useState(null);
     // add async in comp is okay??? not okay??
     const handleProfile = async () => {
@@ -140,7 +150,7 @@ const Header = ({imgurl}) =>{
         </Center>
     <Container>
 
-           <MenuCont> <Menu /> </MenuCont>
+           <MenuCont> <Menu textColor={textColor} textColor2={textColor2} MenuSelect={HandleMenu} /> </MenuCont>
    
         <FlexEnd>
             <SearchContainer onClick={clickSearch}>
