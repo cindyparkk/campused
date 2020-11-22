@@ -9,6 +9,7 @@ import FilterOpen from '../../comps/FilterOpen';
 import CircleButton from '../../comps/CircleButton';
 import Item from '../../comps/Item';
 import DropdownFurn from '../../comps/DropdownFurn';
+import Menu from '../../comps/Menu';
 
 import Router from 'next/router';
 
@@ -40,12 +41,13 @@ export default function Leavein() {
  console.log(post);
   
   return  <div className="page">
+
        <Header />
-      <HeaderMenu />
+      <HeaderMenu leaveintextcolor={"#EA7317"} />
       <div className="page_home">
       <div className="col-4 menu">
             <div>
-              <DropdownFurn font={"'Montserrat', sans-serif"} name1={"Brock Hall"} name2={"Walter Gage"} name3={"Ponnderosa"} name4={"Thunderbird"}/>
+              <DropdownFurn fontweight={800} font={"'Montserrat', sans-serif"} name1={"Brock Hall"} name2={"Walter Gage"} name3={"Ponnderosa"} name4={"Thunderbird"}/>
               {/* <Category name1="Brock Hall" name2="Walter Gage" name3="Ponnderosa" name4="Thunderbird"/> */}
             </div>
             

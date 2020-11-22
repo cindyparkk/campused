@@ -22,7 +22,8 @@ const LeaveIn = styled.h3`
     :hover{
         color: #EA7317;
     }
-    color: ${props=>props.selected ? '#EA7317' : 'black'};
+    // color: ${props=>props.selected ? '#EA7317' : 'black'};
+    color: ${props=>props.leaveintextcolor ? props.leaveintextcolor : "black"};
 `;
 
 const LeaveIn2 = styled.h4`
@@ -31,7 +32,8 @@ const LeaveIn2 = styled.h4`
     :hover{
         color: #EA7317;
     }
-    color: ${props=>props.selected ? '#EA7317' : 'black'};
+    // color: ${props=>props.selected ? '#EA7317' : 'black'};
+    color: ${props=>props.leaveintextcolor ? props.leaveintextcolor : "black"};
 `;
 
 const Furniture = styled.h3`
@@ -40,7 +42,8 @@ const Furniture = styled.h3`
     :hover{
         color: #EA7317;
     }
-    color: ${props=>props.selected2 ? '#EA7317' : 'black'};
+    // color: ${props=>props.selected2 ? '#EA7317' : 'black'};
+    color: ${props=>props.furnituretextcolor ? props.furnituretextcolor : "black"};
 `;
 
 const Furniture2 = styled.h4`
@@ -49,7 +52,8 @@ const Furniture2 = styled.h4`
     :hover{
         color: #EA7317;
     }
-    color: ${props=>props.selected2 ? '#EA7317' : 'black'};
+    // color: ${props=>props.selected2 ? '#EA7317' : 'black'};
+    color: ${props=>props.furnituretextcolor ? props.furnituretextcolor : "black"};
 `;
 
 
@@ -59,7 +63,8 @@ const Saved = styled.h3`
     :hover{
         color: #EA7317;
     }
-    color: ${props=>props.selected3 ? '#EA7317' : 'black'};
+    // color: ${props=>props.selected3 ? '#EA7317' : 'black'};
+    color: ${props=>props.savedtextcolor ? props.savedtextcolor : "black"};
 `;
 
 const Saved2 = styled.h4`
@@ -68,7 +73,8 @@ const Saved2 = styled.h4`
     :hover{
         color: #EA7317;
     }
-    color: ${props=>props.selected3 ? '#EA7317' : 'black'};
+    // color: ${props=>props.selected3 ? '#EA7317' : 'black'};
+    color: ${props=>props.savedtextcolor ? props.savedtextcolor : "black"};
 `;
 
 function clickLeavein(){
@@ -93,7 +99,7 @@ function clickSaved(){
 
 
 
-const HeaderMenu = ({fontSize}) =>{
+const HeaderMenu = ({fontSize, leaveintextcolor, furnituretextcolor, savedtextcolor}) =>{
     const [selected, setSelected] = useState(1);
     const [state, setState] = useState(false);
 
@@ -102,40 +108,40 @@ const HeaderMenu = ({fontSize}) =>{
         <Container>
         
         {process.browser && window.innerWidth > 630 ? 
-            <LeaveIn selected={selected === 1} onClick={()=>{
-            setSelected(1); 
+            <LeaveIn selected={selected === 1} leaveintextcolor={leaveintextcolor} onClick={()=>{
+            // setSelected(1); 
             clickLeavein();
         }}>Leave-in's</LeaveIn> : null}
         
 
         
         {process.browser && window.innerWidth < 630 ?
-            <LeaveIn2 selected={selected === 1} onClick={()=>{
-            setSelected(1);
+            <LeaveIn2 selected={selected === 1} leaveintextcolor={leaveintextcolor} onClick={()=>{
+            // setSelected(1);
             clickLeavein();
         }}>Leave-in's</LeaveIn2>: null}
         
 
         
         {process.browser && window.innerWidth > 630 ? 
-                <Furniture selected2={selected === 2} onClick={()=>{
-                setSelected(2);
+                <Furniture selected2={selected === 2} furnituretextcolor={furnituretextcolor} onClick={()=>{
+                // setSelected(2);
                 clickFurniture();
             }}>Furniture</Furniture>: null}
                 
 
        
         {process.browser && window.innerWidth < 630 ? 
-                <Furniture2 selected2={selected === 2} onClick={()=>{
-                setSelected(2);
+                <Furniture2 selected2={selected === 2} furnituretextcolor={furnituretextcolor} onClick={()=>{
+                // setSelected(2);
                 clickFurniture();
             }}>Furniture</Furniture2>: null}
          
 
         
         {process.browser && window.innerWidth > 630 ?
-        <Saved selected3={selected === 3} onClick={()=>{
-            setSelected(3);
+        <Saved selected3={selected === 3} savedtextcolor={savedtextcolor} onClick={()=>{
+            // setSelected(3);
             clickSaved();
         }}>Saved</Saved> : null}
 
@@ -143,8 +149,8 @@ const HeaderMenu = ({fontSize}) =>{
 
         
         {process.browser && window.innerWidth < 630 ? 
-       <Saved2 selected3={selected === 3} onClick={()=>{
-            setSelected(3);
+       <Saved2 selected3={selected === 3} savedtextcolor={savedtextcolor} onClick={()=>{
+            // setSelected(3);
             clickSaved();
         }}>Saved</Saved2>: null}
 
@@ -161,7 +167,9 @@ const HeaderMenu = ({fontSize}) =>{
    }
 
    HeaderMenu.defaultProps = {
-      
+      leaveintextcolor: "black",
+      furnituretextcolor: "black",
+      savedtextcolor: "black"
    }
    
    

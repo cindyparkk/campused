@@ -11,7 +11,7 @@ import SavedItemlist from '../../comps/SavedItemlist';
 export default function MainPage() {
     return  <div className="page">
         <Header />
-        <HeaderMenu />
+        <HeaderMenu savedtextcolor={"#EA7317"} />
 
         <SavedItemlist />
         <div className="footer">

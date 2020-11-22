@@ -5,6 +5,7 @@ import Footer from '../../comps/Footer';
 import Browse_Button from '../../comps/Browse_Button';
 import Button from '../../comps/Button';
 import Router from 'next/router';
+import Menu from '../../comps/Menu';
 
 
 function clicktoleavein() {
@@ -22,6 +23,7 @@ function clicktofurniture() {
 
 export default function Home() {
     return  <div className="page">
+
         <Header />
         <HeaderMenu />
         <div className="home_header">

@@ -5,6 +5,13 @@
 // 1. font-weight: bold (or 800)
 // 2. specific font sizes, like the price range
 
+// .menu{
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     z-index: 3;
+// }
+
 h1 {
     // i.e. Filters
     font-family: "Montserrat", sans-serif;
@@ -204,6 +211,10 @@ textarea {
     margin-right:-50%;
 }
 
+.categorydiv{
+    max-width: 400px;
+}
+
 // profile page
 .profile_contents {
     background-color: #FEC601;
@@ -229,11 +240,27 @@ textarea {
     margin: 10px 0 -30px 0;
 }
 
+.profile_post {
+    @include flexIt();
+    flex-direction: column;
+    width: 95%;
+    background-color: #FEC601;
+    border: 2px solid black;
+    border-radius: 16px;
+    margin: 3%;
+    padding: 2%;
+    box-sizing: border-box;
+}
+
+.profile_post_list {
+    width: 100%;
+    @include flexIt();
+    flex-direction: row;
+}
 
 // product page
 .product_description {
     width: 100%;
-
 }
 
 #time{
