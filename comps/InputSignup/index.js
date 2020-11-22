@@ -20,6 +20,7 @@ const Input = styled.input`
     border-radius: 10px;
     padding-left: 15px;
     margin-top: ${props=>props.margin ? props.margin : 0};
+    // text-transform: capitalize;
 `
 
 const InputSignup = ({title, placeholder, type, margin, onChange}) => {
