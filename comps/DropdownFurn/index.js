@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-    min-width: 252px;
+    width: 100%;
     display:inline-flex;
     flex-direction:column;
     padding:0px;
@@ -14,7 +14,7 @@ const Form = styled.form`
 
 const Select = styled.select`
     display:inline-flex;
-    width: 250px;
+    width: 100%;
     min-height: 67px;
     border: ${props=>props.border ? props.border : "2px solid #000000"};
     border-radius: 17px;
@@ -22,6 +22,7 @@ const Select = styled.select`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 20px;
     font-family: ${props=>props.font ? props.font : "'Assistant', sans-serif"};
+    font-weight: ${props=>props.fontweight ? props.fontweight : 300};
     font-size: 15pt;
     background-color: #FFF;
 
@@ -53,10 +54,10 @@ select > option:hover {
 `;
 
 
-const DropdownFurn =({font, name1, name2, name3, name4, border})=> {
+const DropdownFurn =({font, name1, name2, name3, name4, border, fontweight})=> {
     return <Container>
         <Form>
-            <Select font={font} border={border}>
+            <Select font={font} border={border} fontweight={fontweight}>
                 <Option>Select a Category</Option>
                 <Option>{name1}</Option>
                 <Option>{name2}</Option>
@@ -70,6 +71,7 @@ const DropdownFurn =({font, name1, name2, name3, name4, border})=> {
 DropdownFurn.defaultProps = {
     font: "'Assistant', sans-serif",
     border: "2px solid black",
+    fontweight: 300,
     name1: "Title 1",
     name2: "Title 2",
     name3: "Title 3",
