@@ -41,7 +41,7 @@ export default function Home() {
       <div className="page_home">
           <div className="col-4 menu">
             <div>
-            <DropdownFurn font={"'Montserrat', sans-serif"} name1={"Bedroom"} name2={"Bathroom"} name3={"Kitchen"} name4={"Living Room & General Furniture"}/>
+            <DropdownFurn fontweight={800} font={"'Montserrat', sans-serif"} name1={"Bedroom"} name2={"Bathroom"} name3={"Kitchen"} name4={"Living Room & General Furniture"}/>
               {/* <Category /> */}
               {/* <Button onClick={HandlePost} /> */}
             </div>
@@ -51,7 +51,7 @@ export default function Home() {
             </div></div>:null}
 
             {process.browser && window.innerWidth < 940 ? <div className='mobilecontainer'> <div className='mobileadd'>
-            <FilterOpen /><CircleButton icon="/addblack.svg" iconwidth="40px" width="50px" height="50px" onClick={createAListing} /></div> </div> :null}
+            <FilterOpen /><CircleButton icon="/addblack.svg" iconwidth="50px" width="50px" height="50px" onClick={createAListing} /></div> </div> :null}
 
 
           </div>

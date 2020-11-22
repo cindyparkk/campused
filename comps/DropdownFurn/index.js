@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-    min-width: 252px;
+    width: 100%;
     display:inline-flex;
     flex-direction:column;
     padding:0px;
@@ -14,7 +14,7 @@ const Form = styled.form`
 
 const Select = styled.select`
     display:inline-flex;
-    width: 250px;
+    width: 100%;
     min-height: 67px;
     border: ${props=>props.border ? props.border : "2px solid #000000"};
     border-radius: 17px;
@@ -22,6 +22,7 @@ const Select = styled.select`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 20px;
     font-family: ${props=>props.font ? props.font : "'Assistant', sans-serif"};
+    font-weight: ${props=>props.fontweight ? props.fontweight : 300};
     font-size: 15pt;
     background-color: #FFF;
 
