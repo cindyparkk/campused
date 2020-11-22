@@ -26,6 +26,10 @@ const Item_Image = styled.img`
     // width: 100%;
     // height: 100%;
     max-width: 400px;
+    @media (max-width: 375px){
+        max-width: 250px;
+        margin-left:10px;
+    }
     height: auto;
     border: 2px solid #9A9A9A;
     border-radius: 16px;
@@ -44,12 +48,20 @@ const Item_Title = styled.h4`
     margin:5px 5px 0px 0px;
     word-wrap: break-word;
     text-transform: initial;
+    @media (max-width: 375px){
+        
+        margin-left:10px;
+    }
 `;
 
 const Item_Price = styled.h6`
     // font-family: 'Montserrat', sans-serif;
     margin:5px 0px;
     color:#474A57;
+    @media (max-width: 375px){
+        
+        margin-left:10px;
+    }
 `;
 
 

@@ -7,6 +7,7 @@ import Post from '../../comps/Post';
 import Button from '../../comps/Button';
 import FilterOpen from '../../comps/FilterOpen';
 import CircleButton from '../../comps/CircleButton';
+import DropdownFurn from '../../comps/DropdownFurn';
 
 import Router from 'next/router';
 
@@ -40,7 +41,8 @@ export default function Home() {
       <div className="page_home">
           <div className="col-4 menu">
             <div>
-              <Category />
+            <DropdownFurn font={"'Montserrat', sans-serif"} name1={"Bedroom"} name2={"Bathroom"} name3={"Kitchen"} name4={"Living Room & General Furniture"}/>
+              {/* <Category /> */}
               {/* <Button onClick={HandlePost} /> */}
             </div>
 

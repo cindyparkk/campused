@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Header from '../../comps/Header';
 import HeaderMenu from '../../comps/HeaderMenu';
 import Footer from '../../comps/Footer';
@@ -21,16 +21,28 @@ export default function ProfilePage() {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
 
-  const handleProfile = async () =>{
-      console.log("clicked", name, image);
+  // const handleProfile = async () =>{
+  //     console.log("clicked", name, image);
 
-      var resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user");
+  //     var resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user/");
 
-      console.log(resp.data);
+  //     console.log(resp.data);
 
-      setName(resp.data.name);
-      setImage(resp.data.imageUrl);
-  }
+  //     setName(resp.data.name);
+  //     setImage(resp.data.imageUrl);
+  // }
+
+  useEffect(() => {
+    // if []. run once when the row loads, and don't run again
+      async function fetchData() {
+        const resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user/");
+
+        setName(resp.data.name);
+        setImage(resp.data.imageUrl);
+        return resp;
+      }
+      fetchData();
+     }, []);
 
   return  <div className="page">
       <Header />

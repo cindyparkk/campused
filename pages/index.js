@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Button from '../comps/Button';
 import InputwIcon from '../comps/InputwIcon';
+import Alert from '../comps/Alert';
 
 import axios from 'axios';
 import Router from 'next/router';
@@ -23,6 +24,7 @@ export default function Start() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
 
   const HandleLogin = async (e)=>{
 
@@ -52,6 +54,10 @@ export default function Start() {
         setPassword(e.target.value);
       }}/>
       <p>Don't have an account? Click here to <a href="/signup" onClick={clickSignup}>create an account.</a></p>
+      {error == true ? 
+      <Alert 
+      text="Your email or password does not match."/>
+      : null}
       <Button text="Log In" bgcolor="#73BFB8" onClick={HandleLogin} />
     </div>
     </div>

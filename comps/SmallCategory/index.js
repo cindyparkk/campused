@@ -106,13 +106,12 @@ const SmallCategory =({expand,onCategorySelect,name1,name2,name3,name4, title, o
 
 
     const [expanded, setExpanded] = useState(false);
-    // const [bed, setBed] = useState(false);
+    const [bed, setBed] = useState("");
     // const [category, setCategory] = useState("");
 
     function onCategorySelect(str){
         if(str === "bed"){
-            console.log("bed selected")
-        } 
+        }
     }
 
     useEffect(() => {

@@ -8,6 +8,7 @@ import Button from '../../comps/Button';
 import FilterOpen from '../../comps/FilterOpen';
 import CircleButton from '../../comps/CircleButton';
 import Item from '../../comps/Item';
+import DropdownFurn from '../../comps/DropdownFurn';
 
 import Router from 'next/router';
 
@@ -44,14 +45,16 @@ export default function Leavein() {
       <div className="page_home">
       <div className="col-4 menu">
             <div>
-              <Category />
+              <DropdownFurn font={"'Montserrat', sans-serif"} name1={"Brock Hall"} name2={"Walter Gage"} name3={"Ponnderosa"} name4={"Thunderbird"}/>
+              {/* <Category name1="Brock Hall" name2="Walter Gage" name3="Ponnderosa" name4="Thunderbird"/> */}
             </div>
-            {process.browser && window.innerWidth > 940 ?<div className="filterdesktop"><FilterOpen /> <div className="addlisting">
+            
+            {process.browser && window.innerWidth > 940 ? <div className="filterdesktop"><FilterOpen /> <div className="addlisting">
             <Button center="center" text="+ Add a Listing" color="#FFF" bgcolor="#3DA5D9" fsize="26px" onClick={createAListing}/>
             </div></div>:null}
 
-            {process.browser && window.innerWidth < 940 ? <div className='mobilecontainer'> <div className='mobileadd'>
-            <FilterOpen /><CircleButton icon="/addblack.svg" iconwidth="40px" width="50px" height="50px" onClick={createAListing} /></div> </div> :null}
+            {process.browser && window.innerWidth < 940 ? <div className='mainmobile'> <div className='mobilecontainer'> <div className='mobileadd'>
+            <FilterOpen /><CircleButton icon="/addblack.svg" iconwidth="50px" width="50px" height="50px" onClick={createAListing} /></div> </div> </div> :null}
           </div>
 
 

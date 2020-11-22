@@ -15,15 +15,16 @@ const Contain = styled.div`
     overflow: hidden;
     max-height: ${props=>props.showfilters ? "617px" : "0px"};
     transition: 0.5s ease-in-out;
-    z-index: 4;
-   
-`
+    z-index: 4;   
+`;
+
 const Main = styled.div`
     height: 700px;
     display: inline-flex;
-    justify-content: flex-end;
-    flex-direction: column;
-    position: relative;
+    // justify-content: flex-end;
+    // flex-direction: column;
+    // position: relative;
+    // border: 1px solid black;
 `;
 
 const Cont = styled.div`
@@ -32,25 +33,25 @@ const Cont = styled.div`
 
 const Content = styled.div`
     margin: 25px;
-`
+`;
 
 const Top = styled.div`
     display: inline-flex;
     width: 100%;
     justify-content: space-between;
-`
+`;
 
 const Title = styled.h1`
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 35px;
-`
+`;
 
 const Subtitle = styled.h3`
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 24px;
-`
+`;
 const Box = styled.div`
     display: inline-flex;
     align-items: center;
@@ -63,7 +64,7 @@ const Box = styled.div`
         font-weight: 300;
         font-size: 18px;
     }
-`
+`;
 
 const Checkbox = styled.input`
     width: 25px;
@@ -77,7 +78,7 @@ const Checkbox = styled.input`
         visibility: visible;
         background-color: #EA7317;
     }
-`
+`;
 
 const Icon = styled.img`
     width: 22px;
@@ -120,6 +121,7 @@ const FilterContainer = styled.div`
     transition: 0.3s;
     opacity: ${props=>props.filterbutton ? "0" : "1"};
     width: 50px;
+    position: absolute;
 `;
 
 const GrayBackground = styled.div`
@@ -142,7 +144,7 @@ const DropDownContainer = styled.div`
 `;
 
 const Desktop = styled.div`
-
+   
 `;
 
 const ContainDesktop = styled.div`
