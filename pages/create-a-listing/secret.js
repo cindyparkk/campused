@@ -1,4 +1,4 @@
-import firebase from 'firebase';
+import admin from 'firebase-admin';
 
 
 const config = {
@@ -14,7 +14,7 @@ const config = {
  
 
 try {
-    firebase.initializeApp(config)
+    admin.initializeApp(config)
     } catch (err) {
     // we skip the "already exists" message which is
     // not an actual error when we're hot-reloading
@@ -23,4 +23,4 @@ try {
     }
     }
 
-export default firebase;
+export default admin.firestore();

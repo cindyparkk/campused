@@ -5,7 +5,7 @@ import Router from 'next/router';
 
 const Contain = styled.div`
     position: relative;
-    z-index: 6;
+    
 `;
 const Content = styled.div`
     display: inline-flex;
@@ -42,7 +42,6 @@ const InitialButton = styled.div`
     transition: 0.3s;
     opacity: ${props=>props.expanded ? "0" : "1"};
     display: inline-flex;
-    
 `
 
 const Main = styled.div`
@@ -71,7 +70,7 @@ const Main = styled.div`
 const CloseBackground = styled.div`
     width: 100vw;
     height: 100vh;
-    z-index: -1;
+    z-index: 0;
     position: fixed;
     top: 0;
     left: 0;

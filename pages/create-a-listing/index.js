@@ -59,19 +59,21 @@ export default function CreateAListing() {
   
     console.log("clicked", title, price, leavein, furniture, building, category, dormnum, desc, imageUrl);
     
-    // try{
-    //   console.log("");
-    //    var resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/createPost", {
-    //    title: title,
-    //    price: price,
-    //    building: building,
-    //    category: category,
-    //    description: desc,
-    //    dormRoomNumber: dormnum,
-    //    isFurniture: furniture,
-    //    isLeave: leavein
-    //  });
-    //  console.log(resp.data);
+
+    try{
+      console.log("");
+       var resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/createPost", {
+       title: title,
+       price: price,
+       building: isFurniture ? "" : building,
+       category: isLeave ? "" : category,
+       description: desc,
+       dormRoomNumber: dormnum,
+       isFurniture: furniture,
+       isLeave: leavein,
+       imageUrls: imageUrl
+     });
+     console.log(resp.data);
 
     //  Router.push("/post-success");
      
