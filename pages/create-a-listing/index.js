@@ -65,8 +65,8 @@ export default function CreateAListing() {
        var resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/createPost", {
        title: title,
        price: price,
-       building: building,
-       category: category,
+       building: isFurniture ? "" : building,
+       category: isLeave ? "" : category,
        description: desc,
        dormRoomNumber: dormnum,
        isFurniture: furniture,
