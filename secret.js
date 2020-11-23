@@ -1,4 +1,4 @@
-import admin from 'firebase-admin';
+import firebase from 'firebase';
 
 
 const config = {
@@ -23,4 +23,4 @@ try {
     }
     }
 
-export default admin.firestore();
+export default firebase;
