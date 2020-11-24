@@ -70,7 +70,6 @@ const [file, setFile] = useState(null);
   const createPost = async (e)=>{
   
     console.log("clicked", title, price, leavein, furniture, building, category, dormnum, desc, imageUrl);
-    
 
     try{
       console.log("");
@@ -89,7 +88,7 @@ const [file, setFile] = useState(null);
 
      Router.push("/post-success");
      
-    } catch {
+    }catch {
       console.log("Failed");
      //  show error if not everything is filled out
     }
