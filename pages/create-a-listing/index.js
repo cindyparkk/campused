@@ -37,22 +37,22 @@ export default function CreateAListing() {
 
   const handleCategory = (str) => {
     if (leavein === false && furniture === true){
-    //     if(str === "option1"){
-    //       setCategory("Bedroom");
-    //   } else if (str === "option2"){
-    //       setCategory("Kitchen");
-    //   } else if (str === "option3"){
-    //       setCategory("Bathroom");
-    //   } else if (str === "option4"){
-    //       setCategory("Living room & General Furniture");
-    //   } 
-    // } else {
-    //   setCategory("furniture");
-    // }
-    setCategory(category);
+        if(str === "option1"){
+          setCategory("Bedroom");
+      } else if (str === "option2"){
+          setCategory("Kitchen");
+      } else if (str === "option3"){
+          setCategory("Bathroom");
+      } else if (str === "option4"){
+          setCategory("Living room & General Furniture");
+      } 
     } else {
       setCategory("empty");
     }
+    // setCategory(category);
+    // } else {
+    //   setCategory("empty");
+    // }
 }
 
   const createPost = async (e)=>{
@@ -127,7 +127,7 @@ export default function CreateAListing() {
             {furniture == true ? <div className="listing_box">
               <p>Furniture Category</p>
                 <DropdownFurn border={"1px solid black"} onChange={(e)=>{
-                setCategory(furniture); onClick={}
+                setCategory(furniture); 
                 }} onCategorySelect={handleCategory}/>
             </div> : null}
 
