@@ -41,8 +41,6 @@ export default function ProfilePage() {
 
         console.log(resp.data);
 
-        // setName(resp.data.name);
-        // setImage(resp.data.imageUrl);
         setName([resp.data.credentials.name]);
         setImage(resp.data.credentials.imageUrl);
         return resp.data;

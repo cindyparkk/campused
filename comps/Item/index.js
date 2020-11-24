@@ -11,7 +11,7 @@ const Container = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-    
+    margin-bottom: 30px;
 
 `;
 
@@ -69,9 +69,9 @@ const Item_Price = styled.h6`
 const Item = ({title, price, imgurl, onChange}) => {
 
     return <Container>
-        <Image_Box>
+        {imgurl ? <Image_Box>
             <Item_Image src={imgurl}/>
-        </Image_Box>   
+        </Image_Box> : null}  
          <Item_Title>
              {title}
          </Item_Title>
