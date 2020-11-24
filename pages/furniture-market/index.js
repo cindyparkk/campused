@@ -1,9 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Header from '../../comps/Header';
 import HeaderMenu from '../../comps/HeaderMenu';
 import Footer from '../../comps/Footer';
-import Category from '../../comps/Category';
-import Post from '../../comps/Post';
+import Item from '../../comps/Item';
 import Button from '../../comps/Button';
 import FilterOpen from '../../comps/FilterOpen';
 import CircleButton from '../../comps/CircleButton';
@@ -20,20 +19,23 @@ function createAListing() {
 
 export default function Home() {
 
-  const [post, setPost] = useState("");
+  const [post, setPost] = useState([]);
 
-  const HandlePost = async ()=>{
-
-    console.log("clicked");
-
-      console.log("");
-      var resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/getPost");
-
-      // console.log("Failed");
-
-     console.log(resp.data);
-    // Router.push("/home");
+ useEffect(() => {
+// if []. run once when the row loads, and don't run again
+  async function fetchData() {
+    const request = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/getPost");
+    //console.log(request);
+    if(request.data.furniture === true){
+      setPost(request.data);
+      return request;
+    } else {
+      return "";
+    }
   }
+  fetchData();
+ }, []);
+//  [post] will update every time there is an update in post
 
   return  <div className="page">
       <Header />
@@ -56,7 +58,25 @@ export default function Home() {
 
           </div>
           <div className="col-3 right">
-              <Post />
+          <div className="Fullstack">
+              <div className="post">
+                <div className="post_list">
+                <h3>Recent Posts</h3>
+                {post.map(info => (
+               <div>
+                {/* <Post imgurl={info.photoUrl} price={info.price} title={info.title}/> */}
+                <Item imgurl={info.photoUrl} price={info.price} title={info.title}/>
+
+                {/* <div>{info.building}</div>
+                <h1>{info.title}</h1>
+                <img src={info.photoUrl} alt="uploadedimg" height="150" width="150" />
+                <div>{info.price}</div>
+                <div>{info.dormRoom}</div> */}
+                </div>
+              ))}</div>
+              </div>
+              
+            </div>
           </div>
       </div>
       <div className="footer">

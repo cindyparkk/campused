@@ -5,7 +5,8 @@ import Router from 'next/router';
 
 const Contain = styled.div`
     position: relative;
-    
+    z-index: 1;
+
 `;
 const Content = styled.div`
     display: inline-flex;

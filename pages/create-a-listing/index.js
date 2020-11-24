@@ -55,6 +55,18 @@ export default function CreateAListing() {
     // }
 }
 
+const [file, setFile] = useState(null);
+
+  const ImageUpload = async () => {
+    console.log(file);
+    var fd = new FormData();
+    fd.append("image", file[0]);
+    await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/post/image", fd, {
+      headers: {'Conent-Type' : 'multipart/form-data'}
+    });
+  }
+
+
   const createPost = async (e)=>{
   
     console.log("clicked", title, price, leavein, furniture, building, category, dormnum, desc, imageUrl);
@@ -137,6 +149,9 @@ export default function CreateAListing() {
             
            {/* <UploadImager setImageUrl={setImageUrl} /> */}
             <UploadImage title="Add Photo(s)"/>
+            <input type="file" onChange={(e)=>{
+              setFile(e.target.files)
+            }} />
 
             <div className="listing_box">
               <p>Description</p>
@@ -145,7 +160,7 @@ export default function CreateAListing() {
               }}></textarea>
             </div>
 
-            <Button text="Post" fsize="26px" onClick={createPost}/>
+            <Button text="Post" fsize="26px" onClick={createPost, ImageUpload}/>
           </div>
           </div>
         </div>

@@ -66,7 +66,7 @@ const SearchContainer = styled.div`
     // border: 1px solid black;
     cursor: pointer;
     margin-left: 12px;
-    z-index: 10;
+    z-index: 1;
 `;
 
 const Searchmain = styled.div`
@@ -86,7 +86,7 @@ const Profile = styled.img`
     margin-right: 10px;
     margin-left: 10px;
     cursor: pointer;
-    z-index: 5;
+    z-index: 1;
 `;
 
 const FlexEnd = styled.div`
