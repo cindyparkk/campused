@@ -86,7 +86,7 @@ const [file, setFile] = useState(null);
      });
      console.log(resp.data);
 
-     Router.push("/post-success");
+    //  Router.push("/post-success");
      
     }catch {
       console.log("Failed");

@@ -90,6 +90,7 @@ const Profile = styled.img`
 `;
 
 const FlexEnd = styled.div`
+    z-index: 1;
     margin-left: auto;
     display: flex;
     justify-content: flex-end;
