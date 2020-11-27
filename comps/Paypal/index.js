@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import InputPaypal from '../InputPaypal';
 import Paypal_Button from '../Paypal_Button';
 import Divider from '../Divider';
+import Router from 'next/router';
 
 
 const Contain = styled.div`
@@ -50,7 +51,11 @@ const Input = styled.div`
 
 `;
 
-
+function clickPaypal(){
+    if(true){
+        location ="https://www.paypal.com/signin?returnUri=https%3A%2F%2Fwww.paypal.com%2Fmyaccount%2Ftransfer&state=%2Frequest";
+    }
+}
 
 const Paypal =()=> {
 
@@ -66,7 +71,7 @@ const Paypal =()=> {
         </Input>
 
      
-        <Paypal_Button />
+        <Paypal_Button onClick={clickPaypal}/>
         <p>Have trouble logging in?</p>
 
 
@@ -82,10 +87,8 @@ const Paypal =()=> {
     
     
     
- Paypal.defaultProps = {
+Paypal.defaultProps = {
       
-
-    }
-    
+}
     
     export default Paypal;

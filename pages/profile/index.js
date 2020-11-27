@@ -21,7 +21,7 @@ function createListing(){
 export default function ProfilePage() {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
-  const [user, setUse] = useState([]);
+  const [user, setUser] = useState([]);
 
   const handleProfile = async () =>{
       console.log("clicked", name, image);
@@ -41,10 +41,9 @@ export default function ProfilePage() {
 
         console.log(resp.data);
 
-        // setName(resp.data.name);
-        // setImage(resp.data.imageUrl);
-        setUser([...resp.data]);
-        return resp;
+        setName([resp.data.credentials.name]);
+        setImage(resp.data.credentials.imageUrl);
+        return resp.data;
       }
       fetchData();
      }, []);
@@ -78,10 +77,15 @@ export default function ProfilePage() {
       <Header />
       <HeaderMenu />
       <div className="profile">
+<<<<<<< HEAD
       {user.map((o, i)=>{
+=======
+        {/* {user.map((o, i)=>{
+>>>>>>> 4fb1be19b842fe28bfcfc238338e681b1805a9cf
         <Profile name={o.name}
         icon={o.image}
-        />})}
+        />})} */}
+        <Profile name={name} icon={image} />
         <div className="rating">
           <Rating />
         </div>

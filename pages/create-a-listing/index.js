@@ -37,36 +37,47 @@ export default function CreateAListing() {
 
   const handleCategory = (str) => {
     if (leavein === false && furniture === true){
-    //     if(str === "option1"){
-    //       setCategory("Bedroom");
-    //   } else if (str === "option2"){
-    //       setCategory("Kitchen");
-    //   } else if (str === "option3"){
-    //       setCategory("Bathroom");
-    //   } else if (str === "option4"){
-    //       setCategory("Living room & General Furniture");
-    //   } 
-    // } else {
-    //   setCategory("furniture");
-    // }
-    setCategory(category);
+        if(str === "option1"){
+          setCategory("Bedroom");
+      } else if (str === "option2"){
+          setCategory("Kitchen");
+      } else if (str === "option3"){
+          setCategory("Bathroom");
+      } else if (str === "option4"){
+          setCategory("Living room & General Furniture");
+      } 
     } else {
       setCategory("empty");
     }
+    // setCategory(category);
+    // } else {
+    //   setCategory("empty");
+    // }
 }
+
+const [file, setFile] = useState(null);
+
+  const ImageUpload = async () => {
+    console.log(file);
+    var fd = new FormData();
+    fd.append("image", file[0]);
+    await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/post/image", fd, {
+      headers: {'Conent-Type' : 'multipart/form-data'}
+    });
+  }
+
 
   const createPost = async (e)=>{
   
     console.log("clicked", title, price, leavein, furniture, building, category, dormnum, desc, imageUrl);
-    
 
     try{
       console.log("");
        var resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/createPost", {
        title: title,
        price: price,
-       building: building,
-       category: category,
+       building: isFurniture ? "" : building,
+       category: isLeave ? "" : category,
        description: desc,
        dormRoomNumber: dormnum,
        isFurniture: furniture,
@@ -77,7 +88,7 @@ export default function CreateAListing() {
 
      Router.push("/post-success");
      
-    } catch {
+    }catch {
       console.log("Failed");
      //  show error if not everything is filled out
     }
@@ -127,7 +138,7 @@ export default function CreateAListing() {
             {furniture == true ? <div className="listing_box">
               <p>Furniture Category</p>
                 <DropdownFurn border={"1px solid black"} onChange={(e)=>{
-                setCategory(furniture); onClick={}
+                setCategory(furniture); 
                 }} onCategorySelect={handleCategory}/>
             </div> : null}
 
@@ -137,6 +148,9 @@ export default function CreateAListing() {
             
            {/* <UploadImager setImageUrl={setImageUrl} /> */}
             <UploadImage title="Add Photo(s)"/>
+            <input type="file" onChange={(e)=>{
+              setFile(e.target.files)
+            }} />
 
             <div className="listing_box">
               <p>Description</p>
@@ -145,7 +159,7 @@ export default function CreateAListing() {
               }}></textarea>
             </div>
 
-            <Button text="Post" fsize="26px" onClick={createPost}/>
+            <Button text="Post" fsize="26px" onClick={createPost, ImageUpload}/>
           </div>
           </div>
         </div>

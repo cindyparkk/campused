@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import firebase from './secret';
+import firebase from '../../secret';
 import { v4 as uuid } from 'uuid';
 export default function UploadImager(props) {
   const [imageUrl, setImageUrl] = useState([]);
