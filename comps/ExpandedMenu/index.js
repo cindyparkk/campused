@@ -5,7 +5,7 @@ import Router from 'next/router';
 
 const Contain = styled.div`
     position: relative;
-    z-index: 6;
+    
 `;
 const Content = styled.div`
     display: inline-flex;
@@ -42,7 +42,6 @@ const InitialButton = styled.div`
     transition: 0.3s;
     opacity: ${props=>props.expanded ? "0" : "1"};
     display: inline-flex;
-    
 `
 
 const Main = styled.div`
@@ -71,21 +70,30 @@ const Main = styled.div`
 const CloseBackground = styled.div`
     width: 100vw;
     height: 100vh;
-    z-index: -1;
+    z-index: 0;
     position: fixed;
     top: 0;
     left: 0;
     visibility: ${props=>props.visibilityback ? "visibile" : "hidden"};
 `;
 
-const ExpandedMenu = ({expand, onMenuSelect}) => {
+const ExpandedMenu = ({expand, onMenuSelect, sold}) => {
     const [expanded, setExpanded] = useState(false);
     const [visibilityback, setVisibilityBack] = useState(false);
     const [state, setState] = useState(0);
+    const [text, setText] = useState("Mark as Sold");
 
     useEffect(()=>{
         setExpanded(expand);
     }, [expand]);
+
+    // const handleSold = () => {
+    //     if(sold === true){
+    //         setText("Undo");
+    //     } else {
+    //         setText();
+    //     }
+    // }
     
 
     return <Contain >
@@ -102,7 +110,7 @@ const ExpandedMenu = ({expand, onMenuSelect}) => {
         }}></CloseBackground>
         <Main expanded={expanded}>
             <Content>
-                <div onClick={()=>{
+                <div sold={sold} onClick={()=>{
                 onMenuSelect("marksold");}}>Mark as Sold</div>
                 <div onClick={()=>{
                 onMenuSelect("edit");}}>Edit</div>

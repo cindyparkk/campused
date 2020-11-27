@@ -43,8 +43,13 @@ export default function ProfilePage() {
 
         // setName(resp.data.name);
         // setImage(resp.data.imageUrl);
+<<<<<<< HEAD
         setUser([resp.data]);
         return console.log(resp.data.credentials.email);
+=======
+        setUser([...resp.data]);
+        return resp;
+>>>>>>> master
       }
       fetchData();
      }, []);
@@ -80,7 +85,11 @@ console.log(user);
       <Header />
       <HeaderMenu />
       <div className="profile">
+<<<<<<< HEAD
         {user.map((o)=>{
+=======
+      {user.map((o, i)=>{
+>>>>>>> master
         <Profile name={o.name}
         icon={o.image}
         />})}
