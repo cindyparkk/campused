@@ -6,14 +6,14 @@ import CreateListing from '../../comps/CreateListing';
 import InputPost from '../../comps/InputPost';
 import SmallCategory from '../../comps/SmallCategory';
 import BuildingCategory from '../../comps/BuildingCategory';
-import UploadImage from '../../comps/UploadImage';
+//import UploadImage from '../../comps/UploadImage';
 import Button from '../../comps/Button';
 import DropdownFurn from '../../comps/DropdownFurn';
 
 import Router from 'next/router';
 import jwtDecode from 'jwt-decode';
 import axios from 'axios';
-import UploadImager from "./UploadImage";
+//import UploadImager from "./UploadImage";
 if (process.browser){
   const token = localStorage.FBIdToken
 
@@ -35,6 +35,10 @@ export default function CreateAListing() {
   const [category, setCategory] = useState("category");
   const [imageUrl, setImageUrl] = useState('something');
 
+  const [file, setFile] = useState(null);
+
+  
+
   const handleFurniture = (str) => {
     if(str === "bed"){
         setCategory("Bedroom");
@@ -49,34 +53,42 @@ export default function CreateAListing() {
     }
 }
 
+
+
+
   const createPost = async (e)=>{
   
     console.log("clicked", title, price, leavein, furniture, building, category, dormnum, desc, imageUrl);
     
-    try{
-      console.log("");
-       var resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/createPost", {
-       title: title,
-       price: price,
-       building: building,
-       category: category,
-       description: desc,
-       dormRoomNumber: dormnum,
-       isFurniture: furniture,
-       isLeave: leavein,
-       imageUrls: imageUrl
-     });
-     console.log(resp.data);
-
-     Router.push("/post-success");
+      var fd = new FormData();
+      fd.append("image", file);
+      console.log(fd, file);
+      const resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/post/image", fd, {
+      headers: { 'Content-Type': 'application/json'}})
      
-    } catch {
-      console.log("Failed");
-     //  show error if not everything is filled out
-    }
 
-    }
-  
+        console.log(resp);
+      const resp2 = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/createPost", {
+          title: title,
+          price: price,
+          building: building,
+          category: category,
+          description: desc,
+          dormRoomNumber: dormnum,
+          isFurniture: furniture,
+          isLeave: leavein,
+          imageUrls: resp.data.imageUrl
+      })
+      const resultsAll = [resp, resp2];
+      
+        console.log(resultsAll);
+
+        Router.push("/post-success");
+      
+      
+
+  }
+    
   return  <div className="page">
       <Header />
       <HeaderMenu />
@@ -85,6 +97,8 @@ export default function CreateAListing() {
         {/* <CreateListing /> */}
         <div className="create_listing">
         <div className="listing_contents">
+        
+
         
           <h1>Create a Listing</h1>
           <InputPost width="90%" onChange={(e)=>{
@@ -139,8 +153,11 @@ export default function CreateAListing() {
               setDormnum(e.target.value);
             }}/> : null}
             
-           {/* <UploadImager setImageUrl={setImageUrl} /> */}
-            <UploadImage title="Add Photo(s)"/>
+            <input type="file" onChange={e=>{
+              setFile(e.target.files[0]);
+            }} />
+           {/* <UploadImager setImageUrl={setImageUrl} />  */}
+            {/* <UploadImage title="Add Photo(s)"/> */}
 
             <div className="listing_box">
               <p>Description</p>

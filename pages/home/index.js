@@ -15,6 +15,7 @@ if (process.browser){
 if(token) {
   const decodedToken = jwtDecode(token);
   console.log(decodedToken);
+  Axios.defaults.headers["Authorization"] = `${token}`;
 }
 }
 
@@ -38,8 +39,10 @@ function getUserData() {
  .catch(err => console.log(err))
 }
 
-export default function Home() {
 
+
+export default function Home() {
+  
   
     return  <div className="page">
 
@@ -51,6 +54,11 @@ export default function Home() {
       
 
          <div className="main_part1">
+         <input type="file" onChange={(e) =>{
+          setFile(e.target.files);
+        }} />
+        <button onClick={testUpload}>test</button>
+
            <button onClick={getUserData}>
              click me
            </button>
