@@ -23,16 +23,16 @@ export default function ProfilePage() {
   const [image, setImage] = useState("");
   const [user, setUser] = useState([]);
 
-  const handleProfile = async () =>{
-      console.log("clicked", name, image);
+  // const handleProfile = async () =>{
+  //     console.log("clicked", name, image);
 
-      var resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user/");
+  //     var resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user/");
 
-      console.log(resp.data);
+  //     console.log(resp.data);
 
-      setName(resp.data.name);
-      setImage(resp.data.imageUrl);
-  }
+  //     setName(resp.data.name);
+  //     setImage(resp.data.imageUrl);
+  // }
 
   useEffect(() => {
     // if []. run once when the row loads, and don't run again
@@ -41,9 +41,21 @@ export default function ProfilePage() {
 
         console.log(resp.data);
 
+<<<<<<< HEAD
+        // setName(resp.data.name);
+        // setImage(resp.data.imageUrl);
+<<<<<<< HEAD
+        setUser([resp.data]);
+        return console.log(resp.data.credentials.email);
+=======
+        setUser([...resp.data]);
+        return resp;
+>>>>>>> master
+=======
         setName([resp.data.credentials.name]);
         setImage(resp.data.credentials.imageUrl);
         return resp.data;
+>>>>>>> master
       }
       fetchData();
      }, []);
@@ -73,15 +85,24 @@ export default function ProfilePage() {
       } 
   }
 
+  
+console.log(user);
   return  <div className="page">
       <Header />
       <HeaderMenu />
       <div className="profile">
 <<<<<<< HEAD
+<<<<<<< HEAD
+        {user.map((o)=>{
+=======
+      {user.map((o, i)=>{
+>>>>>>> master
+=======
       {user.map((o, i)=>{
 =======
         {/* {user.map((o, i)=>{
 >>>>>>> 4fb1be19b842fe28bfcfc238338e681b1805a9cf
+>>>>>>> master
         <Profile name={o.name}
         icon={o.image}
         />})} */}
