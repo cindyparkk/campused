@@ -54,10 +54,8 @@ export default function Home() {
       
 
          <div className="main_part1">
-         <input type="file" onChange={(e) =>{
-          setFile(e.target.files);
-        }} />
-        <button onClick={testUpload}>test</button>
+         
+        
 
            <button onClick={getUserData}>
              click me

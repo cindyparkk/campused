@@ -17,11 +17,12 @@ import axios from 'axios';
 if (process.browser){
   const token = localStorage.FBIdToken
 
-if(token) {
+  if(token) {
   const decodedToken = jwtDecode(token);
   console.log(decodedToken);
 }
 }
+
 
 export default function CreateAListing() {
 
@@ -49,8 +50,11 @@ export default function CreateAListing() {
         setCategory("Bathroom");
     } else if (str === "liv"){
         setCategory("Living room & General Furniture");
+    }
+  }
 
-  const handleCategory = (str) => {
+
+const handleCategory = (str) => {
     if (leavein === false && furniture === true){
 
    
@@ -96,7 +100,6 @@ export default function CreateAListing() {
         console.log(resultsAll);
 
         Router.push("/post-success");
-      
       
 
   }
@@ -160,7 +163,6 @@ export default function CreateAListing() {
             }} />
            
 
-
             <div className="listing_box">
               <p>Description</p>
               <textarea placeholder="Write a description..." onChange={(e)=>{
@@ -168,7 +170,7 @@ export default function CreateAListing() {
               }}></textarea>
             </div>
 
-            <Button text="Post" fsize="26px" onClick={createPost, ImageUpload}/>
+            <Button text="Post" fsize="26px" onClick={createPost}/>
           </div>
           </div>
         </div>
@@ -178,4 +180,4 @@ export default function CreateAListing() {
         <Footer />
       </div>
     </div>
-}
+    }
