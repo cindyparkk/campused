@@ -1,5 +1,4 @@
 import firebase from 'firebase';
-import React from 'react';
 
 
 const config = {
@@ -15,7 +14,7 @@ const config = {
  
 
 try {
-    firebase.initializeApp(config)
+    admin.initializeApp(config)
     } catch (err) {
     // we skip the "already exists" message which is
     // not an actual error when we're hot-reloading

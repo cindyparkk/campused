@@ -41,6 +41,7 @@ export default function ProfilePage() {
 
         console.log(resp.data);
 
+<<<<<<< HEAD
         // setName(resp.data.name);
         // setImage(resp.data.imageUrl);
 <<<<<<< HEAD
@@ -49,6 +50,11 @@ export default function ProfilePage() {
 =======
         setUser([...resp.data]);
         return resp;
+>>>>>>> master
+=======
+        setName([resp.data.credentials.name]);
+        setImage(resp.data.credentials.imageUrl);
+        return resp.data;
 >>>>>>> master
       }
       fetchData();
@@ -86,13 +92,21 @@ console.log(user);
       <HeaderMenu />
       <div className="profile">
 <<<<<<< HEAD
+<<<<<<< HEAD
         {user.map((o)=>{
 =======
       {user.map((o, i)=>{
 >>>>>>> master
+=======
+      {user.map((o, i)=>{
+=======
+        {/* {user.map((o, i)=>{
+>>>>>>> 4fb1be19b842fe28bfcfc238338e681b1805a9cf
+>>>>>>> master
         <Profile name={o.name}
         icon={o.image}
-        />})}
+        />})} */}
+        <Profile name={name} icon={image} />
         <div className="rating">
           <Rating />
         </div>

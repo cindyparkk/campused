@@ -26,14 +26,8 @@ export default function Start() {
   
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-<<<<<<< HEAD
   const[loading,setLoading] = useState(true);
   const [error, setError] = useState(false);
-=======
-  const [loading,setLoading] = useState(true);
-  const [error, setError] = useState(false);
-  
->>>>>>> master
   const HandleLogin = async (e)=>{
 
    e.preventDefault();

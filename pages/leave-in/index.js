@@ -31,8 +31,12 @@ export default function Leavein() {
   async function fetchData() {
     const request = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/getPost");
     //console.log(request);
-    setPost(request.data);
-    return request;
+    if(request.data.leavein === true){
+      setPost(request.data);
+      return request;
+    } else {
+      return "";
+    }
   }
   fetchData();
  }, []);

@@ -30,9 +30,9 @@ const ButtonBox = styled.h6`
     font-size: ${props=>props.fsize ? props.fsize : "15px"};
 `
 
-const Paypal_Button = ({bgcolor, text, fsize,color,ftweight}) => {
+const Paypal_Button = ({bgcolor, text, fsize,color,ftweight, onClick}) => {
     return <Contain>
-        <ButtonBox bgcolor={bgcolor} fsize={fsize} color={color} ftweight={ftweight}>{text}</ButtonBox>
+        <ButtonBox bgcolor={bgcolor} fsize={fsize} color={color} ftweight={ftweight} onClick={onClick}>{text}</ButtonBox>
     </Contain>
 }
 
@@ -41,7 +41,8 @@ Paypal_Button.defaultProps = {
     text: "Login",
     fsize: "15px",
     color:"#FFFFFF",
-    ftweight:"300"
+    ftweight:"300",
+    onClick:()=>{}
 }
 
 export default Paypal_Button;
