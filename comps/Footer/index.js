@@ -135,48 +135,55 @@ const Copyright = styled.p`
     margin: 50px 0px 10px 0px;
 `;
 
+
 function clickHome(){
     if(true){
-        Router.push({pathname: '/home', scrollreset: true}).then(()=> window.scrollTo(0, 0));
+        // Router.push({pathname: '/home', scrollreset: true}).then(()=> window.scrollTo(0, 0));
+        window.location.replace('/home');
     }
 }
 
 function clickAbout(){
     if(true){
-        Router.push({pathname: '/about', scrollreset: true}).then(()=> window.scrollTo(0, 0));
+        // Router.push({pathname: '/about', scrollreset: true}).then(()=> window.scrollTo(0, 0));
+        window.location.replace('/about');
     }
 }
 
 function clickFurniture(){
     if(true){
-        Router.push({pathname: "/furniture-market", scrollreset: true}).then(() => window.scrollTo(0, 0));
+        // Router.push({pathname: "/furniture-market", scrollreset: true}).then(() => window.scrollTo(0, 0));
+        window.location.replace('/furniture-market');
     }
 }
 
 function clickLeavein(){
     if(true){
-        Router.push({pathname: "/leave-in", scrollreset: true}).then(() => window.scrollTo(0, 0));
+        // Router.push({pathname: "/leave-in", scrollreset: true}).then(() => window.scrollTo(0, 0));
+        window.location.replace('/leave-in');
     }
 }
 
 function clickFAQ(){
     if(true){
-        Router.push({pathname: "/faq", scrollreset: true}).then(() => window.scrollTo(0, 0));
+        // Router.push({pathname: "/faq", scrollreset: true}).then(() => window.scrollTo(0, 0));
+        window.location.replace('/faq');
     }
 }
 
 function clickProfile(){
     if(true){
-        Router.push("/profile");
+        // Router.push("/profile");
+        window.location.replace('/profile');
     }
 }
 
 
 const Footer = () =>{
 
-    // Router.events.on('routeChangeComplete', () => { window.scrollTo(0, 0); });
-
  return <Main>
+
+     
  
  <Container>
 
