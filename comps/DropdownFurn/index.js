@@ -29,6 +29,7 @@ const Select = styled.select`
     select > option:hover { 
         background-color: red !important;
     }
+    outline: none;
 `;
 
 const Option = styled.option`
