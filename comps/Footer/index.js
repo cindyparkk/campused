@@ -137,31 +137,31 @@ const Copyright = styled.p`
 
 function clickHome(){
     if(true){
-        Router.push("/home");
+        Router.push({pathname: '/home', scrollreset: true}).then(()=> window.scrollTo(0, 0));
     }
 }
 
 function clickAbout(){
     if(true){
-        Router.push("/about");
+        Router.push({pathname: '/about', scrollreset: true}).then(()=> window.scrollTo(0, 0));
     }
 }
 
 function clickFurniture(){
     if(true){
-        Router.push("/furniture-market");
+        Router.push({pathname: "/furniture-market", scrollreset: true}).then(() => window.scrollTo(0, 0));
     }
 }
 
 function clickLeavein(){
     if(true){
-        Router.push("/leave-in");
+        Router.push({pathname: "/leave-in", scrollreset: true}).then(() => window.scrollTo(0, 0));
     }
 }
 
 function clickFAQ(){
     if(true){
-        Router.push("/faq");
+        Router.push({pathname: "/faq", scrollreset: true}).then(() => window.scrollTo(0, 0));
     }
 }
 
@@ -173,6 +173,9 @@ function clickProfile(){
 
 
 const Footer = () =>{
+
+    // Router.events.on('routeChangeComplete', () => { window.scrollTo(0, 0); });
+
  return <Main>
  
  <Container>
