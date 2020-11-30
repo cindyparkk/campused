@@ -7,6 +7,7 @@ import Button from '../../comps/Button';
 import Router from 'next/router';
 import jwtDecode from 'jwt-decode';
 import Axios from 'axios';
+import { useRouter } from 'next/router';
 
 
 if (process.browser){
@@ -22,13 +23,13 @@ if(token) {
 
 function clicktoleavein() {
   if (true) {
-      Router.push("/home");
+      window.location.replace('/leave-in');
   }
 }
 
 function clicktofurniture() {
   if (true) {
-      Router.push("/furnitre_market");
+    window.location.replace('/furniture-market');
   }
 }
 function getUserData() {
