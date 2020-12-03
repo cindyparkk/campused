@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import Router from 'next/router';
-
+import Button from "../Button/index";
 import CircleButton from '../CircleButton';
 import Menu from '../Menu';
 
@@ -123,6 +123,13 @@ function clickHome(){
     }
 }
 
+function Logout() {
+    if (true){
+        localStorage.clear();
+        Router.push("/");
+    }
+}
+
 const Header = ({imgurl}) =>{
 
    const [textColor, setTextColor] = useState(false);
@@ -138,10 +145,10 @@ const Header = ({imgurl}) =>{
     const [img, setImg] = useState(null);
     // add async in comp is okay??? not okay??
     const handleProfile = async () => {
-        var resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user/image");
+        const resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user/image");
 
         console.log(resp.data);
-        setImg(resp.data.image);
+        setImg(resp.data.imageUrl);
     }
     return <Main>
     <Center>
@@ -154,6 +161,8 @@ const Header = ({imgurl}) =>{
            <MenuCont> <Menu textColor={textColor} textColor2={textColor2} MenuSelect={HandleMenu} /> </MenuCont>
    
         <FlexEnd>
+        
+        <Button text="Logout" onClick={Logout}/>
             <SearchContainer onClick={clickSearch}>
                 <CircleButton icon="/search.svg" width="32px" height="32px"/>
             </SearchContainer>

@@ -7,7 +7,7 @@ import Button from '../../comps/Button';
 import Router from 'next/router';
 import jwtDecode from 'jwt-decode';
 import Axios from 'axios';
-
+import {useAuth} from '../../auth';
 
 if (process.browser){
   const token = localStorage.FBIdToken
@@ -42,8 +42,8 @@ function getUserData() {
 
 
 export default function Home() {
-  
-  
+    const {user} = useAuth();
+    console.log("user data", user)
     return  <div className="page">
 
         <Header />
@@ -57,9 +57,7 @@ export default function Home() {
          
         
 
-           <button onClick={getUserData}>
-             click me
-           </button> 
+           
           <img src="/userpost4.png"></img>
           <div>
           <p>Get your furniture without having to move a single piece! <br/>Student furniture can be left in the campus dorm for the next person to use.</p>

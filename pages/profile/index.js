@@ -44,7 +44,7 @@ export default function ProfilePage() {
         // setName(resp.data.name);
         // setImage(resp.data.imageUrl);
         setUser([resp.data]);
-        return console.log(resp.data.credentials.email);
+        return console.log(resp.data.likes[0]);
       }
       fetchData();
      }, []);
@@ -81,8 +81,8 @@ console.log(user);
       <HeaderMenu />
       <div className="profile">
         {user.map((o)=>{
-        <Profile name={o.name}
-        icon={o.image}
+        <Profile name={o.credentials.name}
+        icon={o.credentials.imageUrl}
         />})}
         <div className="rating">
           <Rating />
@@ -93,8 +93,13 @@ console.log(user);
       </div>
       <ProfileSlider />
       <div className="profile_post">
+      {user.map((e) => {
+            <h1>{e.likes.title}</h1>
+           
+          })}
         <div className="profile_post_list">
-          <ProfilePost sold={sold}/>
+          
+           <ProfilePost sold={sold}/>
           <ExpandedMenu onMenuSelect={handleMenu}/>
         </div>
       </div>

@@ -7,6 +7,8 @@ import Alert from '../comps/Alert';
 import axios from 'axios';
 import Router from 'next/router';
 
+import {useAuth} from '../auth'
+
 
 function clickSignup(){
   if(true){
@@ -22,7 +24,7 @@ function clickSignup(){
 // }
 
 export default function Start() {
-
+  const {setUser} = useAuth();
   
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -39,12 +41,16 @@ export default function Start() {
    };
    axios
     .post("https://us-central1-campused-15cf0.cloudfunctions.net/api/login", userData)
-    .then((res) => {
+    .then(async (res) => {
       console.log(res.data);
+      localStorage.clear();
       const FBIdToken = `Bearer ${res.data.token}`
       localStorage.setItem('FBIdToken', FBIdToken);
       axios.defaults.headers.common["Authorization"] = FBIdToken
       setLoading(false);
+      const resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user/")
+      console.log(resp)
+      if (resp.data) setUser(resp.data);
       Router.push("/home");
     })
 

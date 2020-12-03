@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-
-
+import Button from "../Button/index";
+import Router from "next/router";
 // var photo = require('../../public/photo.png');
 
 const Container = styled.div`
@@ -66,7 +66,8 @@ const Item_Price = styled.h6`
 
 
 
-const Item = ({title, price, imgurl, onChange}) => {
+
+const Item = ({title, price, imgurl, postId, onChange}) => {
 
     return <Container>
         {imgurl ? <Image_Box>
@@ -78,7 +79,6 @@ const Item = ({title, price, imgurl, onChange}) => {
          <Item_Price>
              {price}
          </Item_Price>
-
     </Container>
 
 }
