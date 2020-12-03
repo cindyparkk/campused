@@ -7,6 +7,7 @@ import Button from '../../comps/Button';
 import Router from 'next/router';
 import jwtDecode from 'jwt-decode';
 import Axios from 'axios';
+import { useRouter } from 'next/router';
 
 
 if (process.browser){
@@ -15,19 +16,20 @@ if (process.browser){
 if(token) {
   const decodedToken = jwtDecode(token);
   console.log(decodedToken);
+  Axios.defaults.headers["Authorization"] = `${token}`;
 }
 }
 
 
 function clicktoleavein() {
   if (true) {
-      Router.push("/home");
+      window.location.replace('/leave-in');
   }
 }
 
 function clicktofurniture() {
   if (true) {
-      Router.push("/furnitre_market");
+    window.location.replace('/furniture-market');
   }
 }
 function getUserData() {
@@ -38,8 +40,10 @@ function getUserData() {
  .catch(err => console.log(err))
 }
 
-export default function Home() {
 
+
+export default function Home() {
+  
   
     return  <div className="page">
 
@@ -51,9 +55,12 @@ export default function Home() {
       
 
          <div className="main_part1">
-           {/* <button onClick={getUserData}>
+         
+        
+
+           <button onClick={getUserData}>
              click me
-           </button> */}
+           </button> 
           <img src="/userpost4.png"></img>
           <div>
           <p>Get your furniture without having to move a single piece! <br/>Student furniture can be left in the campus dorm for the next person to use.</p>

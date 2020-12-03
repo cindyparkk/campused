@@ -41,9 +41,10 @@ export default function ProfilePage() {
 
         // console.log(resp.data);
 
-        setName([resp.data.credentials.name]);
-        setImage(resp.data.credentials.imageUrl);
-        return resp.data;
+        // setName(resp.data.name);
+        // setImage(resp.data.imageUrl);
+        setUser([resp.data]);
+        return console.log(resp.data.credentials.email);
       }
       fetchData();
      }, []);
@@ -73,15 +74,16 @@ export default function ProfilePage() {
       } 
   }
 
+  
+console.log(user);
   return  <div className="page">
       <Header />
       <HeaderMenu />
       <div className="profile">
-        {/* {user.map((o, i)=>{
+        {user.map((o)=>{
         <Profile name={o.name}
         icon={o.image}
-        />})} */}
-        <Profile name={name} icon={image} />
+        />})}
         <div className="rating">
           <Rating />
         </div>

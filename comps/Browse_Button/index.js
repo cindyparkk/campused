@@ -35,8 +35,8 @@ function clickFurniture() {
     }
 }
 
-const Browse_Button = ({bgcolor, text, fsize}) => {
-    return <Contain onClick={clickFurniture}>
+const Browse_Button = ({bgcolor, text, fsize, onClick}) => {
+    return <Contain onClick={onClick}>
         <ButtonBox bgcolor={bgcolor} fsize={fsize}>{text}</ButtonBox>
     </Contain>
 }
@@ -44,7 +44,8 @@ const Browse_Button = ({bgcolor, text, fsize}) => {
 Browse_Button.defaultProps = {
     bgcolor: "#FEC601",
     text: "Browse more furniture",
-    fsize: "17px"
+    fsize: "17px",
+    onClick:()=>{}
 }
 
 export default Browse_Button;

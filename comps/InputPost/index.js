@@ -23,7 +23,8 @@ const Input = styled.input`
     border-radius: 17px;
     padding-left: 20px;
     text-transform: capitalize;
-`
+    outline: none;
+`;
 
 const InputPost = ({title, placeholder, width, type, onChange}) => {
     return <Contain width={width}>

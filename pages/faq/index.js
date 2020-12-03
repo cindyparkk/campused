@@ -10,7 +10,7 @@ export default function FAQ() {
       <div className="faq_contents">
           <div className="textbox">
             <h2>FAQ Page</h2>
-            <div>
+            <div className='faqfix'>
                 <h6>Q: What does ‘Leave-in’s’ mean?</h6>
                 <p>‘Leave-in’s’ are a category of furniture that is specifically furniture that you leave behind in your dorm. 
                     This way, there’s no process of moving out all of your furniture. The furniture simply moves from one 

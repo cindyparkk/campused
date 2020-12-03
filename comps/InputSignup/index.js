@@ -21,6 +21,7 @@ const Input = styled.input`
     padding-left: 15px;
     margin-top: ${props=>props.margin ? props.margin : 0};
     // text-transform: capitalize;
+    outline: none;
 `
 
 const InputSignup = ({title, placeholder, type, margin, onChange}) => {

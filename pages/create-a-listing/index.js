@@ -6,22 +6,23 @@ import CreateListing from '../../comps/CreateListing';
 import InputPost from '../../comps/InputPost';
 import SmallCategory from '../../comps/SmallCategory';
 import BuildingCategory from '../../comps/BuildingCategory';
-import UploadImage from '../../comps/UploadImage';
+
 import Button from '../../comps/Button';
 import DropdownFurn from '../../comps/DropdownFurn';
 
 import Router from 'next/router';
 import jwtDecode from 'jwt-decode';
 import axios from 'axios';
-import UploadImager from "./UploadImage";
+
 if (process.browser){
   const token = localStorage.FBIdToken
 
-if(token) {
+  if(token) {
   const decodedToken = jwtDecode(token);
   // console.log(decodedToken);
 }
 }
+
 
 export default function CreateAListing() {
 
@@ -35,66 +36,70 @@ export default function CreateAListing() {
   const [category, setCategory] = useState("category");
   const [imageUrl, setImageUrl] = useState('something');
 
-  const handleCategory = (str) => {
+
+  const [file, setFile] = useState(null);
+
+  
+
+  const handleFurniture = (str) => {
+    if(str === "bed"){
+        setCategory("Bedroom");
+    } else if (str === "kit"){
+        setCategory("Kitchen");
+    } else if (str === "bath"){
+        setCategory("Bathroom");
+    } else if (str === "liv"){
+        setCategory("Living room & General Furniture");
+    }
+  }
+
+
+const handleCategory = (str) => {
     if (leavein === false && furniture === true){
-        if(str === "option1"){
-          setCategory("Bedroom");
-      } else if (str === "option2"){
-          setCategory("Kitchen");
-      } else if (str === "option3"){
-          setCategory("Bathroom");
-      } else if (str === "option4"){
-          setCategory("Living room & General Furniture");
-      } 
+
+   
+    setCategory(category);
+
     } else {
       setCategory("empty");
     }
-    // setCategory(category);
-    // } else {
-    //   setCategory("empty");
-    // }
+    
 }
-
-const [file, setFile] = useState(null);
-
-  const ImageUpload = async () => {
-    // console.log(file);
-    var fd = new FormData();
-    fd.append("image", file[0]);
-    await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/post/image", fd, {
-      headers: {'Conent-Type' : 'multipart/form-data'}
-    });
-  }
-
 
   const createPost = async (e)=>{
   
     console.log("clicked", title, price, leavein, furniture, building, category, dormnum, desc, imageUrl);
 
-    try{
-      console.log("");
-       var resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/createPost", {
-       title: title,
-       price: price,
-       building: isFurniture ? "" : building,
-       category: isLeave ? "" : category,
-       description: desc,
-       dormRoomNumber: dormnum,
-       isFurniture: furniture,
-       isLeave: leavein,
-       imageUrls: imageUrl
-     });
-    //  console.log(resp.data);
+      var fd = new FormData();
+      fd.append("image", file);
+      console.log(fd, file);
+      const resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/post/image", fd, {
+      headers: { 'Content-Type': 'application/json'}})
 
-     Router.push("/post-success");
-     
-    }catch {
-      console.log("Failed");
-     //  show error if not everything is filled out
-    }
 
-    }
   
+
+        console.log(resp);
+      const resp2 = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/createPost", {
+          title: title,
+          price: price,
+          building: building,
+          category: category,
+          description: desc,
+          dormRoomNumber: dormnum,
+          isFurniture: furniture,
+          isLeave: leavein,
+          imageUrls: resp.data.imageUrl
+      })
+      const resultsAll = [resp, resp2];
+      
+        console.log(resultsAll);
+
+        Router.push("/post-success");
+      
+
+  }
+    
   return  <div className="page">
       <Header />
       <HeaderMenu />
@@ -103,6 +108,8 @@ const [file, setFile] = useState(null);
         {/* <CreateListing /> */}
         <div className="create_listing">
         <div className="listing_contents">
+        
+
         
           <h1>Create a Listing</h1>
           <InputPost width="90%" onChange={(e)=>{
@@ -146,11 +153,11 @@ const [file, setFile] = useState(null);
               setDormnum(e.target.value);
             }}/> : null}
             
-           {/* <UploadImager setImageUrl={setImageUrl} /> */}
-            <UploadImage title="Add Photo(s)"/>
-            <input type="file" onChange={(e)=>{
-              setFile(e.target.files)
+
+            <input type="file" onChange={e=>{
+              setFile(e.target.files[0]);
             }} />
+           
 
             <div className="listing_box">
               <p>Description</p>
@@ -159,7 +166,7 @@ const [file, setFile] = useState(null);
               }}></textarea>
             </div>
 
-            <Button text="Post" fsize="26px" onClick={createPost, ImageUpload}/>
+            <Button text="Post" fsize="26px" onClick={createPost}/>
           </div>
           </div>
         </div>
@@ -169,4 +176,4 @@ const [file, setFile] = useState(null);
         <Footer />
       </div>
     </div>
-}
+    }
