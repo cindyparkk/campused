@@ -19,7 +19,7 @@ if (process.browser){
 
 if(token) {
   const decodedToken = jwtDecode(token);
-  console.log(decodedToken);
+  // console.log(decodedToken);
 }
 }
 
@@ -58,7 +58,7 @@ export default function CreateAListing() {
 const [file, setFile] = useState(null);
 
   const ImageUpload = async () => {
-    console.log(file);
+    // console.log(file);
     var fd = new FormData();
     fd.append("image", file[0]);
     await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/post/image", fd, {
@@ -84,7 +84,7 @@ const [file, setFile] = useState(null);
        isLeave: leavein,
        imageUrls: imageUrl
      });
-     console.log(resp.data);
+    //  console.log(resp.data);
 
      Router.push("/post-success");
      

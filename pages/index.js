@@ -40,7 +40,7 @@ export default function Start() {
    axios
     .post("https://us-central1-campused-15cf0.cloudfunctions.net/api/login", userData)
     .then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       const FBIdToken = `Bearer ${res.data.token}`
       localStorage.setItem('FBIdToken', FBIdToken);
       axios.defaults.headers.common["Authorization"] = FBIdToken

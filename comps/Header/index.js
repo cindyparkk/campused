@@ -140,7 +140,7 @@ const Header = ({imgurl}) =>{
     const handleProfile = async () => {
         var resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user/image");
 
-        console.log(resp.data);
+        // console.log(resp.data);
         setImg(resp.data.image);
     }
     return <Main>
