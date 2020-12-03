@@ -35,7 +35,7 @@ function clicktofurniture() {
 function getUserData() {
  Axios.get('https://us-central1-campused-15cf0.cloudfunctions.net/api/user')
  .then(res => {
-   console.log(res.data)
+  //  console.log(res.data)
  })
  .catch(err => console.log(err))
 }

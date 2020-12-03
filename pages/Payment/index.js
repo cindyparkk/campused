@@ -8,9 +8,9 @@ import Proceed from '../../comps/Proceed';
 
 import Router from 'next/router';
 
-function clickProceed(){
-  if(true){
-      Router.push("/payment2");
+function clicktoPayment() {
+  if (true) {
+      Router.push("/paypal");
   }
 }
 
@@ -23,8 +23,8 @@ export default function Payment() {
      <h2>Payment Details</h2>
      <SendMoney />
      </div>   
-     <div className="proceed">
-       <Proceed />
+     <div className="proceed" onClick={clicktoPayment}>
+       <Proceed/>
      </div>
    
 

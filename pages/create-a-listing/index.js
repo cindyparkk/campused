@@ -19,7 +19,7 @@ if (process.browser){
 
   if(token) {
   const decodedToken = jwtDecode(token);
-  console.log(decodedToken);
+  // console.log(decodedToken);
 }
 }
 
@@ -65,10 +65,6 @@ const handleCategory = (str) => {
     }
     
 }
-
-
-
-
 
   const createPost = async (e)=>{
   
