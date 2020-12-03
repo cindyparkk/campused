@@ -22,19 +22,19 @@ if(token) {
 
 function clicktoleavein() {
   if (true) {
-      Router.push("/home");
+      window.location.replace('/leave-in');
   }
 }
 
 function clicktofurniture() {
   if (true) {
-      Router.push("/furnitre_market");
+    window.location.replace('/furniture-market');
   }
 }
 function getUserData() {
  Axios.get('https://us-central1-campused-15cf0.cloudfunctions.net/api/user')
  .then(res => {
-   console.log(res.data)
+  //  console.log(res.data)
  })
  .catch(err => console.log(err))
 }

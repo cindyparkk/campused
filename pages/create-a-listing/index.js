@@ -6,7 +6,7 @@ import CreateListing from '../../comps/CreateListing';
 import InputPost from '../../comps/InputPost';
 import SmallCategory from '../../comps/SmallCategory';
 import BuildingCategory from '../../comps/BuildingCategory';
-
+import Alert from '../../comps/Alert';
 import Button from '../../comps/Button';
 import DropdownFurn from '../../comps/DropdownFurn';
 
@@ -19,7 +19,7 @@ if (process.browser){
 
   if(token) {
   const decodedToken = jwtDecode(token);
-  console.log(decodedToken);
+  // console.log(decodedToken);
 }
 }
 
@@ -35,11 +35,9 @@ export default function CreateAListing() {
   const [leavein, setLeavein] = useState(false);
   const [category, setCategory] = useState("category");
   const [imageUrl, setImageUrl] = useState('something');
-
+  const [error, setError] = useState(false);
 
   const [file, setFile] = useState(null);
-
-  
 
   const handleFurniture = (str) => {
     if(str === "bed"){
@@ -56,8 +54,6 @@ export default function CreateAListing() {
 
 const handleCategory = (str) => {
     if (leavein === false && furniture === true){
-
-   
     setCategory(category);
 
     } else {
@@ -66,24 +62,22 @@ const handleCategory = (str) => {
     
 }
 
-
-
-
-
   const createPost = async (e)=>{
   
     console.log("clicked", title, price, leavein, furniture, building, category, dormnum, desc, imageUrl);
 
+    if (title || price || building || dormnum || desc || category || imageUrl == ""){
+      Router.push("/create-a-listing");
+      window.scrollTo(0, 0);
+      setError(true);
+    } else {
+      setError(false);
       var fd = new FormData();
       fd.append("image", file);
-      console.log(fd, file);
+      // console.log(fd, file);
       const resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/post/image", fd, {
       headers: { 'Content-Type': 'application/json'}})
-
-
-  
-
-        console.log(resp);
+        // console.log(resp);
       const resp2 = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/createPost", {
           title: title,
           price: price,
@@ -97,12 +91,12 @@ const handleCategory = (str) => {
       })
       const resultsAll = [resp, resp2];
       
-        console.log(resultsAll);
+        // console.log(resultsAll);
 
         Router.push("/post-success");
-      
 
   }
+}
     
   return  <div className="page">
       <Header />
@@ -112,10 +106,9 @@ const handleCategory = (str) => {
         {/* <CreateListing /> */}
         <div className="create_listing">
         <div className="listing_contents">
-        
 
-        
           <h1>Create a Listing</h1>
+
           <InputPost width="90%" onChange={(e)=>{
             setTitle(e.target.value);
           }}/>
@@ -157,11 +150,12 @@ const handleCategory = (str) => {
               setDormnum(e.target.value);
             }}/> : null}
             
-
-            <input type="file" onChange={e=>{
-              setFile(e.target.files[0]);
-            }} />
-           
+            <div className="listing_box">
+            <p>Upload Image</p>
+              <input type="file" onChange={e=>{
+                setFile(e.target.files[0]);
+              }} />
+           </div>
 
             <div className="listing_box">
               <p>Description</p>
@@ -170,6 +164,11 @@ const handleCategory = (str) => {
               }}></textarea>
             </div>
 
+            {error == true ?
+          <Alert 
+          text="You must fill out all of the fields."/>
+          : null}
+          
             <Button text="Post" fsize="26px" onClick={createPost}/>
           </div>
           </div>

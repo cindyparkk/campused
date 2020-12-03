@@ -40,6 +40,7 @@ const Input = styled.input`
     box-sizing: border-box;
     border-radius: 10px;
     padding-left: 40px;
+    outline: none;
 `
 
 const InputwIcon = ({ title, placeholder, icon, type, onChange}) => {

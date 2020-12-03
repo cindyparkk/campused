@@ -39,10 +39,10 @@ export default function ProfilePage() {
       async function fetchData() {
         var resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user/");
 
-        console.log(resp.data);
+        // console.log(resp.data);
 
-        // setName(resp.data.name);
-        // setImage(resp.data.imageUrl);
+        setName(resp.data.name);
+        setImage(resp.data.imageUrl);
         setUser([resp.data]);
         return console.log(resp.data.likes[0]);
       }
