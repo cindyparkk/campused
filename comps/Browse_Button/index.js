@@ -36,8 +36,8 @@ function clickFurniture() {
 }
 
 const Browse_Button = ({bgcolor, text, fsize, onClick}) => {
-    return <Contain onClick={onClick}>
-        <ButtonBox bgcolor={bgcolor} fsize={fsize}>{text}</ButtonBox>
+    return <Contain>
+        <ButtonBox onClick={onClick} bgcolor={bgcolor} fsize={fsize}>{text}</ButtonBox>
     </Contain>
 }
 

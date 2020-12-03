@@ -43,8 +43,6 @@ function getUserData() {
 
 
 export default function Home() {
-  
-  
     return  <div className="page">
 
         <Header />
@@ -55,12 +53,6 @@ export default function Home() {
       
 
          <div className="main_part1">
-         
-        
-
-           <button onClick={getUserData}>
-             click me
-           </button> 
           <img src="/userpost4.png"></img>
           <div>
           <p>Get your furniture without having to move a single piece! <br/>Student furniture can be left in the campus dorm for the next person to use.</p>
