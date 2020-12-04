@@ -8,7 +8,7 @@ import Profile from '../../comps/Profile';
 import ProfilePost from '../../comps/ProfilePost';
 import Rating from '../../comps/Rating';
 import ExpandedMenu from '../../comps/ExpandedMenu';
-
+import Item from '../../comps/Item';
 import Router from 'next/router';
 import axios from 'axios';
 
@@ -21,7 +21,7 @@ function createListing(){
 export default function ProfilePage() {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState(null);
 
   // const handleProfile = async () =>{
   //     console.log("clicked", name, image);
@@ -43,7 +43,7 @@ export default function ProfilePage() {
 
         setName(resp.data.name);
         setImage(resp.data.imageUrl);
-        setUser([resp.data]);
+        setUser(resp.data);
         return console.log(resp.data.likes[0]);
       }
       fetchData();
@@ -80,10 +80,14 @@ console.log(user);
       <Header />
       <HeaderMenu />
       <div className="profile">
-        {user.map((o)=>{
+        {!!user && [user].map(o=> (
         <Profile name={o.credentials.name}
         icon={o.credentials.imageUrl}
-        />})}
+
+        />
+       
+        
+        ))}
         <div className="rating">
           <Rating />
         </div>
@@ -93,13 +97,14 @@ console.log(user);
       </div>
       <ProfileSlider />
       <div className="profile_post">
-      {user.map((e) => {
-            <h1>{e.likes.title}</h1>
-           
-          })}
+     
         <div className="profile_post_list">
-          
-           <ProfilePost sold={sold}/>
+           {!!user && [user].map(o => (
+           
+
+           <Item title={o.title} price={o.price} imgurl={o.likes.imageUrls}  />
+      ))}
+           
           <ExpandedMenu onMenuSelect={handleMenu}/>
         </div>
       </div>

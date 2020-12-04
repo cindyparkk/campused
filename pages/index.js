@@ -42,14 +42,14 @@ export default function Start() {
    axios
     .post("https://us-central1-campused-15cf0.cloudfunctions.net/api/login", userData)
     .then(async (res) => {
-      console.log(res.data);
+      // console.log(res.data);
       localStorage.clear();
       const FBIdToken = `Bearer ${res.data.token}`
       localStorage.setItem('FBIdToken', FBIdToken);
       axios.defaults.headers.common["Authorization"] = FBIdToken
       setLoading(false);
       const resp = await axios.get("https://us-central1-campused-15cf0.cloudfunctions.net/api/user/")
-      console.log(resp)
+      // console.log(resp)
       if (resp.data) setUser(resp.data);
       Router.push("/home");
     })

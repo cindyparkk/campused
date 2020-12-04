@@ -15,7 +15,7 @@ import Axios from 'axios';
 
 export default function Product() {
   const _routes = useRouter();
-  const [product, setProduct] = useState({});
+  const [product, setProduct] = useState(null);
 
   const {postId} = _routes.query;
   console.log("postId", postId);
@@ -25,24 +25,34 @@ export default function Product() {
     console.log(postInfo);
   }, [postId])
   return  <div>
+    
       <Header />
       <HeaderMenu />
+      
       <div>
+        
           <div>
               {/* product image */}
-          </div>
+        
+     
       
-      </div>
-
-     <PostSlide price={"$00"} />
-      
-      <ProductDetails />
+      {/* <ProductDetails /> */}
 
       <div className="product_description">
+      
         <Divider />
-        {/* {product.map((buy) =>)} */}
-        <ProductDescription title={product.title} description={product.description}/>
+        {!!product && [product.data].map(buy => (
+        
+        <div>
+          <PostSlide imgurl={buy.imageUrls} price={buy.price} title={buy.title}/>
+        <ProductDescription title={buy.title} description={buy.description}/>
+        </div>
+        ))}
+        
       </div>
+      </div>
+      </div>
+
       <div>
         <Footer />
       </div>
