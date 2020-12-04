@@ -66,18 +66,18 @@ const handleCategory = (str) => {
   
     console.log("clicked", title, price, leavein, furniture, building, category, dormnum, desc, imageUrl);
 
-    if (title || price || building || dormnum || desc || category || imageUrl == ""){
-      Router.push("/create-a-listing");
-      window.scrollTo(0, 0);
-      setError(true);
-    } else {
-      setError(false);
+    
+      // Router.push("/create-a-listing");
+      // window.scrollTo(0, 0);
+      // setError(true);
+  
+      // setError(false);
       var fd = new FormData();
       fd.append("image", file);
       // console.log(fd, file);
       const resp = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/post/image", fd, {
       headers: { 'Content-Type': 'application/json'}})
-        // console.log(resp);
+         console.log(resp);
       const resp2 = await axios.post("https://us-central1-campused-15cf0.cloudfunctions.net/api/createPost", {
           title: title,
           price: price,
@@ -95,7 +95,7 @@ const handleCategory = (str) => {
 
         Router.push("/post-success");
 
-  }
+  
 }
     
   return  <div className="page">

@@ -42,7 +42,7 @@ export default function Signup() {
     //   setFailed("Failed to create an account");
     // }
 
-    if (pwdLength <= 6 || confirmPassword != password){
+    if (pwdLength <= 5 || confirmPassword != password){
       setError(true)
       setFailed("Failed to create an account");
     } else{
@@ -54,7 +54,7 @@ export default function Signup() {
         confirmpassword: confirmPassword,
         name:name
       });
-      Router.push("/home");
+      Router.push("/");
     }
   }
 
